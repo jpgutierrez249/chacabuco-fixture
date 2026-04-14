@@ -1,0 +1,68 @@
+{
+  "Chacabuco": {
+    "es_propio": true,
+    "estadio": "Club Gimnacio Chacabuco",
+    "direccion": "Miro 750",
+    "maps": ""
+  },
+  "El Barrio 2": {
+    "direccion": "Constitución 4253, Boedo",
+    "maps": "https://maps.google.com/?q=Constitucion+4253+Boedo+Buenos+Aires"
+  },
+  "Federacion Caballito": {
+    "direccion": "Av. La Plata 1151, Caballito",
+    "maps": "https://maps.google.com/?q=Av+La+Plata+1151+Caballito+Buenos+Aires"
+  },
+  "Nueva Era": {
+    "direccion": "Gral. División Juan José Valle 2972, Nueva Pompeya",
+    "maps": "https://maps.google.com/?q=Juan+Jose+Valle+2972+Nueva+Pompeya+Buenos+Aires"
+  },
+  "Corvalan": {
+    "direccion": "",
+    "maps": ""
+  },
+  "Pampero": {
+    "direccion": "Balbastro 6151, Lugano",
+    "maps": "https://maps.google.com/?q=Balbastro+6151+Lugano+Buenos+Aires"
+  },
+  "Nueva Estrella": {
+    "direccion": "Santander 4602, Parque Avellaneda",
+    "maps": "https://maps.google.com/?q=Santander+4602+Parque+Avellaneda+Buenos+Aires"
+  },
+  "La Loma": {
+    "direccion": "Cafayate 758, Liniers",
+    "maps": "https://maps.google.com/?q=Cafayate+758+Liniers+Buenos+Aires"
+  },
+  "Semillero FC": {
+    "direccion": "Benavídez (confirmar dirección)",
+    "maps": ""
+  },
+  "Bristol FC": {
+    "direccion": "",
+    "maps": ""
+  },
+  "Santiago de Liniers": {
+    "direccion": "",
+    "maps": ""
+  },
+  "Social Club": {
+    "direccion": "",
+    "maps": ""
+  },
+  "Villa Don Bosco": {
+    "direccion": "",
+    "maps": ""
+  },
+  "San Telmo": {
+    "direccion": "",
+    "maps": ""
+  },
+  "Amigos de Villa Luro": {
+    "direccion": "",
+    "maps": ""
+  },
+  "Glorias Argentinas": {
+    "direccion": "",
+    "maps": ""
+  }
+}

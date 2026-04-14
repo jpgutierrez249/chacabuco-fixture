@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin · Club Chacabuco</title>
+  <style>
+    :root {
+      --azul:        #003087;
+      --azul-claro:  #1a4bb5;
+      --azul-oscuro: #001a4d;
+      --amarillo:    #FFD700;
+      --blanco:      #ffffff;
+      --gris-bg:     #f0f4f8;
+      --gris-borde:  #d1dae6;
+      --gris-texto:  #6b7a8d;
+      --verde:       #16a34a;
+      --rojo:        #dc2626;
+      --radio:       10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--gris-bg);
+      color: #1e2d40;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    /* ── Header ─────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--azul-oscuro), var(--azul));
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 16px rgba(0,0,0,.3);
+    }
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .escudo {
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 15px; flex-shrink: 0;
+    }
+    .header-left h1 { font-size: 1.25rem; font-weight: 800; }
+    .header-left h1 span { color: var(--amarillo); }
+    .header-left p { font-size: .75rem; color: rgba(255,255,255,.6); margin-top: 2px; }
+    .local-badge {
+      background: #dc2626;
+      color: white;
+      font-size: .68rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    /* ── Nav tabs ────────────────────────────────────────────── */
+    nav { background: var(--azul-oscuro); }
+    .tabs { display: flex; max-width: 1100px; margin: 0 auto; }
+    .tab-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,.6);
+      padding: 12px 26px;
+      font-size: .88rem; font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all .2s;
+    }
+    .tab-btn:hover { color: white; background: rgba(255,255,255,.06); }
+    .tab-btn.active { color: var(--amarillo); border-bottom-color: var(--amarillo); }
+
+    /* ── Main ────────────────────────────────────────────────── */
+    main { max-width: 1100px; margin: 0 auto; padding: 28px 20px 40px; }
+
+    .section-title {
+      font-size: .9rem; font-weight: 700;
+      color: var(--azul); text-transform: uppercase;
+      letter-spacing: .8px; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-title::after {
+      content: ''; flex: 1; height: 2px;
+      background: var(--gris-borde); border-radius: 2px;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radio);
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      margin-bottom: 20px;
+    }
+
+    /* ── Forms ───────────────────────────────────────────────── */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: .72rem; font-weight: 700;
+      color: var(--gris-texto); text-transform: uppercase; letter-spacing: .5px;
+    }
+    .form-group input, .form-group select {
+      border: 1.5px solid var(--gris-borde);
+      border-radius: 8px; padding: 8px 12px;
+      font-size: .9rem; color: #1e2d40;
+      background: white; transition: border-color .15s; width: 100%;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none; border-color: var(--azul-claro);
+    }
+
+    /* ── Clubs table ─────────────────────────────────────────── */
+    .clubs-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .clubs-table th {
+      text-align: left; padding: 10px 14px;
+      font-size: .7rem; font-weight: 700;
+      color: var(--gris-texto); text-transform: uppercase; letter-spacing: .5px;
+      border-bottom: 2px solid var(--gris-borde);
+    }
+    .clubs-table td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #f0f4f8;
+      vertical-align: middle;
+    }
+    .clubs-table tr:hover td { background: #f8fafc; }
+    .clubs-table td input {
+      border: 1.5px solid var(--gris-borde);
+      border-radius: 6px; padding: 5px 9px;
+      font-size: .86rem; width: 100%;
+    }
+    .clubs-table td input:focus { outline: none; border-color: var(--azul-claro); }
+    .tag-propio {
+      background: #dbeafe; color: var(--azul);
+      font-size: .65rem; font-weight: 700;
+      padding: 2px 8px; border-radius: 8px; margin-left: 6px;
+    }
+
+    /* Add club row */
+    .add-club-row {
+      display: flex; gap: 10px; align-items: flex-end;
+      padding: 18px 0 0;
+      border-top: 2px dashed var(--gris-borde); margin-top: 10px;
+    }
+    .add-club-row .form-group { flex: 1; margin: 0; }
+
+    /* ── Fixture table ───────────────────────────────────────── */
+    .fixture-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .fixture-table th {
+      text-align: left; padding: 10px 10px;
+      font-size: .68rem; font-weight: 700;
+      color: var(--gris-texto); text-transform: uppercase; letter-spacing: .5px;
+      border-bottom: 2px solid var(--gris-borde); white-space: nowrap;
+    }
+    .fixture-table td {
+      padding: 7px 10px;
+      border-bottom: 1px solid #f0f4f8; vertical-align: middle;
+    }
+    .fixture-table tr:hover td { background: #f8fafc; }
+    .fixture-table td input,
+    .fixture-table td select {
+      border: 1.5px solid var(--gris-borde);
+      border-radius: 6px; padding: 4px 8px;
+      font-size: .84rem; background: white; color: #1e2d40;
+    }
+    .fixture-table td input:focus,
+    .fixture-table td select:focus { outline: none; border-color: var(--azul-claro); }
+    .fixture-table td input[type="number"] { width: 60px; text-align: center; }
+    .fixture-table td input[type="date"]   { width: 140px; }
+    .fixture-table td input[type="time"]   { width: 90px; }
+    .num-fecha { font-weight: 800; color: var(--azul); }
+    .equipo-nombre { font-weight: 600; white-space: nowrap; }
+    .chacabuco { color: var(--azul); }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .btn {
+      padding: 9px 18px; border-radius: 8px;
+      font-size: .84rem; font-weight: 600;
+      cursor: pointer; border: none;
+      transition: all .15s;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-primary { background: var(--azul); color: white; }
+    .btn-primary:hover { background: var(--azul-claro); }
+    .btn-success { background: var(--verde); color: white; }
+    .btn-success:hover { opacity: .88; }
+    .btn-warning { background: #d97706; color: white; }
+    .btn-warning:hover { opacity: .88; }
+    .btn-danger { background: var(--rojo); color: white; }
+    .btn-danger:hover { opacity: .88; }
+    .btn-outline { background: white; color: var(--azul); border: 1.5px solid var(--azul); }
+    .btn-outline:hover { background: var(--gris-bg); }
+    .btn-sm { padding: 5px 12px; font-size: .76rem; }
+
+    /* ── Export bar ──────────────────────────────────────────── */
+    .export-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: white; border-top: 2px solid var(--gris-borde);
+      padding: 12px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      z-index: 200; box-shadow: 0 -4px 20px rgba(0,0,0,.1);
+    }
+    .export-info { font-size: .8rem; color: var(--gris-texto); font-weight: 500; }
+    .export-info strong { color: #1e2d40; }
+    .export-actions { display: flex; gap: 10px; align-items: center; }
+
+    /* ── Toast ───────────────────────────────────────────────── */
+    .toast {
+      position: fixed; top: 80px; right: 24px;
+      background: #1e2d40; color: white;
+      padding: 12px 20px; border-radius: 10px;
+      font-size: .86rem; font-weight: 600;
+      z-index: 400; opacity: 0;
+      transform: translateY(-8px); transition: all .25s;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ── Tab views ───────────────────────────────────────────── */
+    .tab-view { display: none; }
+    .tab-view.active { display: block; }
+
+    /* ── Categorías expandible ───────────────────────────────── */
+    .cats-row { display: none; background: #f8fafc; }
+    .cats-row.open { display: table-row; }
+    .cats-panel {
+      padding: 14px 20px 16px;
+      border-bottom: 1px solid var(--gris-borde);
+    }
+    .cats-panel-title {
+      font-size: .72rem; font-weight: 700; color: var(--azul);
+      text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: 10px;
+    }
+    .cats-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+    .cat-item {
+      display: flex; gap: 8px; align-items: center;
+    }
+    .cat-item input[type="text"] { width: 90px; }
+    .cat-item input[type="time"] { width: 110px; }
+    .cats-add-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+    .cats-add-row input { border: 1.5px solid var(--gris-borde); border-radius: 6px; padding: 5px 9px; font-size: .84rem; }
+    .cats-add-row input:focus { outline: none; border-color: var(--azul-claro); }
+    .precio-row { display: flex; gap: 8px; align-items: center; }
+    .precio-row label { font-size: .75rem; font-weight: 700; color: var(--gris-texto); white-space: nowrap; }
+    .precio-row input { width: 120px; border: 1.5px solid var(--gris-borde); border-radius: 6px; padding: 5px 9px; font-size: .86rem; }
+    .precio-row input:focus { outline: none; border-color: var(--azul-claro); }
+    .btn-cats-toggle {
+      background: none; border: 1.5px solid var(--gris-borde);
+      border-radius: 6px; padding: 4px 9px;
+      font-size: .76rem; cursor: pointer; color: var(--azul);
+      font-weight: 600; transition: all .15s; white-space: nowrap;
+    }
+    .btn-cats-toggle:hover { background: #dbeafe; border-color: var(--azul); }
+
+    /* ── Error banner ────────────────────────────────────────── */
+    .error-banner {
+      background: #fee2e2; border: 1.5px solid #fca5a5;
+      color: #991b1b; border-radius: var(--radio);
+      padding: 16px 20px; margin-bottom: 20px;
+      font-size: .9rem; line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .export-bar { flex-direction: column; align-items: stretch; }
+      .export-actions { justify-content: flex-end; }
+      .add-club-row { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════════════ -->
+<header>
+  <div class="header-left">
+    <div class="escudo">CC</div>
+    <div>
+      <h1>Panel <span>Admin</span></h1>
+      <p>Club Chacabuco · Gestión de fixture</p>
+    </div>
+  </div>
+  <span class="local-badge">🔒 Solo uso local</span>
+</header>
+
+<!-- ══ NAV ═════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('equipos', this)">⚽ Equipos</button>
+    <button class="tab-btn"        onclick="showTab('fixture', this)">📅 Fixture</button>
+  </div>
+</nav>
+
+<!-- ══ MAIN ════════════════════════════════════════════════════════ -->
+<main>
+
+  <div id="error-container"></div>
+
+  <!-- ── TAB: EQUIPOS ──────────────────────────────────────────── -->
+  <div class="tab-view active" id="tab-equipos">
+
+    <!-- Club propio -->
+    <div class="section-title">Mi club</div>
+    <div class="card">
+      <div class="form-grid" id="club-form">
+        <p style="color:var(--gris-texto)">Cargando…</p>
+      </div>
+    </div>
+
+    <div class="section-title">Equipos rivales · Canchas y direcciones</div>
+    <div class="card" style="overflow-x:auto">
+      <table class="clubs-table">
+        <thead>
+          <tr>
+            <th style="width:200px">Club</th>
+            <th>Dirección</th>
+            <th>Link Google Maps</th>
+            <th style="width:60px"></th>
+          </tr>
+        </thead>
+        <tbody id="clubs-tbody">
+          <tr><td colspan="4" style="color:var(--gris-texto);padding:20px">Cargando…</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Agregar club -->
+      <div class="add-club-row">
+        <div class="form-group" style="min-width:160px">
+          <label>Nombre del club</label>
+          <input type="text" id="new-nombre" placeholder="Ej: Deportivo Norte">
+        </div>
+        <div class="form-group" style="flex:2; min-width:200px">
+          <label>Dirección</label>
+          <input type="text" id="new-dir" placeholder="Ej: Av. Siempreviva 742, Barrio">
+        </div>
+        <div class="form-group" style="flex:2; min-width:200px">
+          <label>Google Maps URL</label>
+          <input type="text" id="new-maps" placeholder="https://maps.google.com/?q=...">
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="addClub()" style="flex-shrink:0;margin-bottom:1px">
+          + Agregar club
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TAB: FIXTURE ──────────────────────────────────────────── -->
+  <div class="tab-view" id="tab-fixture">
+    <div class="section-title">Fixture · Partidos</div>
+    <div class="card" style="overflow-x:auto; padding: 0;">
+      <table class="fixture-table">
+        <thead>
+          <tr>
+            <th style="padding-left:20px">#</th>
+            <th>Fecha</th>
+            <th>Condición</th>
+            <th>Rival</th>
+            <th>G. Local</th>
+            <th>G. Visit.</th>
+            <th>Estado</th>
+            <th style="padding-right:20px">Cats / Precio</th>
+          </tr>
+        </thead>
+        <tbody id="fixture-tbody">
+          <tr><td colspan="9" style="color:var(--gris-texto);padding:20px">Cargando…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--gris-texto);margin-top:10px;padding:0 4px">
+      💡 Elegí el <strong>rival</strong> del dropdown (cada club aparece una sola vez). La condición determina si Chacabuco juega de local o visitante. Ingresá goles y cambiá el estado a <strong>Jugado</strong> para registrar resultados.
+    </p>
+  </div>
+
+</main>
+
+<!-- ══ EXPORT BAR ═══════════════════════════════════════════════════ -->
+<div class="export-bar">
+  <div class="export-info">
+    💾 Cuando termines de editar, descargá los archivos y reemplazalos en tu repo para actualizar el sitio público.
+  </div>
+  <div class="export-actions">
+    <button class="btn btn-outline" onclick="exportClubs()">⬇ clubs.json</button>
+    <button class="btn btn-warning" onclick="exportFixture()">⬇ fixture.json</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ══ SCRIPT ═══════════════════════════════════════════════════════ -->
+<script>
+  // ── Estado global ────────────────────────────────────────────
+  let clubs = {};
+  let fd = { club: {}, fixture: [] }; // fixtureData
+
+  // ── Carga inicial ─────────────────────────────────────────────
+  async function loadData() {
+    try {
+      const [c, f] = await Promise.all([
+        fetch('clubs.json').then(r => { if (!r.ok) throw new Error('clubs.json'); return r.json(); }),
+        fetch('fixture.json').then(r => { if (!r.ok) throw new Error('fixture.json'); return r.json(); }),
+      ]);
+      clubs = c;
+      fd = f;
+      renderAll();
+    } catch(e) {
+      document.getElementById('error-container').innerHTML = `
+        <div class="error-banner">
+          ⚠️ <strong>No se pudieron cargar los archivos JSON.</strong><br>
+          Asegurate de abrir <code>admin.html</code> desde un servidor local (Live Server en VSCode).
+          No funciona si abrís el archivo directamente desde el explorador de archivos.
+        </div>`;
+    }
+  }
+
+  function renderAll() {
+    renderClubForm();
+    renderClubsTable();
+    renderFixtureTable();
+  }
+
+  // ── Clave del club propio ─────────────────────────────────────
+  function propioKey() {
+    return Object.keys(clubs).find(k => clubs[k].es_propio) || null;
+  }
+
+  // Sincroniza fd.club ↔ clubs[propio] para que la dirección
+  // quede consistente en ambos objetos al exportar.
+  function syncPropio(key, valor) {
+    fd.club[key] = valor;
+    const pk = propioKey();
+    if (!pk) return;
+    if (key === 'direccion_local') clubs[pk].direccion = valor;
+    if (key === 'estadio')         clubs[pk].estadio   = valor;
+  }
+
+  // ── Sección Mi Club (dentro de Equipos) ───────────────────────
+  function renderClubForm() {
+    const c = fd.club || {};
+    // clubs.json es siempre la fuente de verdad para estadio y dirección.
+    // Al cargar, sobreescribimos fd.club con los valores de clubs[propio].
+    const pk = propioKey();
+    if (pk) {
+      if (clubs[pk].direccion) c.direccion_local = clubs[pk].direccion;
+      if (clubs[pk].estadio)   c.estadio         = clubs[pk].estadio;
+    }
+    const fields = [
+      { key: 'nombre',          label: 'Nombre del club',       ph: 'Club Chacabuco' },
+      { key: 'torneo',          label: 'Torneo',                 ph: 'FEFI 2026' },
+      { key: 'temporada',       label: 'Temporada',              ph: '2026' },
+      { key: 'categoria',       label: 'Categoría',              ph: 'Ej: Primera División' },
+      { key: 'estadio',         label: 'Nombre del estadio',     ph: 'Estadio Municipal…', full: true, sync: true },
+      { key: 'direccion_local', label: 'Dirección del estadio',  ph: 'Av. Siempreviva 742, Barrio', full: true, sync: true },
+    ];
+    document.getElementById('club-form').innerHTML = fields.map(f => `
+      <div class="form-group ${f.full ? 'full' : ''}">
+        <label>${f.label}</label>
+        <input type="text"
+               value="${escHtml(c[f.key] || '')}"
+               placeholder="${f.ph}"
+               oninput="${f.sync ? `syncPropio('${f.key}', this.value)` : `fd.club['${f.key}'] = this.value`}">
+      </div>
+    `).join('');
+  }
+
+  // ── Tab: Equipos (solo rivales, sin propio) ───────────────────
+  function renderClubsTable() {
+    const tbody = document.getElementById('clubs-tbody');
+    const entries = Object.entries(clubs).filter(([_, d]) => !d.es_propio);
+    if (!entries.length) {
+      tbody.innerHTML = '<tr><td colspan="4" style="color:var(--gris-texto);padding:20px">No hay equipos rivales cargados.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = entries.map(([nombre, data]) => `
+      <tr>
+        <td><span style="font-weight:600">${escHtml(nombre)}</span></td>
+        <td>
+          <input type="text"
+                 value="${escHtml(data.direccion || '')}"
+                 placeholder="Dirección completa"
+                 oninput="clubs[${JSON.stringify(nombre)}].direccion = this.value">
+        </td>
+        <td>
+          <input type="text"
+                 value="${escHtml(data.maps || '')}"
+                 placeholder="https://maps.google.com/?q=..."
+                 oninput="clubs[${JSON.stringify(nombre)}].maps = this.value">
+        </td>
+        <td style="text-align:center">
+          <button class="btn btn-danger btn-sm" onclick="removeClub(${JSON.stringify(nombre)})">✕</button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function addClub() {
+    const nombre = document.getElementById('new-nombre').value.trim();
+    const dir    = document.getElementById('new-dir').value.trim();
+    const maps   = document.getElementById('new-maps').value.trim();
+    if (!nombre) { toast('⚠️ Ingresá el nombre del club'); return; }
+    if (clubs[nombre]) { toast('⚠️ Ese club ya existe'); return; }
+    clubs[nombre] = { direccion: dir, maps };
+    document.getElementById('new-nombre').value = '';
+    document.getElementById('new-dir').value    = '';
+    document.getElementById('new-maps').value   = '';
+    renderClubsTable();
+    toast('✅ Club agregado');
+  }
+
+  function removeClub(nombre) {
+    if (!confirm(`¿Eliminar "${nombre}" de la lista de equipos?`)) return;
+    delete clubs[nombre];
+    renderClubsTable();
+    toast('🗑 Club eliminado');
+  }
+
+  // ── Tab: Fixture ──────────────────────────────────────────────
+
+  // Nombre del club propio (clave en clubs.json con es_propio:true)
+  function getClubName() {
+    const propio = Object.entries(clubs).find(([_, d]) => d.es_propio);
+    return propio ? propio[0] : (fd.club?.nombre || 'Chacabuco');
+  }
+
+  // Rivals disponibles para la fila i (excluye los ya usados en otras filas)
+  function rivalesDisponibles(indexActual) {
+    const usados = new Set(
+      fd.fixture
+        .filter((x, j) => j !== indexActual && x.condicion !== 'libre' && x.rival && x.rival !== 'Libre')
+        .map(x => x.rival)
+    );
+    return Object.entries(clubs)
+      .filter(([nombre, data]) => !data.es_propio)
+      .map(([nombre]) => ({ nombre, ocupado: usados.has(nombre) }));
+  }
+
+  function renderFixtureTable() {
+    const tbody = document.getElementById('fixture-tbody');
+    if (!fd.fixture.length) {
+      tbody.innerHTML = '<tr><td colspan="9" style="color:var(--gris-texto);padding:20px">Sin partidos.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = fd.fixture.map((p, i) => {
+      const esLibre = p.condicion === 'libre';
+      const gl = p.resultado?.goles_local;
+      const gv = p.resultado?.goles_visitante;
+
+      // Dropdown de rivales
+      const opciones = rivalesDisponibles(i);
+      const rivalOpts = opciones.map(({ nombre, ocupado }) => {
+        const sel  = p.rival === nombre ? 'selected' : '';
+        const dis  = ocupado ? 'disabled style="color:#bbb"' : '';
+        const mark = ocupado ? ' ✗' : '';
+        return `<option value="${escHtml(nombre)}" ${sel} ${dis}>${escHtml(nombre)}${mark}</option>`;
+      }).join('');
+
+      const rivalCell = esLibre
+        ? `<span style="color:var(--gris-texto);font-size:.82rem">— Fecha libre —</span>`
+        : `<select onchange="updateRival(${i}, this.value)" style="min-width:160px">
+             <option value="" ${!p.rival || p.rival === 'Libre' ? 'selected' : ''} disabled>Elegir rival…</option>
+             ${rivalOpts}
+           </select>`;
+
+      const catCount = (p.categorias || []).length;
+      const catLabel = catCount > 0
+        ? `${catCount} cat${catCount > 1 ? 's' : ''} · $${p.precio ? Number(p.precio).toLocaleString('es-AR') : '—'}`
+        : 'Sin cargar';
+
+      return `
+        <tr ${esLibre ? 'style="opacity:.55"' : ''}>
+          <td style="padding-left:20px">
+            <span class="num-fecha">${p.numero}</span>
+          </td>
+          <td>
+            <input type="date" value="${p.fecha}"
+                   oninput="fd.fixture[${i}].fecha = this.value">
+          </td>
+          <td>
+            <select onchange="updateCondicion(${i}, this.value)">
+              <option value="local"     ${p.condicion === 'local'     ? 'selected' : ''}>🏠 Local</option>
+              <option value="visitante" ${p.condicion === 'visitante' ? 'selected' : ''}>🚌 Visitante</option>
+              <option value="libre"     ${p.condicion === 'libre'     ? 'selected' : ''}>— Libre</option>
+            </select>
+          </td>
+          <td>${rivalCell}</td>
+          <td>
+            <input type="number" min="0" max="99"
+                   value="${gl !== null && gl !== undefined ? gl : ''}"
+                   placeholder="—" ${esLibre ? 'disabled' : ''}
+                   oninput="setGol(${i}, 'goles_local', this.value)">
+          </td>
+          <td>
+            <input type="number" min="0" max="99"
+                   value="${gv !== null && gv !== undefined ? gv : ''}"
+                   placeholder="—" ${esLibre ? 'disabled' : ''}
+                   oninput="setGol(${i}, 'goles_visitante', this.value)">
+          </td>
+          <td>
+            <select ${esLibre ? 'disabled' : ''} onchange="fd.fixture[${i}].estado = this.value">
+              <option value="pendiente" ${p.estado === 'pendiente' ? 'selected' : ''}>Pendiente</option>
+              <option value="jugado"    ${p.estado === 'jugado'    ? 'selected' : ''}>✔ Jugado</option>
+            </select>
+          </td>
+          <td style="padding-right:20px">
+            ${esLibre ? '<span style="color:var(--gris-texto);font-size:.75rem">—</span>' : `
+            <button class="btn-cats-toggle" onclick="toggleCats('cats-${i}')">
+              🗓 ${catLabel}
+            </button>`}
+          </td>
+        </tr>
+        <tr class="cats-row" id="cats-${i}">
+          <td colspan="9">
+            <div class="cats-panel">
+              <div class="cats-panel-title">Horario de citación — Fecha ${p.numero}</div>
+              <div class="cats-list" id="cats-list-${i}">
+                ${(p.categorias || []).map((c, ci) => `
+                  <div class="cat-item">
+                    <input type="text" value="${escHtml(c.cat)}" placeholder="2019"
+                           oninput="fd.fixture[${i}].categorias[${ci}].cat = this.value"
+                           style="border:1.5px solid var(--gris-borde);border-radius:6px;padding:5px 9px;font-size:.84rem">
+                    <input type="time" value="${c.hora}"
+                           oninput="fd.fixture[${i}].categorias[${ci}].hora = this.value"
+                           style="border:1.5px solid var(--gris-borde);border-radius:6px;padding:5px 9px;font-size:.84rem">
+                    <button class="btn btn-danger btn-sm" onclick="removeCat(${i}, ${ci})">✕</button>
+                  </div>`).join('')}
+              </div>
+              <div class="cats-add-row">
+                <input type="text" id="new-cat-${i}" placeholder="Cat (ej: 2019)" style="width:110px">
+                <input type="time" id="new-hora-${i}" value="14:00">
+                <button class="btn btn-primary btn-sm" onclick="addCat(${i})">+ Agregar</button>
+              </div>
+              <div class="precio-row">
+                <label>🎟 Entrada $</label>
+                <input type="number" min="0" value="${p.precio || ''}" placeholder="Ej: 7000"
+                       oninput="fd.fixture[${i}].precio = this.value === '' ? null : +this.value"
+                       style="border:1.5px solid var(--gris-borde);border-radius:6px;padding:5px 9px;font-size:.86rem">
+              </div>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  function updateCondicion(i, cond) {
+    const club = getClubName();
+    fd.fixture[i].condicion = cond;
+    if (cond === 'libre') {
+      fd.fixture[i].rival     = 'Libre';
+      fd.fixture[i].local     = club;
+      fd.fixture[i].visitante = 'Libre';
+      fd.fixture[i].cancha    = club;
+      fd.fixture[i].resultado = { goles_local: null, goles_visitante: null };
+      fd.fixture[i].estado    = 'pendiente';
+    } else {
+      // Si ya tenía rival asignado, re-sincronizar local/visitante
+      const rival = fd.fixture[i].rival;
+      if (rival && rival !== 'Libre') {
+        syncLocalVisitante(i, cond, rival);
+      }
+    }
+    renderFixtureTable();
+  }
+
+  function updateRival(i, rival) {
+    if (!rival) return;
+    fd.fixture[i].rival = rival;
+    syncLocalVisitante(i, fd.fixture[i].condicion, rival);
+    renderFixtureTable();
+  }
+
+  function syncLocalVisitante(i, cond, rival) {
+    const club = getClubName();
+    if (cond === 'local') {
+      fd.fixture[i].local     = club;
+      fd.fixture[i].visitante = rival;
+      fd.fixture[i].cancha    = club;
+    } else if (cond === 'visitante') {
+      fd.fixture[i].local     = rival;
+      fd.fixture[i].visitante = club;
+      fd.fixture[i].cancha    = rival;
+    }
+  }
+
+  function setGol(i, campo, valor) {
+    if (!fd.fixture[i].resultado) fd.fixture[i].resultado = {};
+    fd.fixture[i].resultado[campo] = valor === '' ? null : parseInt(valor, 10);
+  }
+
+  // ── Categorías ────────────────────────────────────────────────
+  function toggleCats(id) {
+    const row = document.getElementById(id);
+    if (row) row.classList.toggle('open');
+  }
+
+  function addCat(i) {
+    const catInput  = document.getElementById(`new-cat-${i}`);
+    const horaInput = document.getElementById(`new-hora-${i}`);
+    const cat  = catInput.value.trim();
+    const hora = horaInput.value;
+    if (!cat) { toast('⚠️ Ingresá la categoría (ej: 2019)'); return; }
+    if (!fd.fixture[i].categorias) fd.fixture[i].categorias = [];
+    fd.fixture[i].categorias.push({ cat, hora });
+    catInput.value = '';
+    horaInput.value = '14:00';
+    // Refrescar solo la lista interna sin re-renderizar toda la tabla
+    renderCatsList(i);
+    // Actualizar el botón toggle
+    const catCount = fd.fixture[i].categorias.length;
+    const precio   = fd.fixture[i].precio;
+    const btn = document.querySelector(`#cats-${i}`).previousElementSibling
+                  ?.querySelector('.btn-cats-toggle');
+    if (btn) btn.textContent = `🗓 ${catCount} cat${catCount > 1 ? 's' : ''} · $${precio ? Number(precio).toLocaleString('es-AR') : '—'}`;
+    toast('✅ Categoría agregada');
+  }
+
+  function removeCat(i, ci) {
+    fd.fixture[i].categorias.splice(ci, 1);
+    renderCatsList(i);
+    toast('🗑 Categoría eliminada');
+  }
+
+  function renderCatsList(i) {
+    const list = document.getElementById(`cats-list-${i}`);
+    if (!list) return;
+    const cats = fd.fixture[i].categorias || [];
+    list.innerHTML = cats.map((c, ci) => `
+      <div class="cat-item">
+        <input type="text" value="${escHtml(c.cat)}" placeholder="2019"
+               oninput="fd.fixture[${i}].categorias[${ci}].cat = this.value"
+               style="border:1.5px solid var(--gris-borde);border-radius:6px;padding:5px 9px;font-size:.84rem;width:90px">
+        <input type="time" value="${c.hora}"
+               oninput="fd.fixture[${i}].categorias[${ci}].hora = this.value"
+               style="border:1.5px solid var(--gris-borde);border-radius:6px;padding:5px 9px;font-size:.84rem;width:110px">
+        <button class="btn btn-danger btn-sm" onclick="removeCat(${i}, ${ci})">✕</button>
+      </div>`).join('');
+  }
+
+  // ── Exportar ──────────────────────────────────────────────────
+  function buildFixtureExport() {
+    // Copia profunda
+    const output = JSON.parse(JSON.stringify(fd));
+
+    // Sincronizar dirección desde clubs.json
+    const pk = propioKey();
+    output.fixture.forEach(p => {
+      if (p.condicion === 'local') {
+        p.cancha    = p.local;
+        p.direccion = (pk ? clubs[pk]?.direccion : '') || fd.club.direccion_local || '';
+        p.maps      = (pk ? clubs[pk]?.maps      : '') || '';
+      } else if (p.condicion === 'visitante') {
+        p.cancha    = p.local; // el local del partido es el rival
+        const datos = clubs[p.local] || {};
+        p.direccion = datos.direccion || p.direccion || '';
+        p.maps      = datos.maps      || p.maps      || '';
+      }
+      // Recalcular rival
+      if (p.condicion !== 'libre') {
+        p.rival = p.condicion === 'local' ? p.visitante : p.local;
+      } else {
+        p.rival = 'Libre';
+      }
+    });
+
+    return output;
+  }
+
+  function exportFixture() {
+    const data = buildFixtureExport();
+    download('fixture.json', JSON.stringify(data, null, 2));
+    toast('✅ fixture.json descargado — reemplazalo en el repo');
+  }
+
+  function exportClubs() {
+    download('clubs.json', JSON.stringify(clubs, null, 2));
+    toast('✅ clubs.json descargado — reemplazalo en el repo');
+  }
+
+  function download(filename, content) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([content], { type: 'application/json' }));
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+
+  // ── Navegación ────────────────────────────────────────────────
+  function showTab(tab, btn) {
+    document.querySelectorAll('.tab-view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+
+  // ── Toast ─────────────────────────────────────────────────────
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  // ── Escape HTML ───────────────────────────────────────────────
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  // ── Init ──────────────────────────────────────────────────────
+  loadData();
+</script>
+
+</body>
+</html>

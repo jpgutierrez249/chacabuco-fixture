@@ -1,0 +1,732 @@
+{
+  "club": {
+    "nombre": "Club Chacabuco",
+    "torneo": "FEFI 2026",
+    "temporada": "2026",
+    "categoria": "Completar categoría",
+    "estadio": "Club Gimnasio Chacabuco",
+    "direccion_local": "Miró 750"
+  },
+  "fixture": [
+    {
+      "numero": 1,
+      "fecha": "2026-04-18",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "Glorias Argentinas",
+      "condicion": "local",
+      "rival": "Glorias Argentinas",
+      "cancha": "Chacabuco",
+      "direccion": "Miró 750",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 2,
+      "fecha": "2026-04-25",
+      "hora": "15:30",
+      "local": "El Barrio 2",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
+      "rival": "El Barrio 2",
+      "cancha": "El Barrio 2",
+      "direccion": "Constitución 4253, Boedo",
+      "maps": "https://maps.google.com/?q=Constitucion+4253+Boedo+Buenos+Aires",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 3,
+      "fecha": "2026-05-02",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "Bristol FC",
+      "condicion": "local",
+      "rival": "Bristol FC",
+      "cancha": "Chacabuco",
+      "direccion": "Miró 750",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 4,
+      "fecha": "2026-05-09",
+      "hora": "15:30",
+      "local": "Federacion Caballito",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
+      "rival": "Federacion Caballito",
+      "cancha": "Federacion Caballito",
+      "direccion": "Av. La Plata 1151, Caballito",
+      "maps": "https://maps.google.com/?q=Av+La+Plata+1151+Caballito+Buenos+Aires",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 5,
+      "fecha": "2026-05-16",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "Corvalan",
+      "condicion": "local",
+      "rival": "Corvalan",
+      "cancha": "Chacabuco",
+      "direccion": "Miró 750",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 6,
+      "fecha": "2026-05-23",
+      "hora": "15:30",
+      "local": "Nueva Era",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
+      "rival": "Nueva Era",
+      "cancha": "Nueva Era",
+      "direccion": "Gral. División Juan José Valle 2972, Nueva Pompeya",
+      "maps": "https://maps.google.com/?q=Juan+Jose+Valle+2972+Nueva+Pompeya+Buenos+Aires",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 7,
+      "fecha": "2026-05-30",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "Santiago de Liniers",
+      "condicion": "local",
+      "rival": "Santiago de Liniers",
+      "cancha": "Chacabuco",
+      "direccion": "Miró 750",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 8,
+      "fecha": "2026-06-06",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "Social Club",
+      "condicion": "local",
+      "rival": "Social Club",
+      "cancha": "Chacabuco",
+      "direccion": "Miró 750",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 9,
+      "fecha": "2026-06-13",
+      "hora": "15:30",
+      "local": "Pampero",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
+      "rival": "Pampero",
+      "cancha": "Pampero",
+      "direccion": "Balbastro 6151, Lugano",
+      "maps": "https://maps.google.com/?q=Balbastro+6151+Lugano+Buenos+Aires",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 10,
+      "fecha": "2026-06-20",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "Villa Don Bosco",
+      "condicion": "local",
+      "rival": "Villa Don Bosco",
+      "cancha": "Chacabuco",
+      "direccion": "Miró 750",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 11,
+      "fecha": "2026-06-27",
+      "hora": "15:30",
+      "local": "Nueva Estrella",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
+      "rival": "Nueva Estrella",
+      "cancha": "Nueva Estrella",
+      "direccion": "Santander 4602, Parque Avellaneda",
+      "maps": "https://maps.google.com/?q=Santander+4602+Parque+Avellaneda+Buenos+Aires",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 12,
+      "fecha": "2026-07-04",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "San Telmo",
+      "condicion": "local",
+      "rival": "San Telmo",
+      "cancha": "Chacabuco",
+      "direccion": "Miró 750",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 13,
+      "fecha": "2026-07-11",
+      "hora": "15:30",
+      "local": "La Loma",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
+      "rival": "La Loma",
+      "cancha": "La Loma",
+      "direccion": "Cafayate 758, Liniers",
+      "maps": "https://maps.google.com/?q=Cafayate+758+Liniers+Buenos+Aires",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 14,
+      "fecha": "2026-07-18",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "Amigos de Villa Luro",
+      "condicion": "local",
+      "rival": "Amigos de Villa Luro",
+      "cancha": "Chacabuco",
+      "direccion": "Miró 750",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 15,
+      "fecha": "2026-08-01",
+      "hora": "15:30",
+      "local": "Semillero FC",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
+      "rival": "Semillero FC",
+      "cancha": "Semillero FC",
+      "direccion": "Benavídez (confirmar dirección)",
+      "maps": "",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    }
+  ]
+}

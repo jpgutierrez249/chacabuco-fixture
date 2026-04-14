@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Chacabuco — Fixture FEFI 2026</title>
+  <style>
+    /* ── Variables ─────────────────────────────────────────── */
+    :root {
+      --azul:        #003087;
+      --azul-claro:  #1a4bb5;
+      --azul-oscuro: #001a4d;
+      --amarillo:    #FFD700;
+      --amarillo2:   #FFC200;
+      --blanco:      #ffffff;
+      --gris-bg:     #f0f4f8;
+      --gris-borde:  #d1dae6;
+      --gris-texto:  #6b7a8d;
+      --verde:       #16a34a;
+      --rojo:        #dc2626;
+      --radio:       12px;
+      --sombra:      0 2px 12px rgba(0,0,0,.10);
+      --sombra-lg:   0 6px 28px rgba(0,0,0,.14);
+    }
+
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--gris-bg);
+      color: #1e2d40;
+      min-height: 100vh;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Header ────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul) 60%, var(--azul-claro) 100%);
+      color: var(--blanco);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 16px rgba(0,0,0,.35);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 20px 14px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .club-escudo {
+      width: 62px; height: 62px;
+      background: var(--amarillo);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--azul-oscuro);
+      letter-spacing: -1px;
+    }
+    .club-info h1 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+      line-height: 1.15;
+    }
+    .club-info h1 span { color: var(--amarillo); }
+    .club-info p {
+      font-size: .82rem;
+      color: rgba(255,255,255,.72);
+      margin-top: 2px;
+      letter-spacing: .3px;
+    }
+
+    /* ── Nav ───────────────────────────────────────────────── */
+    nav {
+      background: var(--azul-oscuro);
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,.65);
+      padding: 10px 22px;
+      font-size: .88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all .2s;
+      letter-spacing: .3px;
+    }
+    nav button:hover { color: var(--blanco); background: rgba(255,255,255,.05); }
+    nav button.active { color: var(--amarillo); border-bottom-color: var(--amarillo); }
+
+    /* ── Main ──────────────────────────────────────────────── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 16px 60px;
+    }
+
+    /* ── Próximo partido ────────────────────────────────────── */
+    #proximo-card {
+      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-claro) 100%);
+      border-radius: var(--radio);
+      padding: 26px 28px;
+      color: var(--blanco);
+      margin-bottom: 28px;
+      box-shadow: var(--sombra-lg);
+      display: none;
+    }
+    #proximo-card .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
+      font-size: .72rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 14px;
+    }
+    #proximo-card .tag::before { content: '⚽'; }
+    .proximo-match {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .proximo-team {
+      text-align: center;
+      flex: 1;
+    }
+    .proximo-team .name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .proximo-team .sub {
+      font-size: .75rem;
+      color: rgba(255,255,255,.7);
+      margin-top: 2px;
+    }
+    .proximo-vs {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--amarillo);
+      flex-shrink: 0;
+    }
+    .proximo-meta {
+      margin-top: 18px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: .82rem;
+      color: rgba(255,255,255,.8);
+    }
+    .proximo-meta span { display: flex; align-items: center; gap: 5px; }
+    .proximo-meta a {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: .78rem;
+      margin-top: 4px;
+      transition: opacity .2s;
+    }
+    .proximo-meta a:hover { opacity: .85; }
+
+    /* ── Filtros ────────────────────────────────────────────── */
+    .filtros {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .filtro-btn {
+      background: var(--blanco);
+      border: 2px solid var(--gris-borde);
+      color: var(--gris-texto);
+      padding: 7px 18px;
+      border-radius: 24px;
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .18s;
+    }
+    .filtro-btn:hover { border-color: var(--azul); color: var(--azul); }
+    .filtro-btn.active {
+      background: var(--azul);
+      border-color: var(--azul);
+      color: var(--blanco);
+    }
+
+    /* ── Sección título ─────────────────────────────────────── */
+    .seccion-titulo {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--azul);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .seccion-titulo::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--gris-borde);
+      border-radius: 2px;
+    }
+
+    /* ── Tarjetas de partido ────────────────────────────────── */
+    .fixture-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .partido-card {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      border-left: 5px solid var(--gris-borde);
+      box-shadow: var(--sombra);
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      align-items: center;
+      gap: 16px;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .partido-card:hover { transform: translateY(-2px); box-shadow: var(--sombra-lg); }
+    .partido-card.local    { border-left-color: var(--azul); }
+    .partido-card.visitante { border-left-color: var(--amarillo2); }
+    .partido-card.libre    { border-left-color: var(--gris-borde); opacity: .7; }
+    .partido-card.jugado   { opacity: .75; }
+
+    .partido-fecha {
+      text-align: center;
+    }
+    .partido-fecha .num-fecha {
+      font-size: .68rem;
+      font-weight: 700;
+      color: var(--gris-texto);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .partido-fecha .dia {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--azul);
+      line-height: 1;
+    }
+    .partido-fecha .mes {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--azul);
+      text-transform: uppercase;
+    }
+    .partido-fecha .hora {
+      font-size: .72rem;
+      color: var(--gris-texto);
+      margin-top: 2px;
+    }
+
+    .partido-info { min-width: 0; }
+    .partido-equipos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .98rem;
+      font-weight: 700;
+      flex-wrap: wrap;
+    }
+    .partido-equipos .equipo-local  { color: var(--azul); }
+    .partido-equipos .equipo-visita { color: #444; }
+    .partido-equipos .vs { font-size: .8rem; color: var(--gris-texto); font-weight: 600; }
+
+    .resultado-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gris-bg);
+      border: 1px solid var(--gris-borde);
+      border-radius: 8px;
+      padding: 3px 10px;
+      font-size: .92rem;
+      font-weight: 800;
+      margin-top: 6px;
+      font-variant-numeric: tabular-nums;
+    }
+    .resultado-badge.ganado { background: #dcfce7; border-color: #86efac; color: var(--verde); }
+    .resultado-badge.perdido { background: #fee2e2; border-color: #fca5a5; color: var(--rojo); }
+    .resultado-badge.empate { background: #fef9c3; border-color: #fde047; color: #92400e; }
+
+    .partido-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 5px;
+      flex-wrap: wrap;
+    }
+    .condicion-tag {
+      font-size: .68rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .condicion-tag.local    { background: #dbeafe; color: var(--azul); }
+    .condicion-tag.visitante { background: #fef9c3; color: #92400e; }
+    .condicion-tag.libre    { background: #f1f5f9; color: var(--gris-texto); }
+
+    .dir-texto {
+      font-size: .75rem;
+      color: var(--gris-texto);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .maps-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--azul-claro);
+      padding: 3px 9px;
+      border: 1.5px solid var(--azul-claro);
+      border-radius: 10px;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .maps-btn:hover { background: var(--azul-claro); color: var(--blanco); }
+
+    /* ── Side / acciones ────────────────────────────────────── */
+    .partido-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .estado-chip {
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+    .estado-chip.pendiente  { background: #f1f5f9; color: var(--gris-texto); }
+    .estado-chip.jugado     { background: #dcfce7; color: var(--verde); }
+    .estado-chip.libre-chip { background: #f1f5f9; color: var(--gris-texto); }
+
+    /* ── Vista Info del club ────────────────────────────────── */
+    #view-info { display: none; }
+    .info-card {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      padding: 26px;
+      box-shadow: var(--sombra);
+      margin-bottom: 16px;
+    }
+    .info-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gris-borde);
+    }
+    .info-card p { font-size: .9rem; color: #4a5568; line-height: 1.6; margin-bottom: 6px; }
+    .info-card strong { color: #1e2d40; }
+
+    .rival-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .rival-item {
+      background: var(--gris-bg);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--amarillo2);
+    }
+    .rival-item .rname { font-weight: 700; font-size: .9rem; margin-bottom: 4px; }
+    .rival-item .rdir  { font-size: .78rem; color: var(--gris-texto); display: flex; gap: 5px; align-items: flex-start; }
+    .rival-item .maps-btn { margin-top: 6px; }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      font-size: .78rem;
+      color: var(--gris-texto);
+      border-top: 1px solid var(--gris-borde);
+      margin-top: 20px;
+    }
+    footer strong { color: var(--azul); }
+
+    /* ── Cursor pointer en tarjetas ─────────────────────────── */
+    .partido-card:not(.libre) { cursor: pointer; }
+
+    /* ── Modal ───────────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,20,.55);
+      backdrop-filter: blur(3px);
+      z-index: 500;
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .22s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+    .modal {
+      background: var(--blanco);
+      border-radius: 16px;
+      width: 100%; max-width: 440px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+      overflow: hidden;
+      transform: translateY(14px) scale(.97);
+      transition: transform .22s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+
+    .modal-header {
+      background: linear-gradient(135deg, var(--azul-oscuro), var(--azul));
+      color: white;
+      padding: 22px 24px 20px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 14px; right: 16px;
+      background: rgba(255,255,255,.15); border: none;
+      color: white; width: 30px; height: 30px;
+      border-radius: 50%; font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,.28); }
+    .modal-fecha-tag {
+      font-size: .7rem; font-weight: 800;
+      background: var(--amarillo); color: var(--azul-oscuro);
+      padding: 3px 10px; border-radius: 12px;
+      text-transform: uppercase; letter-spacing: .6px;
+      display: inline-block; margin-bottom: 10px;
+    }
+    .modal-teams {
+      font-size: 1.15rem; font-weight: 800;
+      line-height: 1.25; margin-bottom: 6px;
+    }
+    .modal-teams span { color: var(--amarillo); font-size: .9rem; font-weight: 600; margin: 0 6px; }
+    .modal-date-line {
+      font-size: .8rem; color: rgba(255,255,255,.75);
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+
+    .modal-body { padding: 20px 24px 24px; }
+
+    .modal-condicion-bar {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--gris-bg); border-radius: 10px;
+      padding: 12px 16px; margin-bottom: 14px;
+    }
+    .modal-condicion-icon { font-size: 1.4rem; }
+    .modal-condicion-text { font-size: .88rem; font-weight: 700; color: #1e2d40; }
+    .modal-condicion-text small { display: block; font-weight: 500; color: var(--gris-texto); font-size: .76rem; margin-top: 1px; }
+
+    .modal-dir-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; margin-bottom: 18px;
+    }
+    .modal-dir-text { font-size: .84rem; color: #4a5568; display: flex; align-items: center; gap: 6px; }
+
+    .modal-section-label {
+      font-size: .72rem; font-weight: 800;
+      color: var(--azul); text-transform: uppercase;
+      letter-spacing: .7px; margin-bottom: 8px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--gris-borde);
+    }
+
+    .modal-horarios-table {
+      width: 100%; border-collapse: collapse; margin-bottom: 16px;
+    }
+    .modal-horarios-table tr:not(:last-child) td { border-bottom: 1px solid #f0f4f8; }
+    .modal-horarios-table td {
+      padding: 7px 4px; font-size: .88rem;
+    }
+    .modal-horarios-table td:first-child { font-weight: 700; color: #1e2d40; }
+    .modal-horarios-table td:last-child  { text-align: right; font-weight: 600; color: var(--azul); }
+
+    .modal-precio {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #fefce8; border: 1.5px solid #fde047;
+      border-radius: 10px; padding: 11px 16px;
+      margin-top: 4px;
+    }
+    .modal-precio span { font-size: .82rem; font-weight: 600; color: #92400e; }
+    .modal-precio strong { font-size: 1.1rem; font-weight: 800; color: #92400e; }
+
+    .modal-empty-note {
+      font-size: .82rem; color: var(--gris-texto);
+      text-align: center; padding: 12px 0;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 580px) {
+      .partido-card {
+        grid-template-columns: 72px 1fr;
+        grid-template-rows: auto auto;
+      }
+      .partido-actions { grid-column: 2; flex-direction: row; align-items: center; flex-wrap: wrap; }
+      .club-info h1 { font-size: 1.25rem; }
+      .club-escudo  { width: 50px; height: 50px; font-size: 22px; }
+      .proximo-team .name { font-size: .92rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <div class="club-escudo">CC</div>
+    <div class="club-info">
+      <h1>Club <span>Chacabuco</span></h1>
+      <p id="header-sub">Cargando torneo…</p>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <button class="active" onclick="showView('fixture')">⚽ Fixture</button>
+      <button onclick="showView('info')">📍 Canchas</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ MAIN ════════════════════════════════════════════════════════ -->
+<main>
+
+  <!-- Próximo partido -->
+  <div id="proximo-card">
+    <div class="tag">Próximo partido</div>
+    <div class="proximo-match">
+      <div class="proximo-team">
+        <div class="name" id="p-local">—</div>
+        <div class="sub" id="p-local-sub"></div>
+      </div>
+      <div class="proximo-vs">VS</div>
+      <div class="proximo-team">
+        <div class="name" id="p-visitante">—</div>
+        <div class="sub" id="p-vis-sub"></div>
+      </div>
+    </div>
+    <div class="proximo-meta" id="proximo-meta"></div>
+  </div>
+
+  <!-- ── VIEW: FIXTURE ─────────────────────────────────────────── -->
+  <div id="view-fixture">
+
+    <div class="filtros">
+      <button class="filtro-btn active" onclick="filtrar('todos', this)">Todos</button>
+      <button class="filtro-btn" onclick="filtrar('local', this)">🏠 Local</button>
+      <button class="filtro-btn" onclick="filtrar('visitante', this)">🚌 Visitante</button>
+      <button class="filtro-btn" onclick="filtrar('pendiente', this)">Pendientes</button>
+      <button class="filtro-btn" onclick="filtrar('jugado', this)">Jugados</button>
+    </div>
+
+    <div class="seccion-titulo">Temporada 2026</div>
+    <div class="fixture-list" id="fixture-list">
+      <p style="color:var(--gris-texto); padding:20px 0;">Cargando fixture…</p>
+    </div>
+
+  </div>
+
+  <!-- ── VIEW: INFO ───────────────────────────────────────────── -->
+  <div id="view-info">
+
+    <div class="info-card">
+      <h3>🏟 Nuestro estadio</h3>
+      <p id="info-estadio">—</p>
+      <p id="info-dir-local">—</p>
+    </div>
+
+    <div class="seccion-titulo">Canchas de rivales</div>
+    <div class="rival-grid" id="rival-grid">
+      <p style="color:var(--gris-texto);">Cargando…</p>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- ══ MODAL ════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-fecha-tag" id="m-tag">Fecha 1</div>
+      <div class="modal-teams" id="m-teams">— vs —</div>
+      <div class="modal-date-line" id="m-dateline"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-condicion-bar" id="m-condicion"></div>
+      <div class="modal-dir-row" id="m-dir"></div>
+      <div id="m-horarios"></div>
+      <div id="m-precio"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Fixture <strong>Club Chacabuco</strong> · FEFI 2026 · Actualizado automáticamente desde fixture.json</p>
+</footer>
+
+<!-- ══ SCRIPT ══════════════════════════════════════════════════════ -->
+<script>
+  const MESES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const DIAS  = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+  let fixtureData = null;
+  let filtroActual = 'todos';
+
+  // ── Fetch fixture.json ───────────────────────────────────────
+  fetch('fixture.json')
+    .then(r => r.json())
+    .then(data => {
+      fixtureData = data;
+      init(data);
+    })
+    .catch(() => {
+      document.getElementById('fixture-list').innerHTML =
+        '<p style="color:#dc2626;padding:20px 0;">⚠️ No se pudo cargar fixture.json. Asegurate de abrir el archivo desde un servidor (Live Server en VSCode o GitHub Pages).</p>';
+    });
+
+  function init(data) {
+    // Header
+    document.getElementById('header-sub').textContent =
+      `${data.club.torneo} · ${data.club.categoria}`;
+
+    // Próximo partido
+    const hoy = new Date(); hoy.setHours(0,0,0,0);
+    const proximo = data.fixture.find(p => {
+      if (p.condicion === 'libre') return false;
+      const d = new Date(p.fecha + 'T00:00:00');
+      return d >= hoy && p.estado !== 'jugado';
+    });
+
+    if (proximo) {
+      document.getElementById('proximo-card').style.display = 'block';
+      document.getElementById('p-local').textContent     = proximo.local;
+      document.getElementById('p-visitante').textContent = proximo.visitante;
+      document.getElementById('p-local-sub').textContent =
+        proximo.condicion === 'local' ? '🏠 Local' : '🚌 Visitante';
+
+      const meta = document.getElementById('proximo-meta');
+      const d = parseFecha(proximo.fecha);
+      meta.innerHTML = `
+        <span>📅 ${DIAS[d.getDay()]} ${d.getDate()} ${MESES[d.getMonth()]} ${d.getFullYear()}</span>
+        <span>⏰ ${proximo.hora} hs</span>
+        <span>📍 ${proximo.direccion || 'Estadio propio'}</span>
+        ${proximo.maps ? `<a href="${proximo.maps}" target="_blank">🗺 Ver en Maps</a>` : ''}
+      `;
+    }
+
+    renderFixture(data.fixture);
+    renderInfo(data);
+  }
+
+  // ── Parsear fecha sin problemas de timezone ──────────────────
+  function parseFecha(str) {
+    const [y,m,d] = str.split('-').map(Number);
+    return new Date(y, m-1, d);
+  }
+
+  // ── Render fixture ───────────────────────────────────────────
+  function renderFixture(partidos) {
+    const container = document.getElementById('fixture-list');
+
+    let lista = partidos;
+    if (filtroActual === 'local')     lista = partidos.filter(p => p.condicion === 'local');
+    if (filtroActual === 'visitante') lista = partidos.filter(p => p.condicion === 'visitante');
+    if (filtroActual === 'pendiente') lista = partidos.filter(p => p.estado === 'pendiente' && p.condicion !== 'libre');
+    if (filtroActual === 'jugado')    lista = partidos.filter(p => p.estado === 'jugado');
+
+    if (!lista.length) {
+      container.innerHTML = '<p style="color:var(--gris-texto);padding:20px 0;">Sin partidos para este filtro.</p>';
+      return;
+    }
+
+    container.innerHTML = lista.map(p => cardPartido(p)).join('');
+  }
+
+  function cardPartido(p) {
+    const d = parseFecha(p.fecha);
+    const dia  = d.getDate().toString().padStart(2,'0');
+    const mes  = MESES[d.getMonth()];
+    const clase = p.condicion === 'libre' ? 'libre' : p.condicion;
+    const jugado = p.estado === 'jugado';
+
+    // Resultado
+    let resHTML = '';
+    const r = p.resultado;
+    if (jugado && r.goles_local !== null) {
+      const glCh = p.condicion === 'local' ? r.goles_local : r.goles_visitante;
+      const glRi = p.condicion === 'local' ? r.goles_visitante : r.goles_local;
+      const rclase = glCh > glRi ? 'ganado' : glCh < glRi ? 'perdido' : 'empate';
+      resHTML = `<div class="resultado-badge ${rclase}">${r.goles_local} – ${r.goles_visitante}</div>`;
+    }
+
+    // Dirección
+    let dirHTML = '';
+    if (p.condicion === 'visitante' && p.direccion) {
+      dirHTML = `
+        <span class="dir-texto">📍 ${p.direccion}</span>
+        ${p.maps ? `<a class="maps-btn" href="${p.maps}" target="_blank">🗺 Maps</a>` : ''}
+      `;
+    } else if (p.condicion === 'local' && p.direccion) {
+      dirHTML = `<span class="dir-texto">🏟 ${p.direccion}</span>`;
+    }
+
+    // Condición tag
+    const condTag = {
+      local:     '<span class="condicion-tag local">Local</span>',
+      visitante: '<span class="condicion-tag visitante">Visitante</span>',
+      libre:     '<span class="condicion-tag libre">Fecha libre</span>',
+    }[p.condicion] || '';
+
+    // Estado chip
+    const estadoChip = p.condicion === 'libre'
+      ? '<span class="estado-chip libre-chip">—</span>'
+      : jugado
+        ? '<span class="estado-chip jugado">✔ Jugado</span>'
+        : '<span class="estado-chip pendiente">Pendiente</span>';
+
+    return `
+      <div class="partido-card ${clase} ${jugado ? 'jugado' : ''}"
+           ${p.condicion !== 'libre' ? `onclick="openModal(${p.numero - 1})"` : ''}>
+        <div class="partido-fecha">
+          <div class="num-fecha">Fecha ${p.numero}</div>
+          <div class="dia">${dia}</div>
+          <div class="mes">${mes}</div>
+          <div class="hora">${p.condicion !== 'libre' ? p.hora + ' hs' : ''}</div>
+        </div>
+        <div class="partido-info">
+          <div class="partido-equipos">
+            <span class="equipo-local">${p.local}</span>
+            <span class="vs">vs</span>
+            <span class="equipo-visita">${p.visitante}</span>
+          </div>
+          ${resHTML}
+          <div class="partido-meta">
+            ${condTag}
+            ${dirHTML}
+          </div>
+        </div>
+        <div class="partido-actions">
+          ${estadoChip}
+        </div>
+      </div>
+    `;
+  }
+
+  // ── Render info/canchas ──────────────────────────────────────
+  function renderInfo(data) {
+    document.getElementById('info-estadio').innerHTML =
+      `<strong>${data.club.estadio}</strong>`;
+    document.getElementById('info-dir-local').innerHTML =
+      `📍 ${data.club.direccion_local}`;
+
+    // Rivales visitantes únicos
+    const visitantes = data.fixture.filter(p => p.condicion === 'visitante');
+    const vistos = {};
+    const items = visitantes
+      .filter(p => { if (vistos[p.cancha]) return false; vistos[p.cancha] = true; return true; })
+      .map(p => `
+        <div class="rival-item">
+          <div class="rname">⚽ ${p.cancha}</div>
+          <div class="rdir">📍 ${p.direccion || 'Sin dirección'}</div>
+          ${p.maps ? `<a class="maps-btn" href="${p.maps}" target="_blank">🗺 Ver en Maps</a>` : ''}
+        </div>
+      `).join('');
+
+    document.getElementById('rival-grid').innerHTML = items || '<p>Sin partidos de visitante.</p>';
+  }
+
+  // ── Navegación de vistas ─────────────────────────────────────
+  function showView(view) {
+    document.getElementById('view-fixture').style.display = view === 'fixture' ? 'block' : 'none';
+    document.getElementById('view-info').style.display    = view === 'info'    ? 'block' : 'none';
+    document.querySelectorAll('nav button').forEach((b, i) => {
+      b.classList.toggle('active', (view === 'fixture' && i === 0) || (view === 'info' && i === 1));
+    });
+  }
+
+  // ── Filtros ──────────────────────────────────────────────────
+  function filtrar(tipo, btn) {
+    filtroActual = tipo;
+    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (fixtureData) renderFixture(fixtureData.fixture);
+  }
+
+  // ── Modal ─────────────────────────────────────────────────────
+  function openModal(index) {
+    const p = fixtureData.fixture[index];
+    if (!p || p.condicion === 'libre') return;
+
+    const d    = parseFecha(p.fecha);
+    const dia  = DIAS[d.getDay()];
+    const num  = d.getDate();
+    const mes  = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                  'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'][d.getMonth()];
+
+    // Tag y equipos
+    document.getElementById('m-tag').textContent   = `Fecha ${p.numero}`;
+    document.getElementById('m-teams').innerHTML   =
+      `${p.local} <span>vs</span> ${p.visitante}`;
+    document.getElementById('m-dateline').innerHTML =
+      `<span>📅 ${dia} ${num} de ${mes}</span><span>⏰ Citación según cat.</span>`;
+
+    // Condición
+    const esLocal = p.condicion === 'local';
+    document.getElementById('m-condicion').innerHTML = `
+      <div class="modal-condicion-icon">${esLocal ? '🏠' : '🚌'}</div>
+      <div class="modal-condicion-text">
+        Jugamos de <strong>${esLocal ? 'LOCAL' : 'VISITANTE'}</strong>
+        <small>${esLocal ? 'Recibimos en casa' : `Visitamos a ${p.rival}`}</small>
+      </div>`;
+
+    // Dirección
+    document.getElementById('m-dir').innerHTML = `
+      <span class="modal-dir-text">📍 ${p.direccion || 'Sin dirección confirmada'}</span>
+      ${p.maps ? `<a class="maps-btn" href="${p.maps}" target="_blank" onclick="event.stopPropagation()">🗺 Maps</a>` : ''}`;
+
+    // Horarios de categorías
+    const cats = p.categorias || [];
+    const hEl  = document.getElementById('m-horarios');
+    if (cats.length) {
+      hEl.innerHTML = `
+        <div class="modal-section-label">Horario de citación</div>
+        <table class="modal-horarios-table">
+          ${cats.map(c => `
+            <tr>
+              <td>Cat. ${c.cat}</td>
+              <td>${c.hora} hs</td>
+            </tr>`).join('')}
+        </table>`;
+    } else {
+      hEl.innerHTML = `<p class="modal-empty-note">⏳ Horarios por confirmar</p>`;
+    }
+
+    // Precio entrada
+    const pEl = document.getElementById('m-precio');
+    pEl.innerHTML = p.precio
+      ? `<div class="modal-precio">
+           <span>🎟 Entrada</span>
+           <strong>$${Number(p.precio).toLocaleString('es-AR')}</strong>
+         </div>`
+      : '';
+
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(e) {
+    if (e && e.target !== document.getElementById('modal-overlay') && e.type !== 'click') return;
+    if (e && e.currentTarget === document.getElementById('modal') ) return;
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Cerrar con Escape
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
