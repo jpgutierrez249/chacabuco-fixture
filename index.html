@@ -27,7 +27,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--gris-bg);
+      background: #ffffff;
       color: #1e2d40;
       min-height: 100vh;
     }
@@ -86,7 +86,7 @@
     nav button {
       background: none;
       border: none;
-      color: rgba(255,255,255,.65);
+      color: rgba(255,255,255,.85);
       padding: 10px 22px;
       font-size: .88rem;
       font-weight: 600;
@@ -95,7 +95,7 @@
       transition: all .2s;
       letter-spacing: .3px;
     }
-    nav button:hover { color: var(--blanco); background: rgba(255,255,255,.05); }
+    nav button:hover { color: var(--blanco); background: rgba(255,255,255,.08); }
     nav button.active { color: var(--amarillo); border-bottom-color: var(--amarillo); }
 
     /* ── Main ──────────────────────────────────────────────── */
@@ -234,45 +234,54 @@
     .partido-card {
       background: var(--blanco);
       border-radius: var(--radio);
-      border-left: 5px solid var(--gris-borde);
       box-shadow: var(--sombra);
-      padding: 16px 20px;
+      padding: 0;
       display: grid;
-      grid-template-columns: 90px 1fr auto;
-      align-items: center;
-      gap: 16px;
+      grid-template-columns: 82px 1fr auto;
+      align-items: stretch;
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid var(--gris-borde);
       transition: transform .15s, box-shadow .15s;
     }
     .partido-card:hover { transform: translateY(-2px); box-shadow: var(--sombra-lg); }
-    .partido-card.local    { border-left-color: var(--azul); }
-    .partido-card.visitante { border-left-color: var(--amarillo2); }
-    .partido-card.libre    { border-left-color: var(--gris-borde); opacity: .7; }
-    .partido-card.jugado   { opacity: .75; }
+    .partido-card.libre    { opacity: .65; }
+    .partido-card.jugado   { opacity: .78; }
 
     .partido-fecha {
       text-align: center;
+      background: var(--azul);
+      color: var(--blanco);
+      padding: 14px 8px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1px;
     }
+    .partido-card.visitante .partido-fecha { background: var(--azul-oscuro); border-right: 3px solid var(--amarillo2); }
+    .partido-card.libre     .partido-fecha { background: var(--gris-texto); }
+
     .partido-fecha .num-fecha {
-      font-size: .68rem;
+      font-size: .62rem;
       font-weight: 700;
-      color: var(--gris-texto);
+      color: rgba(255,255,255,.65);
       text-transform: uppercase;
       letter-spacing: .5px;
     }
     .partido-fecha .dia {
-      font-size: 1.7rem;
+      font-size: 1.75rem;
       font-weight: 900;
-      color: var(--azul);
+      color: var(--blanco);
       line-height: 1;
     }
     .partido-fecha .mes {
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--azul);
+      font-size: .72rem;
+      font-weight: 800;
+      color: var(--amarillo);
       text-transform: uppercase;
+      letter-spacing: .3px;
     }
 
-    .partido-info { min-width: 0; }
+    .partido-info { min-width: 0; padding: 14px 12px 14px 16px; }
     .partido-equipos {
       display: flex;
       align-items: center;
@@ -317,8 +326,8 @@
       text-transform: uppercase;
       letter-spacing: .5px;
     }
-    .condicion-tag.local    { background: #dbeafe; color: var(--azul); }
-    .condicion-tag.visitante { background: #fef9c3; color: #92400e; }
+    .condicion-tag.local    { background: var(--azul); color: var(--blanco); }
+    .condicion-tag.visitante { background: var(--amarillo); color: var(--azul-oscuro); }
     .condicion-tag.libre    { background: #f1f5f9; color: var(--gris-texto); }
 
     .dir-texto {
@@ -345,7 +354,7 @@
     .maps-btn:hover { background: var(--azul-claro); color: var(--blanco); }
 
     /* ── Side / acciones ────────────────────────────────────── */
-    .partido-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .partido-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; padding: 14px 16px 14px 8px; }
     .estado-chip {
       font-size: .7rem;
       font-weight: 700;
@@ -515,10 +524,11 @@
     /* ── Responsive ─────────────────────────────────────────── */
     @media (max-width: 580px) {
       .partido-card {
-        grid-template-columns: 72px 1fr;
+        grid-template-columns: 68px 1fr;
         grid-template-rows: auto auto;
       }
-      .partido-actions { grid-column: 2; flex-direction: row; align-items: center; flex-wrap: wrap; }
+      .partido-info { padding: 12px 10px 6px 14px; }
+      .partido-actions { grid-column: 2; padding: 0 10px 10px 14px; flex-direction: row; align-items: center; flex-wrap: wrap; }
       .club-info h1 { font-size: 1.25rem; }
       .club-escudo  { width: 50px; height: 50px; font-size: 22px; }
       .proximo-team .name { font-size: .92rem; }
