@@ -53,16 +53,11 @@
     }
     .club-escudo {
       width: 62px; height: 62px;
-      background: var(--amarillo);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,.3);
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--azul-oscuro);
-      letter-spacing: -1px;
+      display: flex; align-items: center; justify-content: center;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.5));
     }
+    .club-escudo img { width: 100%; height: 100%; object-fit: contain; }
     .club-info h1 {
       font-size: 1.55rem;
       font-weight: 800;
@@ -112,72 +107,78 @@
 
     /* ── Próximo partido ────────────────────────────────────── */
     #proximo-card {
-      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-claro) 100%);
       border-radius: var(--radio);
-      padding: 26px 28px;
+      padding: 22px 24px 20px;
       color: var(--blanco);
       margin-bottom: 28px;
       box-shadow: var(--sombra-lg);
       display: none;
     }
+    #proximo-card.cond-local {
+      background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul) 60%, var(--azul-claro) 100%);
+    }
+    #proximo-card.cond-visitante {
+      background: linear-gradient(135deg, #1a0a00 0%, #7c2d00 55%, #c2410c 100%);
+    }
+
+    /* Tag superior */
+    .proximo-top-row {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 10px;
+      margin-bottom: 14px; flex-wrap: wrap;
+    }
     #proximo-card .tag {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--amarillo);
       color: var(--azul-oscuro);
-      font-size: .72rem;
-      font-weight: 800;
-      padding: 4px 12px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      margin-bottom: 14px;
+      font-size: .7rem; font-weight: 800;
+      padding: 3px 11px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: .8px;
     }
     #proximo-card .tag::before { content: '⚽'; }
+
+    /* Badge de condición */
+    .proximo-condicion {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: .78rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .7px;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .proximo-condicion.local    { background: rgba(255,255,255,.18); color: #fff; border: 1.5px solid rgba(255,255,255,.35); }
+    .proximo-condicion.visitante { background: rgba(255,220,0,.18); color: #FFD700; border: 1.5px solid rgba(255,220,0,.4); }
+
+    /* Equipos */
     .proximo-match {
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 12px; flex-wrap: wrap;
     }
-    .proximo-team {
-      text-align: center;
-      flex: 1;
-    }
+    .proximo-team { text-align: center; flex: 1; }
     .proximo-team .name {
-      font-size: 1.1rem;
-      font-weight: 800;
-      line-height: 1.2;
+      font-size: 1.08rem; font-weight: 800; line-height: 1.2;
     }
+    .proximo-team .name.chaca { color: var(--amarillo); }
     .proximo-team .sub {
-      font-size: .75rem;
-      color: rgba(255,255,255,.7);
-      margin-top: 2px;
+      font-size: .72rem; color: rgba(255,255,255,.65); margin-top: 3px;
     }
     .proximo-vs {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--amarillo);
-      flex-shrink: 0;
+      font-size: 1.4rem; font-weight: 900;
+      color: rgba(255,255,255,.5); flex-shrink: 0;
     }
+
+    /* Meta */
     .proximo-meta {
-      margin-top: 18px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: .82rem;
-      color: rgba(255,255,255,.8);
+      margin-top: 16px;
+      display: flex; gap: 16px; flex-wrap: wrap;
+      font-size: .81rem; color: rgba(255,255,255,.8);
     }
     .proximo-meta span { display: flex; align-items: center; gap: 5px; }
     .proximo-meta a {
       display: inline-flex; align-items: center; gap: 5px;
-      background: var(--amarillo);
-      color: var(--azul-oscuro);
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: .78rem;
-      margin-top: 4px;
+      background: var(--amarillo); color: var(--azul-oscuro);
+      font-weight: 700; padding: 5px 13px;
+      border-radius: 20px; font-size: .77rem;
       transition: opacity .2s;
     }
     .proximo-meta a:hover { opacity: .85; }
@@ -269,11 +270,6 @@
       font-weight: 700;
       color: var(--azul);
       text-transform: uppercase;
-    }
-    .partido-fecha .hora {
-      font-size: .72rem;
-      color: var(--gris-texto);
-      margin-top: 2px;
     }
 
     .partido-info { min-width: 0; }
@@ -534,7 +530,7 @@
 <!-- ══ HEADER ══════════════════════════════════════════════════════ -->
 <header>
   <div class="header-inner">
-    <div class="club-escudo">CC</div>
+    <div class="club-escudo"><img src="escudo.png" alt="Escudo Club Chacabuco"></div>
     <div class="club-info">
       <h1>Club <span>Chacabuco</span></h1>
       <p id="header-sub">Cargando torneo…</p>
@@ -553,7 +549,10 @@
 
   <!-- Próximo partido -->
   <div id="proximo-card">
-    <div class="tag">Próximo partido</div>
+    <div class="proximo-top-row">
+      <div class="tag">Próximo partido</div>
+      <div id="proximo-condicion-badge"></div>
+    </div>
     <div class="proximo-match">
       <div class="proximo-team">
         <div class="name" id="p-local">—</div>
@@ -659,17 +658,33 @@
     });
 
     if (proximo) {
-      document.getElementById('proximo-card').style.display = 'block';
-      document.getElementById('p-local').textContent     = proximo.local;
-      document.getElementById('p-visitante').textContent = proximo.visitante;
-      document.getElementById('p-local-sub').textContent =
-        proximo.condicion === 'local' ? '🏠 Local' : '🚌 Visitante';
+      const card     = document.getElementById('proximo-card');
+      const esLocal  = proximo.condicion === 'local';
+
+      card.style.display = 'block';
+      card.className = esLocal ? 'cond-local' : 'cond-visitante';
+
+      // Badge de condición
+      document.getElementById('proximo-condicion-badge').innerHTML =
+        `<span class="proximo-condicion ${proximo.condicion}">
+           ${esLocal ? '🏠 Jugamos de LOCAL' : '🚌 Jugamos de VISITANTE'}
+         </span>`;
+
+      // Nombres: Chacabuco siempre en amarillo
+      const localEl = document.getElementById('p-local');
+      const visEl   = document.getElementById('p-visitante');
+      localEl.textContent  = proximo.local;
+      visEl.textContent    = proximo.visitante;
+      localEl.className    = 'name' + (esLocal  ? ' chaca' : '');
+      visEl.className      = 'name' + (!esLocal ? ' chaca' : '');
+
+      document.getElementById('p-local-sub').textContent  = esLocal  ? 'Local'    : '';
+      document.getElementById('p-vis-sub').textContent    = !esLocal ? 'Visitante' : '';
 
       const meta = document.getElementById('proximo-meta');
       const d = parseFecha(proximo.fecha);
       meta.innerHTML = `
         <span>📅 ${DIAS[d.getDay()]} ${d.getDate()} ${MESES[d.getMonth()]} ${d.getFullYear()}</span>
-        <span>⏰ ${proximo.hora} hs</span>
         <span>📍 ${proximo.direccion || 'Estadio propio'}</span>
         ${proximo.maps ? `<a href="${proximo.maps}" target="_blank">🗺 Ver en Maps</a>` : ''}
       `;
@@ -752,7 +767,6 @@
           <div class="num-fecha">Fecha ${p.numero}</div>
           <div class="dia">${dia}</div>
           <div class="mes">${mes}</div>
-          <div class="hora">${p.condicion !== 'libre' ? p.hora + ' hs' : ''}</div>
         </div>
         <div class="partido-info">
           <div class="partido-equipos">
