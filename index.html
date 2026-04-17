@@ -657,14 +657,14 @@
   function init(data) {
     // Header
     document.getElementById('header-sub').textContent =
-      `${data.club.torneo} · ${data.club.categoria}`;
+      data.club.categoria ? `${data.club.torneo} · ${data.club.categoria}` : data.club.torneo;
 
     // Próximo partido
     const hoy = new Date(); hoy.setHours(0,0,0,0);
     const proximo = data.fixture.find(p => {
       if (p.condicion === 'libre') return false;
       const d = new Date(p.fecha + 'T00:00:00');
-      return d >= hoy && p.estado !== 'jugado';
+      return d >= hoy && !esJugado(p);
     });
 
     if (proximo) {
@@ -710,6 +710,14 @@
     return new Date(y, m-1, d);
   }
 
+  // ── ¿El partido ya pasó? (JSON jugado O fecha anterior a hoy) ─
+  function esJugado(p) {
+    if (p.estado === 'jugado') return true;
+    if (p.condicion === 'libre') return false;
+    const hoy = new Date(); hoy.setHours(0,0,0,0);
+    return parseFecha(p.fecha) < hoy;
+  }
+
   // ── Render fixture ───────────────────────────────────────────
   function renderFixture(partidos) {
     const container = document.getElementById('fixture-list');
@@ -717,8 +725,8 @@
     let lista = partidos;
     if (filtroActual === 'local')     lista = partidos.filter(p => p.condicion === 'local');
     if (filtroActual === 'visitante') lista = partidos.filter(p => p.condicion === 'visitante');
-    if (filtroActual === 'pendiente') lista = partidos.filter(p => p.estado === 'pendiente' && p.condicion !== 'libre');
-    if (filtroActual === 'jugado')    lista = partidos.filter(p => p.estado === 'jugado');
+    if (filtroActual === 'pendiente') lista = partidos.filter(p => !esJugado(p) && p.condicion !== 'libre');
+    if (filtroActual === 'jugado')    lista = partidos.filter(p => esJugado(p));
 
     if (!lista.length) {
       container.innerHTML = '<p style="color:var(--gris-texto);padding:20px 0;">Sin partidos para este filtro.</p>';
@@ -733,7 +741,7 @@
     const dia  = d.getDate().toString().padStart(2,'0');
     const mes  = MESES[d.getMonth()];
     const clase = p.condicion === 'libre' ? 'libre' : p.condicion;
-    const jugado = p.estado === 'jugado';
+    const jugado = esJugado(p);
 
     // Resultado
     let resHTML = '';
