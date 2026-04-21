@@ -661,11 +661,12 @@
 
     // Próximo partido
     const hoy = new Date(); hoy.setHours(0,0,0,0);
-    const proximo = data.fixture.find(p => {
+    const proximoIdx = data.fixture.findIndex(p => {
       if (p.condicion === 'libre') return false;
       const d = new Date(p.fecha + 'T00:00:00');
       return d >= hoy && !esJugado(p);
     });
+    const proximo = proximoIdx !== -1 ? data.fixture[proximoIdx] : null;
 
     if (proximo) {
       const card     = document.getElementById('proximo-card');
@@ -673,6 +674,8 @@
 
       card.style.display = 'block';
       card.className = esLocal ? 'cond-local' : 'cond-visitante';
+      card.style.cursor = 'pointer';
+      card.onclick = () => openModal(proximoIdx);
 
       // Badge de condición
       document.getElementById('proximo-condicion-badge').innerHTML =
