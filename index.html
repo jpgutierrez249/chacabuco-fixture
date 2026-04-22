@@ -521,6 +521,110 @@
       text-align: center; padding: 12px 0;
     }
 
+    /* ── Posiciones ─────────────────────────────────────────── */
+    .pos-summary {
+      border-radius: var(--radio);
+      padding: 22px 24px 20px;
+      background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul) 60%, var(--azul-claro) 100%);
+      color: var(--blanco);
+      margin-bottom: 24px;
+      box-shadow: var(--sombra-lg);
+    }
+    .pos-summary-top {
+      display: flex; align-items: center;
+      justify-content: space-between; margin-bottom: 16px;
+      flex-wrap: wrap; gap: 8px;
+    }
+    .pos-summary-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--amarillo); color: var(--azul-oscuro);
+      font-size: .7rem; font-weight: 800;
+      padding: 3px 11px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: .8px;
+    }
+    .pos-summary-zona {
+      font-size: .78rem; color: rgba(255,255,255,.7); font-weight: 600;
+    }
+    .pos-summary-body {
+      display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+    }
+    .pos-big-block { text-align: center; }
+    .pos-big-num {
+      font-size: 3.8rem; font-weight: 900; color: var(--amarillo); line-height: 1;
+    }
+    .pos-big-label {
+      font-size: .68rem; color: rgba(255,255,255,.6);
+      text-transform: uppercase; letter-spacing: .5px; margin-top: 2px;
+    }
+    .pos-stats-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+    .pos-stat { text-align: center; }
+    .pos-stat .val { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1; }
+    .pos-stat .lbl {
+      font-size: .66rem; color: rgba(255,255,255,.6);
+      text-transform: uppercase; letter-spacing: .4px; margin-top: 2px;
+    }
+
+    .pos-table-card {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      box-shadow: var(--sombra);
+      overflow: hidden;
+      border: 1px solid var(--gris-borde);
+      margin-bottom: 16px;
+    }
+    .pos-table-scroll { overflow-x: auto; }
+    .pos-table {
+      width: 100%; border-collapse: collapse; min-width: 340px;
+    }
+    .pos-table thead th {
+      background: var(--azul); color: white;
+      font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .5px;
+      padding: 11px 8px; text-align: center; white-space: nowrap;
+    }
+    .pos-table thead th.col-equipo { text-align: left; padding-left: 14px; }
+    .pos-table tbody tr { border-bottom: 1px solid var(--gris-borde); transition: background .12s; }
+    .pos-table tbody tr:last-child { border-bottom: none; }
+    .pos-table tbody tr:hover { background: var(--gris-bg); }
+    .pos-table tbody tr.chaca-row { background: #fffbeb; }
+    .pos-table tbody tr.chaca-row:hover { background: #fef9c3; }
+    .pos-table td { padding: 10px 8px; text-align: center; font-size: .88rem; }
+    .pos-table td.col-equipo {
+      text-align: left; padding-left: 14px;
+      font-weight: 600; min-width: 160px;
+    }
+    .pos-table td.col-equipo.chaca { color: var(--azul); font-weight: 800; }
+    .col-pos { width: 36px; font-weight: 700; font-size: .85rem; color: var(--gris-texto); }
+    .col-pts { font-weight: 800; font-size: 1rem; color: var(--azul); }
+    .chaca-row .col-pts { color: var(--azul-oscuro); }
+    .pos-sep td {
+      background: var(--gris-bg);
+      font-size: .7rem; font-weight: 700;
+      color: var(--gris-texto); text-transform: uppercase;
+      letter-spacing: .5px; padding: 5px 14px;
+      text-align: left; border-bottom: none;
+    }
+    .pos-footer {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      padding: 10px 14px;
+      background: var(--gris-bg);
+      border-top: 1px solid var(--gris-borde);
+      font-size: .74rem; color: var(--gris-texto);
+    }
+    .fefi-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--azul); color: white;
+      padding: 6px 14px; border-radius: 20px;
+      font-size: .76rem; font-weight: 700;
+      transition: opacity .2s;
+    }
+    .fefi-link:hover { opacity: .85; }
+    .pos-scoring-note {
+      font-size: .74rem; color: var(--gris-texto);
+      text-align: center; margin-top: 4px; padding: 0 4px;
+    }
+
     /* ── Responsive ─────────────────────────────────────────── */
     @media (max-width: 580px) {
       .partido-card {
@@ -549,6 +653,7 @@
   <nav>
     <div class="nav-inner">
       <button class="active" onclick="showView('fixture')">⚽ Fixture</button>
+      <button onclick="showView('posiciones')">🏆 Posiciones</button>
       <button onclick="showView('info')">📍 Canchas</button>
     </div>
   </nav>
@@ -593,6 +698,17 @@
       <p style="color:var(--gris-texto); padding:20px 0;">Cargando fixture…</p>
     </div>
 
+  </div>
+
+  <!-- ── VIEW: POSICIONES ────────────────────────────────────── -->
+  <div id="view-posiciones" style="display:none">
+    <div class="pos-summary" id="pos-summary"></div>
+    <div class="filtros" id="pos-tabs"></div>
+    <div class="seccion-titulo" id="pos-titulo">Tabla de posiciones</div>
+    <div id="pos-table-container">
+      <p style="color:var(--gris-texto); padding:20px 0;">Cargando posiciones…</p>
+    </div>
+    <p class="pos-scoring-note">⭐ Sistema de puntos: Victoria = 3 pts · Empate = 2 pts · Derrota = 1 pt</p>
   </div>
 
   <!-- ── VIEW: INFO ───────────────────────────────────────────── -->
@@ -833,11 +949,17 @@
 
   // ── Navegación de vistas ─────────────────────────────────────
   function showView(view) {
-    document.getElementById('view-fixture').style.display = view === 'fixture' ? 'block' : 'none';
-    document.getElementById('view-info').style.display    = view === 'info'    ? 'block' : 'none';
+    document.getElementById('view-fixture').style.display    = view === 'fixture'    ? 'block' : 'none';
+    document.getElementById('view-posiciones').style.display = view === 'posiciones' ? 'block' : 'none';
+    document.getElementById('view-info').style.display       = view === 'info'       ? 'block' : 'none';
     document.querySelectorAll('nav button').forEach((b, i) => {
-      b.classList.toggle('active', (view === 'fixture' && i === 0) || (view === 'info' && i === 1));
+      b.classList.toggle('active',
+        (view === 'fixture'    && i === 0) ||
+        (view === 'posiciones' && i === 1) ||
+        (view === 'info'       && i === 2)
+      );
     });
+    if (view === 'posiciones' && posicionesData) renderPosiciones(posicionesData);
   }
 
   // ── Filtros ──────────────────────────────────────────────────
@@ -919,6 +1041,132 @@
 
   // Cerrar con Escape
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ── Posiciones ────────────────────────────────────────────────
+  let posicionesData = null;
+
+  fetch('posiciones.json')
+    .then(r => r.json())
+    .then(data => { posicionesData = data; })
+    .catch(() => {
+      document.getElementById('pos-table-container').innerHTML =
+        '<p style="color:#dc2626;padding:20px 0;">⚠️ No se pudo cargar posiciones.json</p>';
+    });
+
+  let posTabActiva = 'general';
+
+  function renderPosiciones(data) {
+    // Banner de resumen siempre usa la tabla general
+    const chaca = data.general.find(e => e.es_propio);
+    const pos   = data.general.indexOf(chaca) + 1;
+
+    document.getElementById('pos-summary').innerHTML = `
+      <div class="pos-summary-top">
+        <div class="pos-summary-tag">🏆 Apertura 2026</div>
+        <div class="pos-summary-zona">Zona ${data.zona}</div>
+      </div>
+      <div class="pos-summary-body">
+        <div class="pos-big-block">
+          <div class="pos-big-num">${pos}°</div>
+          <div class="pos-big-label">Posición general</div>
+        </div>
+        <div class="pos-stats-grid">
+          <div class="pos-stat"><div class="val">${chaca.pts}</div><div class="lbl">Puntos</div></div>
+          <div class="pos-stat"><div class="val">${chaca.pj}</div><div class="lbl">Jugados</div></div>
+          <div class="pos-stat"><div class="val">${chaca.g}</div><div class="lbl">Ganados</div></div>
+          <div class="pos-stat"><div class="val">${chaca.e}</div><div class="lbl">Empates</div></div>
+          <div class="pos-stat"><div class="val">${chaca.p}</div><div class="lbl">Perdidos</div></div>
+        </div>
+      </div>`;
+
+    // Tabs de categorías
+    const cats = Object.keys(data.categorias || {}).sort((a, b) => b - a);
+    const tabs  = [{ id: 'general', label: 'General' }, ...cats.map(c => ({ id: c, label: `Cat. ${c}` }))];
+
+    document.getElementById('pos-tabs').innerHTML = tabs.map(t =>
+      `<button class="filtro-btn${posTabActiva === t.id ? ' active' : ''}"
+               onclick="cambiarTabPos('${t.id}')">${t.label}</button>`
+    ).join('');
+
+    renderTablaPos(data);
+  }
+
+  function cambiarTabPos(tab) {
+    posTabActiva = tab;
+    document.querySelectorAll('#pos-tabs .filtro-btn').forEach(b => {
+      b.classList.toggle('active', b.textContent.trim() === (tab === 'general' ? 'General' : `Cat. ${tab}`));
+    });
+    renderTablaPos(posicionesData);
+  }
+
+  function renderTablaPos(data) {
+    const tabla = posTabActiva === 'general'
+      ? data.general
+      : (data.categorias || {})[posTabActiva] || [];
+
+    const titulo = posTabActiva === 'general' ? 'Tabla general' : `Categoría ${posTabActiva}`;
+    document.getElementById('pos-titulo').textContent = titulo;
+
+    if (!tabla.length) {
+      document.getElementById('pos-table-container').innerHTML =
+        `<p style="color:var(--gris-texto);padding:20px 0;">Sin datos para esta categoría todavía.</p>`;
+      return;
+    }
+
+    const medals = ['🥇','🥈','🥉'];
+    let rows = '';
+    let sepAgregado = false;
+
+    tabla.forEach((e, i) => {
+      if (!sepAgregado && e.pj === 0) {
+        rows += `<tr class="pos-sep"><td colspan="7">Sin partidos disputados</td></tr>`;
+        sepAgregado = true;
+      }
+      const isChaca = !!e.es_propio;
+      const posTag  = sepAgregado && e.pj === 0 ? '—' : (medals[i] || `${i + 1}`);
+      rows += `
+        <tr class="${isChaca ? 'chaca-row' : ''}">
+          <td class="col-pos">${posTag}</td>
+          <td class="col-equipo${isChaca ? ' chaca' : ''}">${isChaca ? '⭐ ' : ''}${e.equipo}</td>
+          <td>${e.pj}</td>
+          <td>${e.g}</td>
+          <td>${e.e}</td>
+          <td>${e.p}</td>
+          <td class="col-pts">${e.pts}</td>
+        </tr>`;
+    });
+
+    document.getElementById('pos-table-container').innerHTML = `
+      <div class="pos-table-card">
+        <div class="pos-table-scroll">
+          <table class="pos-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th class="col-equipo">Equipo</th>
+                <th>PJ</th>
+                <th>G</th>
+                <th>E</th>
+                <th>P</th>
+                <th>PTS</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <div class="pos-footer">
+          <span>Actualizado: ${formatFechaLarga(data.ultima_actualizacion)}</span>
+          <a class="fefi-link" href="${data.fuente}" target="_blank">📊 FEFI</a>
+        </div>
+      </div>`;
+  }
+
+  function formatFechaLarga(str) {
+    const d = parseFecha(str);
+    const meses = ['enero','febrero','marzo','abril','mayo','junio',
+                   'julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    return `${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;
+  }
 </script>
 
 </body>
