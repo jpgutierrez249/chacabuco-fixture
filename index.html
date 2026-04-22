@@ -641,18 +641,26 @@
   const DIAS  = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
   let fixtureData = null;
   let filtroActual = 'todos';
+  let clubsData    = {};
 
-  // ── Fetch fixture.json ───────────────────────────────────────
-  fetch('fixture.json')
-    .then(r => r.json())
-    .then(data => {
-      fixtureData = data;
-      init(data);
+  // ── Fetch fixture.json + clubs.json en paralelo ──────────────
+  Promise.all([
+    fetch('fixture.json').then(r => r.json()),
+    fetch('clubs.json').then(r => r.json()),
+  ])
+    .then(([fixture, clubs]) => {
+      fixtureData = fixture;
+      clubsData   = clubs;
+      init(fixture);
     })
     .catch(() => {
       document.getElementById('fixture-list').innerHTML =
         '<p style="color:#dc2626;padding:20px 0;">⚠️ No se pudo cargar fixture.json. Asegurate de abrir el archivo desde un servidor (Live Server en VSCode o GitHub Pages).</p>';
     });
+
+  function infoClub(cancha) {
+    return clubsData[cancha] || { direccion: '', maps: '' };
+  }
 
   function init(data) {
     // Header
@@ -698,8 +706,8 @@
       const d = parseFecha(proximo.fecha);
       meta.innerHTML = `
         <span>📅 ${DIAS[d.getDay()]} ${d.getDate()} ${MESES[d.getMonth()]} ${d.getFullYear()}</span>
-        <span>📍 ${proximo.direccion || 'Estadio propio'}</span>
-        ${proximo.maps ? `<a href="${proximo.maps}" target="_blank">🗺 Ver en Maps</a>` : ''}
+        <span>📍 ${infoClub(proximo.cancha).direccion || 'Estadio propio'}</span>
+        ${infoClub(proximo.cancha).maps ? `<a href="${infoClub(proximo.cancha).maps}" target="_blank">🗺 Ver en Maps</a>` : ''}
       `;
     }
 
@@ -758,13 +766,14 @@
 
     // Dirección
     let dirHTML = '';
-    if (p.condicion === 'visitante' && p.direccion) {
+    const club = infoClub(p.cancha);
+    if (p.condicion === 'visitante' && club.direccion) {
       dirHTML = `
-        <span class="dir-texto">📍 ${p.direccion}</span>
-        ${p.maps ? `<a class="maps-btn" href="${p.maps}" target="_blank">🗺 Maps</a>` : ''}
+        <span class="dir-texto">📍 ${club.direccion}</span>
+        ${club.maps ? `<a class="maps-btn" href="${club.maps}" target="_blank">🗺 Maps</a>` : ''}
       `;
-    } else if (p.condicion === 'local' && p.direccion) {
-      dirHTML = `<span class="dir-texto">🏟 ${p.direccion}</span>`;
+    } else if (p.condicion === 'local' && club.direccion) {
+      dirHTML = `<span class="dir-texto">🏟 ${club.direccion}</span>`;
     }
 
     // Condición tag
@@ -810,10 +819,11 @@
 
   // ── Render info/canchas ──────────────────────────────────────
   function renderInfo(data) {
+    const propio = Object.values(clubsData).find(c => c.es_propio) || {};
     document.getElementById('info-estadio').innerHTML =
-      `<strong>${data.club.estadio}</strong>`;
+      `<strong>${propio.estadio || data.club.nombre}</strong>`;
     document.getElementById('info-dir-local').innerHTML =
-      `📍 ${data.club.direccion_local}`;
+      `📍 ${propio.direccion || '—'}`;
 
     // Rivales visitantes únicos
     const visitantes = data.fixture.filter(p => p.condicion === 'visitante');
@@ -823,8 +833,8 @@
       .map(p => `
         <div class="rival-item">
           <div class="rname">⚽ ${p.cancha}</div>
-          <div class="rdir">📍 ${p.direccion || 'Sin dirección'}</div>
-          ${p.maps ? `<a class="maps-btn" href="${p.maps}" target="_blank">🗺 Ver en Maps</a>` : ''}
+          <div class="rdir">📍 ${infoClub(p.cancha).direccion || 'Sin dirección'}</div>
+          ${infoClub(p.cancha).maps ? `<a class="maps-btn" href="${infoClub(p.cancha).maps}" target="_blank">🗺 Ver en Maps</a>` : ''}
         </div>
       `).join('');
 
@@ -877,8 +887,8 @@
 
     // Dirección
     document.getElementById('m-dir').innerHTML = `
-      <span class="modal-dir-text">📍 ${p.direccion || 'Sin dirección confirmada'}</span>
-      ${p.maps ? `<a class="maps-btn" href="${p.maps}" target="_blank" onclick="event.stopPropagation()">🗺 Maps</a>` : ''}`;
+      <span class="modal-dir-text">📍 ${infoClub(p.cancha).direccion || 'Sin dirección confirmada'}</span>
+      ${infoClub(p.cancha).maps ? `<a class="maps-btn" href="${infoClub(p.cancha).maps}" target="_blank" onclick="event.stopPropagation()">🗺 Maps</a>` : ''}`;
 
     // Horarios de categorías
     const cats = p.categorias || [];
