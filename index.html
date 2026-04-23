@@ -760,9 +760,10 @@
   let clubsData    = {};
 
   // ── Fetch fixture.json + clubs.json en paralelo ──────────────
+  const FETCH_OPTS = { cache: 'no-cache' };
   Promise.all([
-    fetch('fixture.json').then(r => r.json()),
-    fetch('clubs.json').then(r => r.json()),
+    fetch('fixture.json', FETCH_OPTS).then(r => r.json()),
+    fetch('clubs.json',   FETCH_OPTS).then(r => r.json()),
   ])
     .then(([fixture, clubs]) => {
       fixtureData = fixture;
@@ -1055,7 +1056,7 @@
   // ── Posiciones ────────────────────────────────────────────────
   let posicionesData = null;
 
-  fetch('posiciones.json')
+  fetch('posiciones.json', FETCH_OPTS)
     .then(r => r.json())
     .then(data => { posicionesData = data; })
     .catch(() => {
