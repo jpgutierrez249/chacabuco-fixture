@@ -1,0 +1,42 @@
+name: Actualizar posiciones FEFI
+
+on:
+  schedule:
+    # Todos los días a las 05:00 UTC (02:00 Argentina, UTC-3)
+    - cron: '0 5 * * *'
+  # También permite ejecutarlo manualmente desde GitHub → Actions
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar cheerio
+        run: npm install --no-save cheerio
+
+      - name: Ejecutar scraping
+        run: node scripts/fetch-posiciones.js
+
+      - name: Commit y push si hubo cambios
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posiciones.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios en posiciones.json — nada para commitear"
+          else
+            git commit -m "data: actualizar posiciones FEFI $(date +'%Y-%m-%d')"
+            git push
+          fi
