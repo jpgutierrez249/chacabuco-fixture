@@ -3,9 +3,7 @@
     "nombre": "Club Chacabuco",
     "torneo": "FEFI 2026",
     "temporada": "2026",
-    "categoria": "Vespertino-F",
-    "estadio": "Club Gimnasio Chacabuco",
-    "direccion_local": "Miró 750"
+    "categoria": "Vespertino-F"
   },
   "fixture": [
     {
@@ -17,8 +15,6 @@
       "condicion": "local",
       "rival": "Glorias Argentinas",
       "cancha": "Chacabuco",
-      "direccion": "Miró 750",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -65,8 +61,6 @@
       "condicion": "visitante",
       "rival": "El Barrio 2",
       "cancha": "El Barrio 2",
-      "direccion": "Constitución 4253, Boedo",
-      "maps": "https://maps.google.com/?q=Constitucion+4253+Boedo+Buenos+Aires",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -75,11 +69,11 @@
       "categorias": [
         {
           "cat": "2019",
-          "hora": "14:00"
+          "hora": "14:10"
         },
         {
           "cat": "2013",
-          "hora": "14:40"
+          "hora": "14:50"
         },
         {
           "cat": "2018",
@@ -113,8 +107,6 @@
       "condicion": "local",
       "rival": "Bristol FC",
       "cancha": "Chacabuco",
-      "direccion": "Miró 750",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -161,8 +153,6 @@
       "condicion": "visitante",
       "rival": "Federacion Caballito",
       "cancha": "Federacion Caballito",
-      "direccion": "Av. La Plata 1151, Caballito",
-      "maps": "https://maps.google.com/?q=Av+La+Plata+1151+Caballito+Buenos+Aires",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -209,8 +199,6 @@
       "condicion": "local",
       "rival": "Corvalan",
       "cancha": "Chacabuco",
-      "direccion": "Miró 750",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -257,8 +245,6 @@
       "condicion": "visitante",
       "rival": "Nueva Era",
       "cancha": "Nueva Era",
-      "direccion": "Gral. División Juan José Valle 2972, Nueva Pompeya",
-      "maps": "https://maps.google.com/?q=Juan+Jose+Valle+2972+Nueva+Pompeya+Buenos+Aires",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -305,8 +291,6 @@
       "condicion": "local",
       "rival": "Santiago de Liniers",
       "cancha": "Chacabuco",
-      "direccion": "Miró 750",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -353,8 +337,6 @@
       "condicion": "local",
       "rival": "Social Club",
       "cancha": "Chacabuco",
-      "direccion": "Miró 750",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -401,8 +383,6 @@
       "condicion": "visitante",
       "rival": "Pampero",
       "cancha": "Pampero",
-      "direccion": "Balbastro 6151, Lugano",
-      "maps": "https://maps.google.com/?q=Balbastro+6151+Lugano+Buenos+Aires",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -449,8 +429,6 @@
       "condicion": "local",
       "rival": "Villa Don Bosco",
       "cancha": "Chacabuco",
-      "direccion": "Miró 750",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -497,8 +475,6 @@
       "condicion": "visitante",
       "rival": "Nueva Estrella",
       "cancha": "Nueva Estrella",
-      "direccion": "Santander 4602, Parque Avellaneda",
-      "maps": "https://maps.google.com/?q=Santander+4602+Parque+Avellaneda+Buenos+Aires",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -545,8 +521,6 @@
       "condicion": "local",
       "rival": "San Telmo",
       "cancha": "Chacabuco",
-      "direccion": "Miró 750",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -593,8 +567,6 @@
       "condicion": "visitante",
       "rival": "La Loma",
       "cancha": "La Loma",
-      "direccion": "Cafayate 758, Liniers",
-      "maps": "https://maps.google.com/?q=Cafayate+758+Liniers+Buenos+Aires",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -641,8 +613,6 @@
       "condicion": "local",
       "rival": "Amigos de Villa Luro",
       "cancha": "Chacabuco",
-      "direccion": "Miró 750",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -689,8 +659,6 @@
       "condicion": "visitante",
       "rival": "Semillero FC",
       "cancha": "Semillero FC",
-      "direccion": "Benavídez (confirmar dirección)",
-      "maps": "",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
