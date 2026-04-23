@@ -2,8 +2,8 @@ name: Actualizar posiciones FEFI
 
 on:
   schedule:
-    # Todos los días a las 09:00 UTC (06:00 Argentina, UTC-3)
-    - cron: '0 9 * * *'
+    # Todos los días a las 05:00 UTC (02:00 Argentina, UTC-3)
+    - cron: '0 5 * * *'
   # También permite ejecutarlo manualmente desde GitHub → Actions
   workflow_dispatch:
 
