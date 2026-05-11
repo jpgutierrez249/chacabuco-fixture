@@ -2,9 +2,33 @@
   "torneo": "FEFI 2026",
   "fase": "Apertura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-05-10",
+  "ultima_actualizacion": "2026-05-11",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
+    {
+      "equipo": "SEMILLERO F. C.",
+      "pj": 28,
+      "g": 16,
+      "e": 6,
+      "p": 6,
+      "pts": 66
+    },
+    {
+      "equipo": "NUEVA ESTRELLA",
+      "pj": 28,
+      "g": 14,
+      "e": 7,
+      "p": 7,
+      "pts": 63
+    },
+    {
+      "equipo": "AMIGOS DE VILLA LURO",
+      "pj": 28,
+      "g": 15,
+      "e": 3,
+      "p": 10,
+      "pts": 61
+    },
     {
       "equipo": "GIMNASIO CHACABUCO",
       "pj": 21,
@@ -15,28 +39,20 @@
       "es_propio": true
     },
     {
-      "equipo": "SEMILLERO F. C.",
-      "pj": 21,
-      "g": 13,
-      "e": 5,
-      "p": 3,
-      "pts": 52
-    },
-    {
-      "equipo": "NUEVA ESTRELLA",
-      "pj": 21,
-      "g": 11,
-      "e": 6,
-      "p": 4,
-      "pts": 49
-    },
-    {
       "equipo": "GLORIAS ARGENTINAS",
       "pj": 21,
       "g": 13,
       "e": 1,
       "p": 7,
       "pts": 48
+    },
+    {
+      "equipo": "PAMPERO",
+      "pj": 28,
+      "g": 7,
+      "e": 5,
+      "p": 16,
+      "pts": 47
     },
     {
       "equipo": "VILLA DON BOSCO",
@@ -55,11 +71,11 @@
       "pts": 45
     },
     {
-      "equipo": "AMIGOS DE VILLA LURO",
-      "pj": 21,
-      "g": 10,
+      "equipo": "C. A. SAN TELMO",
+      "pj": 28,
+      "g": 7,
       "e": 3,
-      "p": 8,
+      "p": 17,
       "pts": 44
     },
     {
@@ -95,20 +111,12 @@
       "pts": 35
     },
     {
-      "equipo": "C. A. SAN TELMO",
+      "equipo": "EL BARRIO ''2''",
       "pj": 21,
       "g": 5,
-      "e": 3,
+      "e": 4,
       "p": 12,
-      "pts": 33
-    },
-    {
-      "equipo": "PAMPERO",
-      "pj": 21,
-      "g": 4,
-      "e": 3,
-      "p": 14,
-      "pts": 32
+      "pts": 35
     },
     {
       "equipo": "BRISTOL F. C.",
@@ -117,14 +125,6 @@
       "e": 2,
       "p": 8,
       "pts": 24
-    },
-    {
-      "equipo": "EL BARRIO ''2''",
-      "pj": 14,
-      "g": 3,
-      "e": 2,
-      "p": 9,
-      "pts": 22
     },
     {
       "equipo": "C. A. NUEVA ERA",
@@ -137,6 +137,22 @@
   ],
   "categorias": {
     "2013": [
+      {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 4,
+        "g": 3,
+        "e": 1,
+        "p": 0,
+        "pts": 11
+      },
+      {
+        "equipo": "C. A. SAN TELMO",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
       {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 3,
@@ -154,28 +170,20 @@
         "pts": 8
       },
       {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 3,
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 4,
         "g": 2,
-        "e": 1,
-        "p": 0,
+        "e": 0,
+        "p": 2,
         "pts": 8
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 3,
-        "g": 2,
-        "e": 0,
-        "p": 1,
-        "pts": 7
-      },
-      {
         "equipo": "SEMILLERO F. C.",
-        "pj": 3,
+        "pj": 4,
         "g": 1,
         "e": 2,
-        "p": 0,
-        "pts": 7
+        "p": 1,
+        "pts": 8
       },
       {
         "equipo": "FEDERACION CABALLITO",
@@ -203,12 +211,20 @@
         "pts": 6
       },
       {
-        "equipo": "C. A. SAN TELMO",
+        "equipo": "EL BARRIO ''2''",
         "pj": 3,
         "g": 1,
         "e": 1,
         "p": 1,
         "pts": 6
+      },
+      {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 0,
+        "e": 1,
+        "p": 3,
+        "pts": 5
       },
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -217,14 +233,6 @@
         "e": 0,
         "p": 2,
         "pts": 5
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 3,
-        "g": 0,
-        "e": 1,
-        "p": 2,
-        "pts": 4
       },
       {
         "equipo": "VILLA DON BOSCO",
@@ -251,14 +259,6 @@
         "pts": 3
       },
       {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 2,
-        "g": 0,
-        "e": 1,
-        "p": 1,
-        "pts": 3
-      },
-      {
         "equipo": "BRISTOL F. C.",
         "pj": 2,
         "g": 0,
@@ -277,6 +277,22 @@
         "pts": 9
       },
       {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
+        "equipo": "SEMILLERO F. C.",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
         "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 3,
         "g": 3,
@@ -285,7 +301,15 @@
         "pts": 9
       },
       {
-        "equipo": "NUEVA ESTRELLA",
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 4,
+        "g": 1,
+        "e": 2,
+        "p": 1,
+        "pts": 8
+      },
+      {
+        "equipo": "EL BARRIO ''2''",
         "pj": 3,
         "g": 2,
         "e": 1,
@@ -301,23 +325,15 @@
         "pts": 7
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 3,
-        "g": 1,
-        "e": 1,
-        "p": 1,
-        "pts": 6
-      },
-      {
         "equipo": "PAMPERO",
-        "pj": 3,
+        "pj": 4,
         "g": 1,
         "e": 1,
-        "p": 1,
-        "pts": 6
+        "p": 2,
+        "pts": 7
       },
       {
-        "equipo": "SEMILLERO F. C.",
+        "equipo": "FEDERACION CABALLITO",
         "pj": 3,
         "g": 1,
         "e": 1,
@@ -350,14 +366,6 @@
         "pts": 5
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 3,
-        "g": 0,
-        "e": 2,
-        "p": 1,
-        "pts": 5
-      },
-      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 3,
         "g": 1,
@@ -366,20 +374,12 @@
         "pts": 5
       },
       {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 2,
-        "g": 1,
-        "e": 1,
-        "p": 0,
-        "pts": 5
-      },
-      {
         "equipo": "C. A. SAN TELMO",
-        "pj": 3,
+        "pj": 4,
         "g": 0,
         "e": 0,
-        "p": 3,
-        "pts": 3
+        "p": 4,
+        "pts": 4
       },
       {
         "equipo": "C. A. NUEVA ERA",
@@ -400,12 +400,28 @@
     ],
     "2015": [
       {
+        "equipo": "C. A. SAN TELMO",
+        "pj": 4,
+        "g": 3,
+        "e": 1,
+        "p": 0,
+        "pts": 11
+      },
+      {
         "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 3,
+        "pj": 4,
         "g": 3,
         "e": 0,
-        "p": 0,
-        "pts": 9
+        "p": 1,
+        "pts": 10
+      },
+      {
+        "equipo": "SEMILLERO F. C.",
+        "pj": 4,
+        "g": 3,
+        "e": 0,
+        "p": 1,
+        "pts": 10
       },
       {
         "equipo": "GIMNASIO CHACABUCO",
@@ -415,14 +431,6 @@
         "p": 0,
         "pts": 8,
         "es_propio": true
-      },
-      {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 3,
-        "g": 2,
-        "e": 1,
-        "p": 0,
-        "pts": 8
       },
       {
         "equipo": "FEDERACION CABALLITO",
@@ -441,14 +449,6 @@
         "pts": 7
       },
       {
-        "equipo": "SEMILLERO F. C.",
-        "pj": 3,
-        "g": 2,
-        "e": 0,
-        "p": 1,
-        "pts": 7
-      },
-      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 3,
         "g": 2,
@@ -457,11 +457,27 @@
         "pts": 7
       },
       {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 3,
+        "g": 1,
+        "e": 1,
+        "p": 1,
+        "pts": 6
+      },
+      {
         "equipo": "CLUB CORVALAN",
         "pj": 3,
         "g": 1,
         "e": 0,
         "p": 2,
+        "pts": 5
+      },
+      {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 0,
+        "e": 1,
+        "p": 3,
         "pts": 5
       },
       {
@@ -481,11 +497,11 @@
         "pts": 5
       },
       {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 2,
-        "g": 1,
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 4,
+        "g": 0,
         "e": 0,
-        "p": 1,
+        "p": 4,
         "pts": 4
       },
       {
@@ -511,25 +527,17 @@
         "e": 0,
         "p": 3,
         "pts": 3
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 3,
-        "g": 0,
-        "e": 0,
-        "p": 3,
-        "pts": 3
-      },
-      {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 3,
-        "g": 0,
-        "e": 0,
-        "p": 3,
-        "pts": 3
       }
     ],
     "2016": [
+      {
+        "equipo": "SEMILLERO F. C.",
+        "pj": 4,
+        "g": 3,
+        "e": 1,
+        "p": 0,
+        "pts": 11
+      },
       {
         "equipo": "GIMNASIO CHACABUCO",
         "pj": 3,
@@ -540,6 +548,14 @@
         "es_propio": true
       },
       {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
         "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 3,
         "g": 3,
@@ -548,19 +564,11 @@
         "pts": 9
       },
       {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 3,
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 4,
         "g": 2,
-        "e": 1,
-        "p": 0,
-        "pts": 8
-      },
-      {
-        "equipo": "SEMILLERO F. C.",
-        "pj": 3,
-        "g": 2,
-        "e": 1,
-        "p": 0,
+        "e": 0,
+        "p": 2,
         "pts": 8
       },
       {
@@ -569,6 +577,14 @@
         "g": 2,
         "e": 0,
         "p": 1,
+        "pts": 7
+      },
+      {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 1,
+        "e": 1,
+        "p": 2,
         "pts": 7
       },
       {
@@ -596,28 +612,28 @@
         "pts": 6
       },
       {
-        "equipo": "PAMPERO",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 3,
         "g": 1,
         "e": 0,
         "p": 2,
         "pts": 5
+      },
+      {
+        "equipo": "C. A. SAN TELMO",
+        "pj": 4,
+        "g": 0,
+        "e": 0,
+        "p": 4,
+        "pts": 4
+      },
+      {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 3,
+        "g": 0,
+        "e": 1,
+        "p": 2,
+        "pts": 4
       },
       {
         "equipo": "BRISTOL F. C.",
@@ -634,22 +650,6 @@
         "e": 0,
         "p": 3,
         "pts": 3
-      },
-      {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 3,
-        "g": 0,
-        "e": 0,
-        "p": 3,
-        "pts": 3
-      },
-      {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 2,
-        "g": 0,
-        "e": 0,
-        "p": 2,
-        "pts": 2
       },
       {
         "equipo": "C. A. NUEVA ERA",
@@ -663,10 +663,26 @@
     "2017": [
       {
         "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 3,
-        "g": 3,
+        "pj": 4,
+        "g": 4,
         "e": 0,
         "p": 0,
+        "pts": 12
+      },
+      {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
+        "equipo": "SEMILLERO F. C.",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
         "pts": 9
       },
       {
@@ -676,14 +692,6 @@
         "e": 0,
         "p": 0,
         "pts": 9
-      },
-      {
-        "equipo": "SEMILLERO F. C.",
-        "pj": 3,
-        "g": 2,
-        "e": 1,
-        "p": 0,
-        "pts": 8
       },
       {
         "equipo": "FEDERACION CABALLITO",
@@ -703,6 +711,14 @@
         "es_propio": true
       },
       {
+        "equipo": "C. A. SAN TELMO",
+        "pj": 4,
+        "g": 1,
+        "e": 1,
+        "p": 2,
+        "pts": 7
+      },
+      {
         "equipo": "CLUB CORVALAN",
         "pj": 3,
         "g": 1,
@@ -711,19 +727,11 @@
         "pts": 6
       },
       {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 3,
+        "equipo": "PAMPERO",
+        "pj": 4,
         "g": 1,
-        "e": 1,
-        "p": 1,
-        "pts": 6
-      },
-      {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 3,
-        "g": 1,
-        "e": 1,
-        "p": 1,
+        "e": 0,
+        "p": 3,
         "pts": 6
       },
       {
@@ -744,11 +752,11 @@
       },
       {
         "equipo": "EL BARRIO ''2''",
-        "pj": 2,
+        "pj": 3,
         "g": 1,
         "e": 0,
-        "p": 1,
-        "pts": 4
+        "p": 2,
+        "pts": 5
       },
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -768,14 +776,6 @@
       },
       {
         "equipo": "SOCIAL CLUB",
-        "pj": 3,
-        "g": 0,
-        "e": 0,
-        "p": 3,
-        "pts": 3
-      },
-      {
-        "equipo": "PAMPERO",
         "pj": 3,
         "g": 0,
         "e": 0,
@@ -793,6 +793,22 @@
     ],
     "2018": [
       {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 4,
+        "g": 4,
+        "e": 0,
+        "p": 0,
+        "pts": 12
+      },
+      {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 3,
+        "e": 0,
+        "p": 1,
+        "pts": 10
+      },
+      {
         "equipo": "GIMNASIO CHACABUCO",
         "pj": 3,
         "g": 3,
@@ -802,23 +818,15 @@
         "es_propio": true
       },
       {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 3,
-        "g": 3,
+        "equipo": "SEMILLERO F. C.",
+        "pj": 4,
+        "g": 2,
         "e": 0,
-        "p": 0,
-        "pts": 9
+        "p": 2,
+        "pts": 8
       },
       {
         "equipo": "FEDERACION CABALLITO",
-        "pj": 3,
-        "g": 2,
-        "e": 0,
-        "p": 1,
-        "pts": 7
-      },
-      {
-        "equipo": "PAMPERO",
         "pj": 3,
         "g": 2,
         "e": 0,
@@ -834,7 +842,7 @@
         "pts": 7
       },
       {
-        "equipo": "SEMILLERO F. C.",
+        "equipo": "GLORIAS ARGENTINAS",
         "pj": 3,
         "g": 2,
         "e": 0,
@@ -842,12 +850,20 @@
         "pts": 7
       },
       {
-        "equipo": "GLORIAS ARGENTINAS",
-        "pj": 3,
-        "g": 2,
+        "equipo": "C. A. SAN TELMO",
+        "pj": 4,
+        "g": 1,
         "e": 0,
-        "p": 1,
-        "pts": 7
+        "p": 3,
+        "pts": 6
+      },
+      {
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 4,
+        "g": 1,
+        "e": 0,
+        "p": 3,
+        "pts": 6
       },
       {
         "equipo": "CLUB CORVALAN",
@@ -859,14 +875,6 @@
       },
       {
         "equipo": "SOCIAL CLUB",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
-        "equipo": "C. A. SAN TELMO",
         "pj": 3,
         "g": 1,
         "e": 0,
@@ -898,7 +906,7 @@
         "pts": 3
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
+        "equipo": "EL BARRIO ''2''",
         "pj": 3,
         "g": 0,
         "e": 0,
@@ -912,18 +920,18 @@
         "e": 0,
         "p": 3,
         "pts": 3
-      },
-      {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 2,
-        "g": 0,
-        "e": 0,
-        "p": 2,
-        "pts": 2
       }
     ],
     "2019": [
       {
+        "equipo": "SEMILLERO F. C.",
+        "pj": 4,
+        "g": 3,
+        "e": 1,
+        "p": 0,
+        "pts": 11
+      },
+      {
         "equipo": "GIMNASIO CHACABUCO",
         "pj": 3,
         "g": 3,
@@ -933,12 +941,28 @@
         "es_propio": true
       },
       {
-        "equipo": "SEMILLERO F. C.",
-        "pj": 3,
-        "g": 3,
-        "e": 0,
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 4,
+        "g": 1,
+        "e": 3,
         "p": 0,
         "pts": 9
+      },
+      {
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 1,
+        "e": 1,
+        "p": 2,
+        "pts": 7
       },
       {
         "equipo": "VILLA DON BOSCO",
@@ -946,14 +970,6 @@
         "g": 2,
         "e": 0,
         "p": 1,
-        "pts": 7
-      },
-      {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 3,
-        "g": 1,
-        "e": 2,
-        "p": 0,
         "pts": 7
       },
       {
@@ -966,14 +982,6 @@
       },
       {
         "equipo": "LA LOMA",
-        "pj": 3,
-        "g": 1,
-        "e": 1,
-        "p": 1,
-        "pts": 6
-      },
-      {
-        "equipo": "AMIGOS DE VILLA LURO",
         "pj": 3,
         "g": 1,
         "e": 1,
@@ -1013,14 +1021,6 @@
         "pts": 5
       },
       {
-        "equipo": "PAMPERO",
-        "pj": 3,
-        "g": 0,
-        "e": 1,
-        "p": 2,
-        "pts": 4
-      },
-      {
         "equipo": "BRISTOL F. C.",
         "pj": 2,
         "g": 1,
@@ -1038,19 +1038,19 @@
       },
       {
         "equipo": "C. A. SAN TELMO",
-        "pj": 3,
+        "pj": 4,
         "g": 0,
         "e": 0,
-        "p": 2,
-        "pts": 2
+        "p": 3,
+        "pts": 3
       },
       {
         "equipo": "EL BARRIO ''2''",
-        "pj": 2,
+        "pj": 3,
         "g": 0,
         "e": 0,
-        "p": 2,
-        "pts": 2
+        "p": 3,
+        "pts": 3
       }
     ]
   }
