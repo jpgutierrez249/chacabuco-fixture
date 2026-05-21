@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Apertura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-05-19",
+  "ultima_actualizacion": "2026-05-21",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
     {
@@ -13,6 +13,14 @@
       "p": 5,
       "pts": 92,
       "es_propio": true
+    },
+    {
+      "equipo": "BRISTOL F. C.",
+      "pj": 35,
+      "g": 15,
+      "e": 4,
+      "p": 16,
+      "pts": 69
     },
     {
       "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -71,12 +79,12 @@
       "pts": 59
     },
     {
-      "equipo": "BRISTOL F. C.",
+      "equipo": "C. A. NUEVA ERA",
       "pj": 28,
-      "g": 11,
-      "e": 4,
-      "p": 13,
-      "pts": 54
+      "g": 15,
+      "e": 1,
+      "p": 12,
+      "pts": 59
     },
     {
       "equipo": "FEDERACION CABALLITO",
@@ -101,14 +109,6 @@
       "e": 1,
       "p": 7,
       "pts": 48
-    },
-    {
-      "equipo": "C. A. NUEVA ERA",
-      "pj": 21,
-      "g": 12,
-      "e": 1,
-      "p": 8,
-      "pts": 46
     },
     {
       "equipo": "SOCIAL CLUB",
@@ -163,6 +163,22 @@
         "pts": 11
       },
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 5,
+        "g": 3,
+        "e": 0,
+        "p": 2,
+        "pts": 11
+      },
+      {
+        "equipo": "C. A. NUEVA ERA",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
         "equipo": "C. A. SAN TELMO",
         "pj": 4,
         "g": 2,
@@ -187,14 +203,6 @@
         "pts": 9
       },
       {
-        "equipo": "C. A. NUEVA ERA",
-        "pj": 3,
-        "g": 2,
-        "e": 1,
-        "p": 0,
-        "pts": 8
-      },
-      {
         "equipo": "AMIGOS DE VILLA LURO",
         "pj": 4,
         "g": 2,
@@ -208,14 +216,6 @@
         "g": 1,
         "e": 2,
         "p": 1,
-        "pts": 8
-      },
-      {
-        "equipo": "BRISTOL F. C.",
-        "pj": 4,
-        "g": 2,
-        "e": 0,
-        "p": 2,
         "pts": 8
       },
       {
@@ -283,6 +283,14 @@
         "e": 0,
         "p": 0,
         "pts": 12
+      },
+      {
+        "equipo": "C. A. NUEVA ERA",
+        "pj": 4,
+        "g": 3,
+        "e": 0,
+        "p": 1,
+        "pts": 10
       },
       {
         "equipo": "SOCIAL CLUB",
@@ -366,14 +374,6 @@
         "pts": 7
       },
       {
-        "equipo": "C. A. NUEVA ERA",
-        "pj": 3,
-        "g": 2,
-        "e": 0,
-        "p": 1,
-        "pts": 7
-      },
-      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 3,
         "g": 1,
@@ -382,15 +382,15 @@
         "pts": 5
       },
       {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 4,
+        "equipo": "BRISTOL F. C.",
+        "pj": 5,
         "g": 0,
         "e": 0,
-        "p": 4,
-        "pts": 4
+        "p": 5,
+        "pts": 5
       },
       {
-        "equipo": "BRISTOL F. C.",
+        "equipo": "C. A. SAN TELMO",
         "pj": 4,
         "g": 0,
         "e": 0,
@@ -407,6 +407,14 @@
         "p": 0,
         "pts": 14,
         "es_propio": true
+      },
+      {
+        "equipo": "BRISTOL F. C.",
+        "pj": 5,
+        "g": 3,
+        "e": 1,
+        "p": 1,
+        "pts": 12
       },
       {
         "equipo": "C. A. SAN TELMO",
@@ -457,14 +465,6 @@
         "pts": 9
       },
       {
-        "equipo": "BRISTOL F. C.",
-        "pj": 4,
-        "g": 2,
-        "e": 1,
-        "p": 1,
-        "pts": 9
-      },
-      {
         "equipo": "FEDERACION CABALLITO",
         "pj": 4,
         "g": 2,
@@ -497,7 +497,7 @@
         "pts": 7
       },
       {
-        "equipo": "LA LOMA",
+        "equipo": "C. A. NUEVA ERA",
         "pj": 4,
         "g": 1,
         "e": 0,
@@ -505,12 +505,12 @@
         "pts": 6
       },
       {
-        "equipo": "C. A. NUEVA ERA",
-        "pj": 3,
+        "equipo": "LA LOMA",
+        "pj": 4,
         "g": 1,
         "e": 0,
-        "p": 2,
-        "pts": 5
+        "p": 3,
+        "pts": 6
       },
       {
         "equipo": "SOCIAL CLUB",
@@ -548,6 +548,14 @@
         "pts": 14
       },
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 5,
+        "g": 3,
+        "e": 1,
+        "p": 1,
+        "pts": 12
+      },
+      {
         "equipo": "SEMILLERO F. C.",
         "pj": 4,
         "g": 3,
@@ -565,14 +573,6 @@
       },
       {
         "equipo": "NUEVA ESTRELLA",
-        "pj": 4,
-        "g": 2,
-        "e": 1,
-        "p": 1,
-        "pts": 9
-      },
-      {
-        "equipo": "BRISTOL F. C.",
         "pj": 4,
         "g": 2,
         "e": 1,
@@ -644,7 +644,7 @@
         "pts": 5
       },
       {
-        "equipo": "C. A. SAN TELMO",
+        "equipo": "C. A. NUEVA ERA",
         "pj": 4,
         "g": 0,
         "e": 0,
@@ -652,12 +652,12 @@
         "pts": 4
       },
       {
-        "equipo": "C. A. NUEVA ERA",
-        "pj": 3,
+        "equipo": "C. A. SAN TELMO",
+        "pj": 4,
         "g": 0,
         "e": 0,
-        "p": 3,
-        "pts": 3
+        "p": 4,
+        "pts": 4
       }
     ],
     "2017": [
@@ -671,7 +671,7 @@
         "es_propio": true
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
+        "equipo": "C. A. NUEVA ERA",
         "pj": 4,
         "g": 4,
         "e": 0,
@@ -679,12 +679,12 @@
         "pts": 12
       },
       {
-        "equipo": "C. A. NUEVA ERA",
-        "pj": 3,
-        "g": 3,
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 4,
+        "g": 4,
         "e": 0,
         "p": 0,
-        "pts": 9
+        "pts": 12
       },
       {
         "equipo": "PAMPERO",
@@ -751,15 +751,15 @@
         "pts": 8
       },
       {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 4,
+        "equipo": "BRISTOL F. C.",
+        "pj": 5,
         "g": 1,
         "e": 1,
-        "p": 2,
-        "pts": 7
+        "p": 3,
+        "pts": 8
       },
       {
-        "equipo": "BRISTOL F. C.",
+        "equipo": "C. A. SAN TELMO",
         "pj": 4,
         "g": 1,
         "e": 1,
@@ -818,6 +818,14 @@
         "pts": 12
       },
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 5,
+        "g": 3,
+        "e": 1,
+        "p": 1,
+        "pts": 12
+      },
+      {
         "equipo": "VILLA DON BOSCO",
         "pj": 4,
         "g": 3,
@@ -831,14 +839,6 @@
         "g": 2,
         "e": 0,
         "p": 3,
-        "pts": 9
-      },
-      {
-        "equipo": "BRISTOL F. C.",
-        "pj": 4,
-        "g": 2,
-        "e": 1,
-        "p": 1,
         "pts": 9
       },
       {
@@ -882,6 +882,14 @@
         "pts": 7
       },
       {
+        "equipo": "C. A. NUEVA ERA",
+        "pj": 4,
+        "g": 1,
+        "e": 0,
+        "p": 3,
+        "pts": 6
+      },
+      {
         "equipo": "SOCIAL CLUB",
         "pj": 4,
         "g": 1,
@@ -906,14 +914,6 @@
         "pts": 6
       },
       {
-        "equipo": "C. A. NUEVA ERA",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
         "equipo": "EL BARRIO ''2''",
         "pj": 4,
         "g": 0,
@@ -931,6 +931,14 @@
         "p": 0,
         "pts": 15,
         "es_propio": true
+      },
+      {
+        "equipo": "C. A. NUEVA ERA",
+        "pj": 4,
+        "g": 4,
+        "e": 0,
+        "p": 0,
+        "pts": 12
       },
       {
         "equipo": "SEMILLERO F. C.",
@@ -957,14 +965,6 @@
         "pts": 10
       },
       {
-        "equipo": "C. A. NUEVA ERA",
-        "pj": 3,
-        "g": 3,
-        "e": 0,
-        "p": 0,
-        "pts": 9
-      },
-      {
         "equipo": "NUEVA ESTRELLA",
         "pj": 4,
         "g": 1,
@@ -989,7 +989,7 @@
         "pts": 9
       },
       {
-        "equipo": "A. F. SANTIAGO DE LINIERS",
+        "equipo": "BRISTOL F. C.",
         "pj": 5,
         "g": 2,
         "e": 0,
@@ -997,12 +997,12 @@
         "pts": 9
       },
       {
-        "equipo": "BRISTOL F. C.",
-        "pj": 4,
+        "equipo": "A. F. SANTIAGO DE LINIERS",
+        "pj": 5,
         "g": 2,
         "e": 0,
-        "p": 2,
-        "pts": 8
+        "p": 3,
+        "pts": 9
       },
       {
         "equipo": "CLUB CORVALAN",
