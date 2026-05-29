@@ -1023,7 +1023,7 @@
           ${cats.map(c => `
             <tr>
               <td>Cat. ${c.cat}</td>
-              <td>${c.hora} hs</td>
+              <td>${c.hora === 'Suspendido' ? 'Suspendido' : c.hora + ' hs'}</td>
             </tr>`).join('')}
         </table>`;
     } else {
