@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Apertura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-06-02",
+  "ultima_actualizacion": "2026-06-04",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
     {
@@ -39,12 +39,28 @@
       "pts": 103
     },
     {
+      "equipo": "NUEVA ESTRELLA",
+      "pj": 46,
+      "g": 24,
+      "e": 8,
+      "p": 14,
+      "pts": 102
+    },
+    {
       "equipo": "AMIGOS DE VILLA LURO",
       "pj": 49,
       "g": 24,
       "e": 5,
       "p": 20,
       "pts": 102
+    },
+    {
+      "equipo": "BRISTOL F. C.",
+      "pj": 49,
+      "g": 22,
+      "e": 5,
+      "p": 22,
+      "pts": 98
     },
     {
       "equipo": "PAMPERO",
@@ -71,14 +87,6 @@
       "pts": 88
     },
     {
-      "equipo": "NUEVA ESTRELLA",
-      "pj": 39,
-      "g": 20,
-      "e": 8,
-      "p": 11,
-      "pts": 87
-    },
-    {
       "equipo": "FEDERACION CABALLITO",
       "pj": 49,
       "g": 17,
@@ -92,14 +100,6 @@
       "g": 15,
       "e": 6,
       "p": 28,
-      "pts": 85
-    },
-    {
-      "equipo": "BRISTOL F. C.",
-      "pj": 42,
-      "g": 19,
-      "e": 5,
-      "p": 18,
       "pts": 85
     },
     {
@@ -163,6 +163,14 @@
         "pts": 17
       },
       {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 6,
+        "g": 5,
+        "e": 1,
+        "p": 0,
+        "pts": 17
+      },
+      {
         "equipo": "AMIGOS DE VILLA LURO",
         "pj": 7,
         "g": 4,
@@ -179,15 +187,15 @@
         "pts": 14
       },
       {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 5,
-        "g": 4,
+        "equipo": "C. A. SAN TELMO",
+        "pj": 7,
+        "g": 3,
         "e": 1,
-        "p": 0,
+        "p": 3,
         "pts": 14
       },
       {
-        "equipo": "C. A. SAN TELMO",
+        "equipo": "BRISTOL F. C.",
         "pj": 7,
         "g": 3,
         "e": 1,
@@ -212,14 +220,6 @@
       },
       {
         "equipo": "EL BARRIO ''2''",
-        "pj": 6,
-        "g": 3,
-        "e": 1,
-        "p": 2,
-        "pts": 13
-      },
-      {
-        "equipo": "BRISTOL F. C.",
         "pj": 6,
         "g": 3,
         "e": 1,
@@ -293,6 +293,14 @@
         "pts": 17
       },
       {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 7,
+        "g": 4,
+        "e": 1,
+        "p": 2,
+        "pts": 16
+      },
+      {
         "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 7,
         "g": 4,
@@ -342,14 +350,6 @@
         "pts": 14
       },
       {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 6,
-        "g": 3,
-        "e": 1,
-        "p": 2,
-        "pts": 13
-      },
-      {
         "equipo": "FEDERACION CABALLITO",
         "pj": 7,
         "g": 2,
@@ -391,11 +391,11 @@
       },
       {
         "equipo": "BRISTOL F. C.",
-        "pj": 6,
+        "pj": 7,
         "g": 0,
         "e": 0,
-        "p": 6,
-        "pts": 6
+        "p": 7,
+        "pts": 7
       }
     ],
     "2015": [
@@ -415,6 +415,14 @@
         "e": 0,
         "p": 1,
         "pts": 19
+      },
+      {
+        "equipo": "BRISTOL F. C.",
+        "pj": 7,
+        "g": 5,
+        "e": 1,
+        "p": 1,
+        "pts": 18
       },
       {
         "equipo": "VILLA DON BOSCO",
@@ -446,14 +454,6 @@
         "g": 4,
         "e": 0,
         "p": 3,
-        "pts": 15
-      },
-      {
-        "equipo": "BRISTOL F. C.",
-        "pj": 6,
-        "g": 4,
-        "e": 1,
-        "p": 1,
         "pts": 15
       },
       {
@@ -522,11 +522,11 @@
       },
       {
         "equipo": "NUEVA ESTRELLA",
-        "pj": 6,
+        "pj": 7,
         "g": 0,
         "e": 0,
-        "p": 6,
-        "pts": 6
+        "p": 7,
+        "pts": 7
       }
     ],
     "2016": [
@@ -564,6 +564,14 @@
         "pts": 16
       },
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 7,
+        "g": 4,
+        "e": 1,
+        "p": 2,
+        "pts": 16
+      },
+      {
         "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 7,
         "g": 4,
@@ -588,11 +596,11 @@
         "pts": 15
       },
       {
-        "equipo": "BRISTOL F. C.",
-        "pj": 6,
-        "g": 4,
-        "e": 1,
-        "p": 1,
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 7,
+        "g": 3,
+        "e": 2,
+        "p": 2,
         "pts": 15
       },
       {
@@ -618,14 +626,6 @@
         "e": 2,
         "p": 3,
         "pts": 13
-      },
-      {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 6,
-        "g": 2,
-        "e": 2,
-        "p": 2,
-        "pts": 12
       },
       {
         "equipo": "FEDERACION CABALLITO",
@@ -671,6 +671,14 @@
         "es_propio": true
       },
       {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 7,
+        "g": 5,
+        "e": 1,
+        "p": 1,
+        "pts": 18
+      },
+      {
         "equipo": "SEMILLERO F. C.",
         "pj": 7,
         "g": 5,
@@ -709,14 +717,6 @@
         "e": 1,
         "p": 2,
         "pts": 16
-      },
-      {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 6,
-        "g": 4,
-        "e": 1,
-        "p": 1,
-        "pts": 15
       },
       {
         "equipo": "CLUB CORVALAN",
@@ -760,11 +760,11 @@
       },
       {
         "equipo": "BRISTOL F. C.",
-        "pj": 6,
+        "pj": 7,
         "g": 1,
         "e": 1,
-        "p": 4,
-        "pts": 9
+        "p": 5,
+        "pts": 10
       },
       {
         "equipo": "SOCIAL CLUB",
@@ -810,6 +810,14 @@
         "pts": 18
       },
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 7,
+        "g": 5,
+        "e": 1,
+        "p": 1,
+        "pts": 18
+      },
+      {
         "equipo": "SEMILLERO F. C.",
         "pj": 7,
         "g": 5,
@@ -818,27 +826,19 @@
         "pts": 17
       },
       {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 6,
+        "g": 5,
+        "e": 0,
+        "p": 1,
+        "pts": 16
+      },
+      {
         "equipo": "VILLA DON BOSCO",
         "pj": 7,
         "g": 4,
         "e": 0,
         "p": 3,
-        "pts": 15
-      },
-      {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 5,
-        "g": 5,
-        "e": 0,
-        "p": 0,
-        "pts": 15
-      },
-      {
-        "equipo": "BRISTOL F. C.",
-        "pj": 6,
-        "g": 4,
-        "e": 1,
-        "p": 1,
         "pts": 15
       },
       {
@@ -973,11 +973,27 @@
         "pts": 16
       },
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 7,
+        "g": 4,
+        "e": 0,
+        "p": 3,
+        "pts": 15
+      },
+      {
         "equipo": "SOCIAL CLUB",
         "pj": 7,
         "g": 3,
         "e": 0,
         "p": 4,
+        "pts": 13
+      },
+      {
+        "equipo": "NUEVA ESTRELLA",
+        "pj": 6,
+        "g": 2,
+        "e": 3,
+        "p": 1,
         "pts": 13
       },
       {
@@ -989,27 +1005,11 @@
         "pts": 13
       },
       {
-        "equipo": "NUEVA ESTRELLA",
-        "pj": 5,
-        "g": 2,
-        "e": 3,
-        "p": 0,
-        "pts": 12
-      },
-      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 6,
         "g": 2,
         "e": 2,
         "p": 2,
-        "pts": 12
-      },
-      {
-        "equipo": "BRISTOL F. C.",
-        "pj": 6,
-        "g": 3,
-        "e": 0,
-        "p": 3,
         "pts": 12
       },
       {
