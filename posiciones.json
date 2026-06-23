@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Apertura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-06-21",
+  "ultima_actualizacion": "2026-06-23",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
     {
@@ -23,12 +23,44 @@
       "pts": 152
     },
     {
+      "equipo": "AMIGOS DE VILLA LURO",
+      "pj": 70,
+      "g": 33,
+      "e": 7,
+      "p": 30,
+      "pts": 143
+    },
+    {
+      "equipo": "LA LOMA",
+      "pj": 70,
+      "g": 28,
+      "e": 11,
+      "p": 31,
+      "pts": 137
+    },
+    {
+      "equipo": "BRISTOL F. C.",
+      "pj": 70,
+      "g": 29,
+      "e": 9,
+      "p": 32,
+      "pts": 137
+    },
+    {
       "equipo": "VILLA DON BOSCO",
       "pj": 63,
       "g": 33,
       "e": 7,
       "p": 23,
       "pts": 136
+    },
+    {
+      "equipo": "PAMPERO",
+      "pj": 70,
+      "g": 28,
+      "e": 9,
+      "p": 33,
+      "pts": 135
     },
     {
       "equipo": "NUEVA ESTRELLA",
@@ -47,36 +79,28 @@
       "pts": 131
     },
     {
-      "equipo": "AMIGOS DE VILLA LURO",
-      "pj": 63,
-      "g": 30,
-      "e": 5,
-      "p": 28,
-      "pts": 128
+      "equipo": "FEDERACION CABALLITO",
+      "pj": 68,
+      "g": 26,
+      "e": 6,
+      "p": 36,
+      "pts": 126
     },
     {
-      "equipo": "BRISTOL F. C.",
-      "pj": 63,
-      "g": 27,
-      "e": 7,
-      "p": 29,
-      "pts": 124
+      "equipo": "CLUB CORVALAN",
+      "pj": 70,
+      "g": 23,
+      "e": 10,
+      "p": 37,
+      "pts": 126
     },
     {
-      "equipo": "LA LOMA",
-      "pj": 63,
-      "g": 24,
-      "e": 11,
-      "p": 28,
-      "pts": 122
-    },
-    {
-      "equipo": "PAMPERO",
-      "pj": 63,
+      "equipo": "SOCIAL CLUB",
+      "pj": 70,
       "g": 22,
       "e": 9,
-      "p": 32,
-      "pts": 116
+      "p": 39,
+      "pts": 123
     },
     {
       "equipo": "C. A. NUEVA ERA",
@@ -87,28 +111,12 @@
       "pts": 114
     },
     {
-      "equipo": "SOCIAL CLUB",
-      "pj": 63,
-      "g": 21,
-      "e": 9,
-      "p": 33,
-      "pts": 114
-    },
-    {
-      "equipo": "FEDERACION CABALLITO",
-      "pj": 61,
-      "g": 23,
-      "e": 6,
-      "p": 32,
-      "pts": 113
-    },
-    {
-      "equipo": "CLUB CORVALAN",
-      "pj": 63,
+      "equipo": "C. A. SAN TELMO",
+      "pj": 68,
       "g": 18,
       "e": 9,
-      "p": 36,
-      "pts": 108
+      "p": 39,
+      "pts": 111
     },
     {
       "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -117,14 +125,6 @@
       "e": 7,
       "p": 36,
       "pts": 107
-    },
-    {
-      "equipo": "C. A. SAN TELMO",
-      "pj": 61,
-      "g": 17,
-      "e": 8,
-      "p": 34,
-      "pts": 101
     },
     {
       "equipo": "EL BARRIO ''2''",
@@ -137,6 +137,14 @@
   ],
   "categorias": {
     "2013": [
+      {
+        "equipo": "CLUB CORVALAN",
+        "pj": 10,
+        "g": 6,
+        "e": 2,
+        "p": 2,
+        "pts": 24
+      },
       {
         "equipo": "GIMNASIO CHACABUCO",
         "pj": 9,
@@ -155,6 +163,14 @@
         "pts": 23
       },
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 10,
+        "g": 5,
+        "e": 2,
+        "p": 3,
+        "pts": 22
+      },
+      {
         "equipo": "NUEVA ESTRELLA",
         "pj": 8,
         "g": 6,
@@ -163,27 +179,19 @@
         "pts": 22
       },
       {
-        "equipo": "CLUB CORVALAN",
-        "pj": 9,
-        "g": 5,
-        "e": 2,
-        "p": 2,
-        "pts": 21
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 9,
-        "g": 4,
-        "e": 2,
-        "p": 3,
-        "pts": 19
-      },
-      {
         "equipo": "C. A. NUEVA ERA",
         "pj": 8,
         "g": 5,
         "e": 1,
         "p": 2,
+        "pts": 19
+      },
+      {
+        "equipo": "C. A. SAN TELMO",
+        "pj": 10,
+        "g": 4,
+        "e": 1,
+        "p": 5,
         "pts": 19
       },
       {
@@ -195,44 +203,36 @@
         "pts": 19
       },
       {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 9,
+        "equipo": "BRISTOL F. C.",
+        "pj": 10,
         "g": 4,
         "e": 1,
-        "p": 4,
-        "pts": 18
+        "p": 5,
+        "pts": 19
       },
       {
         "equipo": "LA LOMA",
-        "pj": 9,
+        "pj": 10,
         "g": 3,
         "e": 2,
-        "p": 4,
-        "pts": 17
+        "p": 5,
+        "pts": 18
       },
       {
         "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 9,
+        "pj": 10,
         "g": 4,
         "e": 0,
-        "p": 5,
-        "pts": 17
+        "p": 6,
+        "pts": 18
       },
       {
         "equipo": "SOCIAL CLUB",
-        "pj": 9,
+        "pj": 10,
         "g": 3,
         "e": 1,
-        "p": 5,
-        "pts": 16
-      },
-      {
-        "equipo": "BRISTOL F. C.",
-        "pj": 9,
-        "g": 3,
-        "e": 1,
-        "p": 5,
-        "pts": 16
+        "p": 6,
+        "pts": 17
       },
       {
         "equipo": "SEMILLERO F. C.",
@@ -241,6 +241,14 @@
         "e": 4,
         "p": 4,
         "pts": 15
+      },
+      {
+        "equipo": "PAMPERO",
+        "pj": 10,
+        "g": 1,
+        "e": 1,
+        "p": 8,
+        "pts": 13
       },
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -257,14 +265,6 @@
         "e": 2,
         "p": 7,
         "pts": 11
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 9,
-        "g": 0,
-        "e": 1,
-        "p": 8,
-        "pts": 10
       }
     ],
     "2014": [
@@ -275,6 +275,22 @@
         "e": 0,
         "p": 0,
         "pts": 27
+      },
+      {
+        "equipo": "SOCIAL CLUB",
+        "pj": 10,
+        "g": 6,
+        "e": 2,
+        "p": 2,
+        "pts": 24
+      },
+      {
+        "equipo": "LA LOMA",
+        "pj": 10,
+        "g": 6,
+        "e": 1,
+        "p": 3,
+        "pts": 23
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -294,11 +310,11 @@
         "es_propio": true
       },
       {
-        "equipo": "SOCIAL CLUB",
-        "pj": 9,
-        "g": 5,
-        "e": 2,
-        "p": 2,
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 10,
+        "g": 4,
+        "e": 3,
+        "p": 3,
         "pts": 21
       },
       {
@@ -308,14 +324,6 @@
         "e": 2,
         "p": 2,
         "pts": 21
-      },
-      {
-        "equipo": "LA LOMA",
-        "pj": 9,
-        "g": 5,
-        "e": 1,
-        "p": 3,
-        "pts": 20
       },
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -334,20 +342,12 @@
         "pts": 18
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 9,
-        "g": 3,
-        "e": 3,
-        "p": 3,
-        "pts": 18
-      },
-      {
         "equipo": "PAMPERO",
-        "pj": 9,
+        "pj": 10,
         "g": 3,
         "e": 2,
-        "p": 4,
-        "pts": 17
+        "p": 5,
+        "pts": 18
       },
       {
         "equipo": "EL BARRIO ''2''",
@@ -359,11 +359,27 @@
       },
       {
         "equipo": "FEDERACION CABALLITO",
-        "pj": 9,
+        "pj": 10,
         "g": 2,
         "e": 2,
-        "p": 5,
-        "pts": 15
+        "p": 6,
+        "pts": 16
+      },
+      {
+        "equipo": "CLUB CORVALAN",
+        "pj": 10,
+        "g": 2,
+        "e": 0,
+        "p": 8,
+        "pts": 14
+      },
+      {
+        "equipo": "C. A. SAN TELMO",
+        "pj": 10,
+        "g": 1,
+        "e": 2,
+        "p": 7,
+        "pts": 14
       },
       {
         "equipo": "GLORIAS ARGENTINAS",
@@ -374,28 +390,12 @@
         "pts": 14
       },
       {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 9,
-        "g": 1,
-        "e": 2,
-        "p": 6,
-        "pts": 13
-      },
-      {
-        "equipo": "CLUB CORVALAN",
-        "pj": 9,
-        "g": 1,
-        "e": 0,
-        "p": 8,
-        "pts": 11
-      },
-      {
         "equipo": "BRISTOL F. C.",
-        "pj": 9,
+        "pj": 10,
         "g": 0,
         "e": 0,
-        "p": 9,
-        "pts": 9
+        "p": 10,
+        "pts": 10
       }
     ],
     "2015": [
@@ -409,19 +409,19 @@
         "es_propio": true
       },
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 10,
+        "g": 6,
+        "e": 3,
+        "p": 1,
+        "pts": 25
+      },
+      {
         "equipo": "SEMILLERO F. C.",
         "pj": 9,
         "g": 7,
         "e": 0,
         "p": 2,
-        "pts": 23
-      },
-      {
-        "equipo": "BRISTOL F. C.",
-        "pj": 9,
-        "g": 6,
-        "e": 2,
-        "p": 1,
         "pts": 23
       },
       {
@@ -433,6 +433,22 @@
         "pts": 22
       },
       {
+        "equipo": "PAMPERO",
+        "pj": 10,
+        "g": 5,
+        "e": 1,
+        "p": 4,
+        "pts": 21
+      },
+      {
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 10,
+        "g": 5,
+        "e": 1,
+        "p": 4,
+        "pts": 21
+      },
+      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 9,
         "g": 6,
@@ -441,44 +457,36 @@
         "pts": 21
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
+        "equipo": "C. A. SAN TELMO",
         "pj": 9,
-        "g": 5,
-        "e": 0,
-        "p": 4,
+        "g": 4,
+        "e": 2,
+        "p": 3,
         "pts": 19
       },
       {
-        "equipo": "PAMPERO",
-        "pj": 9,
-        "g": 4,
-        "e": 1,
-        "p": 4,
+        "equipo": "CLUB CORVALAN",
+        "pj": 10,
+        "g": 3,
+        "e": 2,
+        "p": 5,
         "pts": 18
       },
       {
-        "equipo": "CLUB CORVALAN",
+        "equipo": "FEDERACION CABALLITO",
         "pj": 9,
-        "g": 3,
-        "e": 2,
-        "p": 4,
+        "g": 4,
+        "e": 0,
+        "p": 5,
         "pts": 17
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 8,
-        "g": 4,
-        "e": 0,
-        "p": 4,
-        "pts": 16
-      },
-      {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 8,
+        "equipo": "LA LOMA",
+        "pj": 10,
         "g": 3,
-        "e": 2,
-        "p": 3,
-        "pts": 16
+        "e": 1,
+        "p": 6,
+        "pts": 17
       },
       {
         "equipo": "EL BARRIO ''2''",
@@ -498,19 +506,11 @@
       },
       {
         "equipo": "SOCIAL CLUB",
-        "pj": 9,
+        "pj": 10,
         "g": 2,
         "e": 1,
-        "p": 6,
-        "pts": 14
-      },
-      {
-        "equipo": "LA LOMA",
-        "pj": 9,
-        "g": 2,
-        "e": 1,
-        "p": 6,
-        "pts": 14
+        "p": 7,
+        "pts": 15
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -540,12 +540,36 @@
         "es_propio": true
       },
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 10,
+        "g": 5,
+        "e": 3,
+        "p": 2,
+        "pts": 23
+      },
+      {
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 10,
+        "g": 5,
+        "e": 2,
+        "p": 3,
+        "pts": 22
+      },
+      {
         "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 9,
         "g": 6,
         "e": 1,
         "p": 2,
         "pts": 22
+      },
+      {
+        "equipo": "CLUB CORVALAN",
+        "pj": 10,
+        "g": 4,
+        "e": 3,
+        "p": 3,
+        "pts": 21
       },
       {
         "equipo": "GLORIAS ARGENTINAS",
@@ -556,19 +580,11 @@
         "pts": 21
       },
       {
-        "equipo": "BRISTOL F. C.",
-        "pj": 9,
-        "g": 5,
+        "equipo": "PAMPERO",
+        "pj": 10,
+        "g": 4,
         "e": 2,
-        "p": 2,
-        "pts": 21
-      },
-      {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 9,
-        "g": 5,
-        "e": 1,
-        "p": 3,
+        "p": 4,
         "pts": 20
       },
       {
@@ -580,20 +596,20 @@
         "pts": 20
       },
       {
-        "equipo": "CLUB CORVALAN",
-        "pj": 9,
+        "equipo": "SOCIAL CLUB",
+        "pj": 10,
         "g": 3,
         "e": 3,
-        "p": 3,
-        "pts": 18
+        "p": 4,
+        "pts": 19
       },
       {
-        "equipo": "SOCIAL CLUB",
-        "pj": 9,
+        "equipo": "LA LOMA",
+        "pj": 10,
         "g": 3,
         "e": 3,
-        "p": 3,
-        "pts": 18
+        "p": 4,
+        "pts": 19
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -604,19 +620,11 @@
         "pts": 18
       },
       {
-        "equipo": "LA LOMA",
+        "equipo": "FEDERACION CABALLITO",
         "pj": 9,
-        "g": 3,
-        "e": 3,
-        "p": 3,
-        "pts": 18
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 9,
-        "g": 3,
-        "e": 2,
-        "p": 4,
+        "g": 4,
+        "e": 0,
+        "p": 5,
         "pts": 17
       },
       {
@@ -626,14 +634,6 @@
         "e": 0,
         "p": 5,
         "pts": 17
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 8,
-        "g": 3,
-        "e": 0,
-        "p": 5,
-        "pts": 14
       },
       {
         "equipo": "C. A. NUEVA ERA",
@@ -653,14 +653,30 @@
       },
       {
         "equipo": "C. A. SAN TELMO",
-        "pj": 8,
+        "pj": 9,
         "g": 0,
         "e": 1,
-        "p": 7,
-        "pts": 9
+        "p": 8,
+        "pts": 10
       }
     ],
     "2017": [
+      {
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 10,
+        "g": 8,
+        "e": 0,
+        "p": 2,
+        "pts": 26
+      },
+      {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 10,
+        "g": 6,
+        "e": 2,
+        "p": 2,
+        "pts": 24
+      },
       {
         "equipo": "GIMNASIO CHACABUCO",
         "pj": 9,
@@ -679,14 +695,6 @@
         "pts": 24
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 9,
-        "g": 7,
-        "e": 0,
-        "p": 2,
-        "pts": 23
-      },
-      {
         "equipo": "NUEVA ESTRELLA",
         "pj": 9,
         "g": 6,
@@ -695,11 +703,11 @@
         "pts": 22
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 9,
-        "g": 5,
-        "e": 2,
-        "p": 2,
+        "equipo": "C. A. SAN TELMO",
+        "pj": 10,
+        "g": 4,
+        "e": 3,
+        "p": 3,
         "pts": 21
       },
       {
@@ -711,27 +719,27 @@
         "pts": 20
       },
       {
+        "equipo": "LA LOMA",
+        "pj": 10,
+        "g": 4,
+        "e": 2,
+        "p": 4,
+        "pts": 20
+      },
+      {
+        "equipo": "CLUB CORVALAN",
+        "pj": 10,
+        "g": 3,
+        "e": 3,
+        "p": 4,
+        "pts": 19
+      },
+      {
         "equipo": "VILLA DON BOSCO",
         "pj": 9,
         "g": 3,
         "e": 4,
         "p": 2,
-        "pts": 19
-      },
-      {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 9,
-        "g": 4,
-        "e": 2,
-        "p": 3,
-        "pts": 19
-      },
-      {
-        "equipo": "LA LOMA",
-        "pj": 9,
-        "g": 4,
-        "e": 2,
-        "p": 3,
         "pts": 19
       },
       {
@@ -743,36 +751,28 @@
         "pts": 18
       },
       {
-        "equipo": "CLUB CORVALAN",
-        "pj": 9,
+        "equipo": "PAMPERO",
+        "pj": 10,
         "g": 3,
-        "e": 2,
-        "p": 4,
+        "e": 1,
+        "p": 6,
         "pts": 17
       },
       {
-        "equipo": "PAMPERO",
-        "pj": 9,
-        "g": 2,
-        "e": 1,
-        "p": 6,
-        "pts": 14
-      },
-      {
         "equipo": "BRISTOL F. C.",
-        "pj": 9,
+        "pj": 10,
         "g": 1,
         "e": 1,
-        "p": 7,
-        "pts": 12
+        "p": 8,
+        "pts": 13
       },
       {
         "equipo": "SOCIAL CLUB",
-        "pj": 9,
+        "pj": 10,
         "g": 0,
         "e": 2,
-        "p": 7,
-        "pts": 11
+        "p": 8,
+        "pts": 12
       },
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -793,6 +793,14 @@
     ],
     "2018": [
       {
+        "equipo": "BRISTOL F. C.",
+        "pj": 10,
+        "g": 8,
+        "e": 1,
+        "p": 1,
+        "pts": 27
+      },
+      {
         "equipo": "GIMNASIO CHACABUCO",
         "pj": 9,
         "g": 8,
@@ -802,12 +810,12 @@
         "es_propio": true
       },
       {
-        "equipo": "BRISTOL F. C.",
-        "pj": 9,
+        "equipo": "PAMPERO",
+        "pj": 10,
         "g": 7,
         "e": 1,
-        "p": 1,
-        "pts": 24
+        "p": 2,
+        "pts": 25
       },
       {
         "equipo": "SEMILLERO F. C.",
@@ -818,19 +826,19 @@
         "pts": 23
       },
       {
-        "equipo": "PAMPERO",
-        "pj": 9,
-        "g": 6,
-        "e": 1,
-        "p": 2,
-        "pts": 22
-      },
-      {
         "equipo": "NUEVA ESTRELLA",
         "pj": 8,
         "g": 6,
         "e": 0,
         "p": 2,
+        "pts": 20
+      },
+      {
+        "equipo": "LA LOMA",
+        "pj": 10,
+        "g": 5,
+        "e": 0,
+        "p": 5,
         "pts": 20
       },
       {
@@ -842,6 +850,22 @@
         "pts": 19
       },
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 10,
+        "g": 4,
+        "e": 0,
+        "p": 6,
+        "pts": 18
+      },
+      {
+        "equipo": "SOCIAL CLUB",
+        "pj": 10,
+        "g": 4,
+        "e": 0,
+        "p": 6,
+        "pts": 18
+      },
+      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 8,
         "g": 5,
@@ -850,28 +874,12 @@
         "pts": 18
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 9,
-        "g": 4,
+        "equipo": "CLUB CORVALAN",
+        "pj": 10,
+        "g": 3,
         "e": 0,
-        "p": 5,
-        "pts": 17
-      },
-      {
-        "equipo": "SOCIAL CLUB",
-        "pj": 9,
-        "g": 4,
-        "e": 0,
-        "p": 5,
-        "pts": 17
-      },
-      {
-        "equipo": "LA LOMA",
-        "pj": 9,
-        "g": 4,
-        "e": 0,
-        "p": 5,
-        "pts": 17
+        "p": 7,
+        "pts": 16
       },
       {
         "equipo": "C. A. NUEVA ERA",
@@ -882,28 +890,20 @@
         "pts": 15
       },
       {
-        "equipo": "CLUB CORVALAN",
-        "pj": 9,
-        "g": 2,
-        "e": 0,
-        "p": 7,
-        "pts": 13
-      },
-      {
         "equipo": "C. A. SAN TELMO",
-        "pj": 9,
+        "pj": 10,
         "g": 2,
         "e": 0,
-        "p": 7,
-        "pts": 13
+        "p": 8,
+        "pts": 14
       },
       {
         "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 9,
+        "pj": 10,
         "g": 2,
         "e": 0,
-        "p": 7,
-        "pts": 13
+        "p": 8,
+        "pts": 14
       },
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -949,12 +949,44 @@
         "pts": 22
       },
       {
+        "equipo": "PAMPERO",
+        "pj": 10,
+        "g": 5,
+        "e": 1,
+        "p": 4,
+        "pts": 21
+      },
+      {
         "equipo": "VILLA DON BOSCO",
         "pj": 9,
         "g": 6,
         "e": 0,
         "p": 3,
         "pts": 21
+      },
+      {
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 10,
+        "g": 5,
+        "e": 1,
+        "p": 4,
+        "pts": 21
+      },
+      {
+        "equipo": "LA LOMA",
+        "pj": 10,
+        "g": 4,
+        "e": 2,
+        "p": 4,
+        "pts": 20
+      },
+      {
+        "equipo": "BRISTOL F. C.",
+        "pj": 10,
+        "g": 5,
+        "e": 0,
+        "p": 5,
+        "pts": 20
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -965,44 +997,12 @@
         "pts": 19
       },
       {
-        "equipo": "BRISTOL F. C.",
-        "pj": 9,
-        "g": 5,
-        "e": 0,
-        "p": 4,
-        "pts": 19
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 9,
-        "g": 4,
-        "e": 1,
-        "p": 4,
-        "pts": 18
-      },
-      {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 9,
-        "g": 4,
-        "e": 1,
-        "p": 4,
-        "pts": 18
-      },
-      {
         "equipo": "SOCIAL CLUB",
-        "pj": 9,
+        "pj": 10,
         "g": 4,
         "e": 0,
-        "p": 5,
-        "pts": 17
-      },
-      {
-        "equipo": "LA LOMA",
-        "pj": 9,
-        "g": 3,
-        "e": 2,
-        "p": 4,
-        "pts": 17
+        "p": 6,
+        "pts": 18
       },
       {
         "equipo": "GLORIAS ARGENTINAS",
@@ -1013,12 +1013,28 @@
         "pts": 16
       },
       {
+        "equipo": "CLUB CORVALAN",
+        "pj": 10,
+        "g": 2,
+        "e": 0,
+        "p": 8,
+        "pts": 14
+      },
+      {
         "equipo": "C. A. SAN TELMO",
-        "pj": 9,
+        "pj": 10,
         "g": 3,
         "e": 0,
-        "p": 4,
-        "pts": 13
+        "p": 5,
+        "pts": 14
+      },
+      {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 10,
+        "g": 1,
+        "e": 0,
+        "p": 9,
+        "pts": 12
       },
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
@@ -1027,22 +1043,6 @@
         "e": 0,
         "p": 6,
         "pts": 12
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 9,
-        "g": 1,
-        "e": 0,
-        "p": 8,
-        "pts": 11
-      },
-      {
-        "equipo": "CLUB CORVALAN",
-        "pj": 9,
-        "g": 1,
-        "e": 0,
-        "p": 8,
-        "pts": 11
       },
       {
         "equipo": "EL BARRIO ''2''",
