@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Apertura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-06-26",
+  "ultima_actualizacion": "2026-06-27",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
     {
@@ -25,10 +25,10 @@
     {
       "equipo": "GLORIAS ARGENTINAS",
       "pj": 67,
-      "g": 37,
-      "e": 8,
+      "g": 38,
+      "e": 7,
       "p": 22,
-      "pts": 149
+      "pts": 150
     },
     {
       "equipo": "VILLA DON BOSCO",
@@ -114,9 +114,9 @@
       "equipo": "A. F. SANTIAGO DE LINIERS",
       "pj": 70,
       "g": 20,
-      "e": 8,
-      "p": 41,
-      "pts": 117
+      "e": 7,
+      "p": 42,
+      "pts": 116
     },
     {
       "equipo": "C. A. SAN TELMO",
@@ -425,15 +425,15 @@
         "pts": 24
       },
       {
-        "equipo": "VILLA DON BOSCO",
+        "equipo": "GLORIAS ARGENTINAS",
         "pj": 10,
-        "g": 6,
-        "e": 1,
+        "g": 7,
+        "e": 0,
         "p": 3,
-        "pts": 23
+        "pts": 24
       },
       {
-        "equipo": "GLORIAS ARGENTINAS",
+        "equipo": "VILLA DON BOSCO",
         "pj": 10,
         "g": 6,
         "e": 1,
@@ -481,14 +481,6 @@
         "pts": 18
       },
       {
-        "equipo": "A. F. SANTIAGO DE LINIERS",
-        "pj": 10,
-        "g": 3,
-        "e": 2,
-        "p": 5,
-        "pts": 18
-      },
-      {
         "equipo": "FEDERACION CABALLITO",
         "pj": 9,
         "g": 4,
@@ -498,6 +490,14 @@
       },
       {
         "equipo": "LA LOMA",
+        "pj": 10,
+        "g": 3,
+        "e": 1,
+        "p": 6,
+        "pts": 17
+      },
+      {
+        "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 10,
         "g": 3,
         "e": 1,
