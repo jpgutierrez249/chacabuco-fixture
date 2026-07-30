@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Apertura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-07-29",
+  "ultima_actualizacion": "2026-07-30",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
     {
@@ -55,19 +55,19 @@
       "pts": 204
     },
     {
+      "equipo": "LA LOMA",
+      "pj": 98,
+      "g": 39,
+      "e": 12,
+      "p": 47,
+      "pts": 188
+    },
+    {
       "equipo": "C. A. NUEVA ERA",
       "pj": 91,
       "g": 47,
       "e": 7,
       "p": 31,
-      "pts": 186
-    },
-    {
-      "equipo": "LA LOMA",
-      "pj": 98,
-      "g": 38,
-      "e": 12,
-      "p": 48,
       "pts": 186
     },
     {
@@ -87,20 +87,20 @@
       "pts": 183
     },
     {
-      "equipo": "SOCIAL CLUB",
-      "pj": 91,
-      "g": 30,
-      "e": 13,
-      "p": 48,
-      "pts": 164
-    },
-    {
       "equipo": "A. F. SANTIAGO DE LINIERS",
       "pj": 98,
       "g": 28,
       "e": 11,
       "p": 57,
       "pts": 163
+    },
+    {
+      "equipo": "SOCIAL CLUB",
+      "pj": 91,
+      "g": 29,
+      "e": 13,
+      "p": 49,
+      "pts": 162
     },
     {
       "equipo": "EL BARRIO ''2''",
@@ -850,6 +850,14 @@
         "pts": 28
       },
       {
+        "equipo": "LA LOMA",
+        "pj": 14,
+        "g": 7,
+        "e": 0,
+        "p": 7,
+        "pts": 28
+      },
+      {
         "equipo": "C. A. NUEVA ERA",
         "pj": 13,
         "g": 6,
@@ -858,23 +866,7 @@
         "pts": 27
       },
       {
-        "equipo": "LA LOMA",
-        "pj": 14,
-        "g": 6,
-        "e": 0,
-        "p": 8,
-        "pts": 26
-      },
-      {
         "equipo": "FEDERACION CABALLITO",
-        "pj": 13,
-        "g": 5,
-        "e": 0,
-        "p": 8,
-        "pts": 23
-      },
-      {
-        "equipo": "SOCIAL CLUB",
         "pj": 13,
         "g": 5,
         "e": 0,
@@ -896,6 +888,14 @@
         "e": 0,
         "p": 10,
         "pts": 22
+      },
+      {
+        "equipo": "SOCIAL CLUB",
+        "pj": 13,
+        "g": 4,
+        "e": 0,
+        "p": 9,
+        "pts": 21
       },
       {
         "equipo": "C. A. SAN TELMO",
