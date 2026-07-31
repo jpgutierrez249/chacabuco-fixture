@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Apertura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-07-30",
+  "ultima_actualizacion": "2026-07-31",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
     {
@@ -87,6 +87,22 @@
       "pts": 183
     },
     {
+      "equipo": "FEDERACION CABALLITO",
+      "pj": 96,
+      "g": 33,
+      "e": 11,
+      "p": 52,
+      "pts": 173
+    },
+    {
+      "equipo": "EL BARRIO ''2''",
+      "pj": 98,
+      "g": 31,
+      "e": 11,
+      "p": 55,
+      "pts": 170
+    },
+    {
       "equipo": "A. F. SANTIAGO DE LINIERS",
       "pj": 98,
       "g": 28,
@@ -101,22 +117,6 @@
       "e": 13,
       "p": 49,
       "pts": 162
-    },
-    {
-      "equipo": "EL BARRIO ''2''",
-      "pj": 91,
-      "g": 30,
-      "e": 9,
-      "p": 51,
-      "pts": 159
-    },
-    {
-      "equipo": "FEDERACION CABALLITO",
-      "pj": 89,
-      "g": 29,
-      "e": 9,
-      "p": 51,
-      "pts": 156
     },
     {
       "equipo": "CLUB CORVALAN",
@@ -171,6 +171,14 @@
         "pts": 33
       },
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 14,
+        "g": 7,
+        "e": 4,
+        "p": 3,
+        "pts": 32
+      },
+      {
         "equipo": "CLUB CORVALAN",
         "pj": 13,
         "g": 7,
@@ -179,20 +187,12 @@
         "pts": 31
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 13,
-        "g": 6,
-        "e": 4,
-        "p": 3,
-        "pts": 29
-      },
-      {
         "equipo": "EL BARRIO ''2''",
-        "pj": 13,
+        "pj": 14,
         "g": 7,
         "e": 2,
-        "p": 4,
-        "pts": 29
+        "p": 5,
+        "pts": 30
       },
       {
         "equipo": "BRISTOL F. C.",
@@ -277,6 +277,14 @@
         "pts": 41
       },
       {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 14,
+        "g": 9,
+        "e": 2,
+        "p": 3,
+        "pts": 34
+      },
+      {
         "equipo": "LA LOMA",
         "pj": 14,
         "g": 9,
@@ -298,14 +306,6 @@
         "g": 8,
         "e": 3,
         "p": 2,
-        "pts": 32
-      },
-      {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 13,
-        "g": 9,
-        "e": 1,
-        "p": 3,
         "pts": 32
       },
       {
@@ -366,20 +366,20 @@
         "pts": 22
       },
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 14,
+        "g": 2,
+        "e": 3,
+        "p": 9,
+        "pts": 21
+      },
+      {
         "equipo": "C. A. SAN TELMO",
         "pj": 14,
         "g": 2,
         "e": 2,
         "p": 10,
         "pts": 20
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 13,
-        "g": 2,
-        "e": 2,
-        "p": 9,
-        "pts": 19
       },
       {
         "equipo": "CLUB CORVALAN",
@@ -458,11 +458,11 @@
       },
       {
         "equipo": "EL BARRIO ''2''",
-        "pj": 13,
+        "pj": 14,
         "g": 6,
         "e": 3,
-        "p": 4,
-        "pts": 28
+        "p": 5,
+        "pts": 29
       },
       {
         "equipo": "C. A. SAN TELMO",
@@ -471,6 +471,14 @@
         "e": 2,
         "p": 5,
         "pts": 27
+      },
+      {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 13,
+        "g": 6,
+        "e": 0,
+        "p": 7,
+        "pts": 25
       },
       {
         "equipo": "CLUB CORVALAN",
@@ -487,14 +495,6 @@
         "e": 1,
         "p": 9,
         "pts": 23
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 12,
-        "g": 5,
-        "e": 0,
-        "p": 7,
-        "pts": 22
       },
       {
         "equipo": "SOCIAL CLUB",
@@ -628,6 +628,14 @@
         "pts": 23
       },
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 13,
+        "g": 4,
+        "e": 1,
+        "p": 8,
+        "pts": 22
+      },
+      {
         "equipo": "C. A. NUEVA ERA",
         "pj": 13,
         "g": 4,
@@ -636,20 +644,12 @@
         "pts": 22
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 12,
-        "g": 4,
-        "e": 0,
-        "p": 8,
-        "pts": 20
-      },
-      {
         "equipo": "EL BARRIO ''2''",
-        "pj": 13,
+        "pj": 14,
         "g": 2,
-        "e": 2,
+        "e": 3,
         "p": 9,
-        "pts": 19
+        "pts": 21
       },
       {
         "equipo": "C. A. SAN TELMO",
@@ -703,20 +703,20 @@
         "pts": 32
       },
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 14,
+        "g": 7,
+        "e": 3,
+        "p": 4,
+        "pts": 31
+      },
+      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 13,
         "g": 7,
         "e": 2,
         "p": 4,
         "pts": 29
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 13,
-        "g": 6,
-        "e": 3,
-        "p": 4,
-        "pts": 28
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -759,20 +759,20 @@
         "pts": 24
       },
       {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 14,
+        "g": 3,
+        "e": 0,
+        "p": 10,
+        "pts": 19
+      },
+      {
         "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 14,
         "g": 1,
         "e": 3,
         "p": 10,
         "pts": 19
-      },
-      {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 13,
-        "g": 3,
-        "e": 0,
-        "p": 9,
-        "pts": 18
       },
       {
         "equipo": "BRISTOL F. C.",
@@ -867,11 +867,11 @@
       },
       {
         "equipo": "FEDERACION CABALLITO",
-        "pj": 13,
-        "g": 5,
+        "pj": 14,
+        "g": 6,
         "e": 0,
         "p": 8,
-        "pts": 23
+        "pts": 26
       },
       {
         "equipo": "AMIGOS DE VILLA LURO",
@@ -915,11 +915,11 @@
       },
       {
         "equipo": "EL BARRIO ''2''",
-        "pj": 13,
+        "pj": 14,
         "g": 2,
         "e": 0,
-        "p": 11,
-        "pts": 17
+        "p": 12,
+        "pts": 18
       }
     ],
     "2019": [
@@ -1013,6 +1013,14 @@
         "pts": 23
       },
       {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 14,
+        "g": 2,
+        "e": 1,
+        "p": 11,
+        "pts": 19
+      },
+      {
         "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 14,
         "g": 3,
@@ -1029,28 +1037,20 @@
         "pts": 18
       },
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 14,
+        "g": 1,
+        "e": 0,
+        "p": 13,
+        "pts": 16
+      },
+      {
         "equipo": "CLUB CORVALAN",
         "pj": 13,
         "g": 2,
         "e": 0,
         "p": 10,
         "pts": 16
-      },
-      {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 13,
-        "g": 1,
-        "e": 1,
-        "p": 11,
-        "pts": 16
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 13,
-        "g": 1,
-        "e": 0,
-        "p": 12,
-        "pts": 15
       }
     ]
   }
