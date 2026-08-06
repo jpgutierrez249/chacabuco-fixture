@@ -10,6 +10,20 @@ const cheerio = require('cheerio');
 const FEFI_URL = 'https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/';
 const OUTPUT   = path.join(__dirname, '..', 'posiciones.json');
 
+// ── Qué fase scrapear ────────────────────────────────────────────────────
+// La página de FEFI trae las dos fases en la misma URL, en solapas distintas
+// de la botonera. Los botones no linkean por href (Elementor las muestra y
+// oculta por JS), así que hay que ubicar la tabla por su contenedor:
+//
+//   #cont5 → "TABLAS APERTURA"
+//   #cont7 → "TABLAS CLAUSURA"
+//
+// Si FEFI reordena la página y el id cambia, se cae al fallback por orden:
+// la 1ª tabla de posiciones del documento es Apertura, la 2ª es Clausura.
+const FASE            = 'Clausura';
+const FASE_SELECTOR   = '#cont7';
+const FASE_ORDEN      = 2;
+
 
 function get(url) {
   return new Promise((resolve, reject) => {
@@ -33,18 +47,38 @@ function norm(t) {
 // ── Tabla de posiciones (Table 3) — parsea todas las secciones ───────────
 // La tabla tiene secciones separadas por filas colspan: "GENERAL", "2019", "2013", etc.
 function parsearTablaPosiciones($) {
-  let tablaEl = null;
-
+  // Todas las tablas de posiciones del documento, en orden (Apertura, Clausura)
+  const candidatas = [];
   $('table').each((_, table) => {
     const headers = [];
     $(table).find('thead th').each((_, th) => headers.push(norm($(th).text())));
     if (headers.includes('pj') && headers.includes('pts.') && headers.includes('equipos')) {
-      tablaEl = table;
-      return false;
+      candidatas.push(table);
     }
   });
 
-  if (!tablaEl) throw new Error('Tabla de posiciones no encontrada');
+  if (candidatas.length === 0) throw new Error('No se encontró ninguna tabla de posiciones');
+
+  // Preferimos el contenedor de la fase; si no está, caemos al orden
+  const porSelector = $(FASE_SELECTOR).find('table').get(0);
+  let tablaEl = candidatas.find(t => t === porSelector);
+
+  if (tablaEl) {
+    console.log(`   Tabla de ${FASE} ubicada por ${FASE_SELECTOR}`);
+  } else {
+    tablaEl = candidatas[FASE_ORDEN - 1];
+    if (!tablaEl) {
+      throw new Error(
+        `Tabla de ${FASE} no encontrada: ${FASE_SELECTOR} no matcheó y solo hay ` +
+        `${candidatas.length} tabla(s) de posiciones (se esperaba al menos ${FASE_ORDEN}). ` +
+        `Revisar la estructura de ${FEFI_URL}`
+      );
+    }
+    console.warn(
+      `   ⚠️  ${FASE_SELECTOR} no matcheó — usando la tabla #${FASE_ORDEN} por orden. ` +
+      `Verificar que FEFI no haya reordenado la página.`
+    );
+  }
 
   const secciones = {}; // { 'GENERAL': [...], '2019': [...], ... }
   let seccionActual = null;
@@ -98,6 +132,7 @@ async function main() {
   const actual = JSON.parse(fs.readFileSync(OUTPUT, 'utf8'));
   const nuevo  = {
     ...actual,
+    fase: FASE,
     ultima_actualizacion: new Date().toISOString().split('T')[0],
     general,
     categorias,

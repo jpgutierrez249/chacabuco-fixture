@@ -1,20 +1,20 @@
 {
   "club": {
     "nombre": "Club Chacabuco",
-    "torneo": "FEFI 2026",
+    "torneo": "FEFI 2026 Clausura",
     "temporada": "2026",
     "categoria": "Vespertino-F"
   },
   "fixture": [
     {
       "numero": 1,
-      "fecha": "2026-04-18",
+      "fecha": "2026-08-08",
       "hora": "15:30",
-      "local": "Chacabuco",
-      "visitante": "Glorias Argentinas",
-      "condicion": "local",
+      "local": "Glorias Argentinas",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
       "rival": "Glorias Argentinas",
-      "cancha": "Chacabuco",
+      "cancha": "Glorias Argentinas",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -54,13 +54,13 @@
     },
     {
       "numero": 2,
-      "fecha": "2026-04-25",
+      "fecha": "2026-08-15",
       "hora": "15:30",
-      "local": "El Barrio 2",
-      "visitante": "Chacabuco",
-      "condicion": "visitante",
+      "local": "Chacabuco",
+      "visitante": "El Barrio 2",
+      "condicion": "local",
       "rival": "El Barrio 2",
-      "cancha": "El Barrio 2",
+      "cancha": "Chacabuco",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -69,11 +69,11 @@
       "categorias": [
         {
           "cat": "2019",
-          "hora": "14:10"
+          "hora": "14:00"
         },
         {
           "cat": "2013",
-          "hora": "14:50"
+          "hora": "14:40"
         },
         {
           "cat": "2018",
@@ -100,13 +100,13 @@
     },
     {
       "numero": 3,
-      "fecha": "2026-05-02",
+      "fecha": "2026-08-22",
       "hora": "15:30",
-      "local": "Chacabuco",
-      "visitante": "Bristol FC",
-      "condicion": "local",
+      "local": "Bristol FC",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
       "rival": "Bristol FC",
-      "cancha": "Chacabuco",
+      "cancha": "Bristol FC",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -146,13 +146,13 @@
     },
     {
       "numero": 4,
-      "fecha": "2026-05-09",
+      "fecha": "2026-08-29",
       "hora": "15:30",
-      "local": "Federacion Caballito",
-      "visitante": "Chacabuco",
-      "condicion": "visitante",
+      "local": "Chacabuco",
+      "visitante": "Federacion Caballito",
+      "condicion": "local",
       "rival": "Federacion Caballito",
-      "cancha": "Federacion Caballito",
+      "cancha": "Chacabuco",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -192,13 +192,13 @@
     },
     {
       "numero": 5,
-      "fecha": "2026-05-16",
+      "fecha": "2026-09-05",
       "hora": "15:30",
-      "local": "Chacabuco",
-      "visitante": "Corvalan",
-      "condicion": "local",
+      "local": "Corvalan",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
       "rival": "Corvalan",
-      "cancha": "Chacabuco",
+      "cancha": "Corvalan",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -238,13 +238,13 @@
     },
     {
       "numero": 6,
-      "fecha": "2026-05-23",
+      "fecha": "2026-09-12",
       "hora": "15:30",
-      "local": "Nueva Era",
-      "visitante": "Chacabuco",
-      "condicion": "visitante",
+      "local": "Chacabuco",
+      "visitante": "Nueva Era",
+      "condicion": "local",
       "rival": "Nueva Era",
-      "cancha": "Nueva Era",
+      "cancha": "Chacabuco",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -257,40 +257,40 @@
         },
         {
           "cat": "2013",
-          "hora": "14:30"
+          "hora": "14:40"
         },
         {
           "cat": "2018",
-          "hora": "15:15"
+          "hora": "15:40"
         },
         {
           "cat": "2014",
-          "hora": "16:00"
+          "hora": "16:30"
         },
         {
           "cat": "2017",
-          "hora": "16:50"
+          "hora": "17:30"
         },
         {
           "cat": "2016",
-          "hora": "17:45"
+          "hora": "18:30"
         },
         {
           "cat": "2015",
-          "hora": "18:30"
+          "hora": "19:30"
         }
       ],
       "precio": 7000
     },
     {
       "numero": 7,
-      "fecha": "2026-05-30",
+      "fecha": "2026-09-19",
       "hora": "15:30",
-      "local": "Chacabuco",
-      "visitante": "Santiago de Liniers",
-      "condicion": "local",
+      "local": "Santiago de Liniers",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
       "rival": "Santiago de Liniers",
-      "cancha": "Chacabuco",
+      "cancha": "Santiago de Liniers",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -299,44 +299,44 @@
       "categorias": [
         {
           "cat": "2019",
-          "hora": "Suspendido"
+          "hora": "14:00"
         },
         {
           "cat": "2013",
-          "hora": "14:10"
+          "hora": "14:40"
         },
         {
           "cat": "2018",
-          "hora": "14:50"
-        },
-        {
-          "cat": "2014",
           "hora": "15:40"
         },
         {
-          "cat": "2017",
+          "cat": "2014",
           "hora": "16:30"
         },
         {
-          "cat": "2016",
+          "cat": "2017",
           "hora": "17:30"
         },
         {
-          "cat": "2015",
+          "cat": "2016",
           "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
         }
       ],
       "precio": 7000
     },
     {
       "numero": 8,
-      "fecha": "2026-06-06",
+      "fecha": "2026-09-26",
       "hora": "15:30",
-      "local": "Chacabuco",
-      "visitante": "Social Club",
-      "condicion": "local",
+      "local": "Social Club",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
       "rival": "Social Club",
-      "cancha": "Chacabuco",
+      "cancha": "Social Club",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -376,13 +376,13 @@
     },
     {
       "numero": 9,
-      "fecha": "2026-06-13",
+      "fecha": "2026-10-03",
       "hora": "15:30",
-      "local": "Pampero",
-      "visitante": "Chacabuco",
-      "condicion": "visitante",
+      "local": "Chacabuco",
+      "visitante": "Pampero",
+      "condicion": "local",
       "rival": "Pampero",
-      "cancha": "Pampero",
+      "cancha": "Chacabuco",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -422,13 +422,13 @@
     },
     {
       "numero": 10,
-      "fecha": "2026-06-20",
+      "fecha": "2026-10-10",
       "hora": "15:30",
-      "local": "Chacabuco",
-      "visitante": "Villa Don Bosco",
-      "condicion": "local",
+      "local": "Villa Don Bosco",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
       "rival": "Villa Don Bosco",
-      "cancha": "Chacabuco",
+      "cancha": "Villa Don Bosco",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -468,13 +468,13 @@
     },
     {
       "numero": 11,
-      "fecha": "2026-06-27",
+      "fecha": "2026-10-17",
       "hora": "15:30",
-      "local": "Nueva Estrella",
-      "visitante": "Chacabuco",
-      "condicion": "visitante",
+      "local": "Chacabuco",
+      "visitante": "Nueva Estrella",
+      "condicion": "local",
       "rival": "Nueva Estrella",
-      "cancha": "Nueva Estrella",
+      "cancha": "Chacabuco",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -491,36 +491,36 @@
         },
         {
           "cat": "2018",
-          "hora": "15:30"
+          "hora": "15:40"
         },
         {
           "cat": "2014",
-          "hora": "16:10"
+          "hora": "16:30"
         },
         {
           "cat": "2017",
-          "hora": "17:00"
+          "hora": "17:30"
         },
         {
           "cat": "2016",
-          "hora": "17:50"
+          "hora": "18:30"
         },
         {
           "cat": "2015",
-          "hora": "18:30"
+          "hora": "19:30"
         }
       ],
       "precio": 7000
     },
     {
       "numero": 12,
-      "fecha": "2026-07-04",
+      "fecha": "2026-10-24",
       "hora": "15:30",
-      "local": "Chacabuco",
-      "visitante": "San Telmo",
-      "condicion": "local",
+      "local": "San Telmo",
+      "visitante": "Chacabuco",
+      "condicion": "visitante",
       "rival": "San Telmo",
-      "cancha": "Chacabuco",
+      "cancha": "San Telmo",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null
@@ -560,58 +560,12 @@
     },
     {
       "numero": 13,
-      "fecha": "2026-07-11",
-      "hora": "15:30",
-      "local": "La Loma",
-      "visitante": "Chacabuco",
-      "condicion": "visitante",
-      "rival": "La Loma",
-      "cancha": "La Loma",
-      "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
-      },
-      "estado": "pendiente",
-      "categorias": [
-        {
-          "cat": "2019",
-          "hora": "14:00"
-        },
-        {
-          "cat": "2013",
-          "hora": "14:40"
-        },
-        {
-          "cat": "2018",
-          "hora": "15:40"
-        },
-        {
-          "cat": "2014",
-          "hora": "16:30"
-        },
-        {
-          "cat": "2017",
-          "hora": "17:30"
-        },
-        {
-          "cat": "2016",
-          "hora": "18:30"
-        },
-        {
-          "cat": "2015",
-          "hora": "19:30"
-        }
-      ],
-      "precio": 7000
-    },
-    {
-      "numero": 14,
-      "fecha": "2026-07-18",
+      "fecha": "2026-10-31",
       "hora": "15:30",
       "local": "Chacabuco",
-      "visitante": "Amigos de Villa Luro",
+      "visitante": "La Loma",
       "condicion": "local",
-      "rival": "Amigos de Villa Luro",
+      "rival": "La Loma",
       "cancha": "Chacabuco",
       "resultado": {
         "goles_local": null,
@@ -651,14 +605,60 @@
       "precio": 7000
     },
     {
-      "numero": 15,
-      "fecha": "2026-08-01",
+      "numero": 14,
+      "fecha": "2026-11-07",
       "hora": "15:30",
-      "local": "Semillero FC",
+      "local": "Amigos de Villa Luro",
       "visitante": "Chacabuco",
       "condicion": "visitante",
+      "rival": "Amigos de Villa Luro",
+      "cancha": "Amigos de Villa Luro",
+      "resultado": {
+        "goles_local": null,
+        "goles_visitante": null
+      },
+      "estado": "pendiente",
+      "categorias": [
+        {
+          "cat": "2019",
+          "hora": "14:00"
+        },
+        {
+          "cat": "2013",
+          "hora": "14:40"
+        },
+        {
+          "cat": "2018",
+          "hora": "15:40"
+        },
+        {
+          "cat": "2014",
+          "hora": "16:30"
+        },
+        {
+          "cat": "2017",
+          "hora": "17:30"
+        },
+        {
+          "cat": "2016",
+          "hora": "18:30"
+        },
+        {
+          "cat": "2015",
+          "hora": "19:30"
+        }
+      ],
+      "precio": 7000
+    },
+    {
+      "numero": 15,
+      "fecha": "2026-11-14",
+      "hora": "15:30",
+      "local": "Chacabuco",
+      "visitante": "Semillero FC",
+      "condicion": "local",
       "rival": "Semillero FC",
-      "cancha": "Semillero FC",
+      "cancha": "Chacabuco",
       "resultado": {
         "goles_local": null,
         "goles_visitante": null

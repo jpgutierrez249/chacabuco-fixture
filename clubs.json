@@ -18,8 +18,8 @@
     "maps": "https://maps.google.com/?q=Juan+Jose+Valle+2972+Nueva+Pompeya+Buenos+Aires"
   },
   "Corvalan": {
-    "direccion": "",
-    "maps": ""
+    "direccion": "Tapalque 5147, CABA",
+    "maps": "https://maps.google.com/?q=Tapalque+5147+CABA+Buenos+Aires"
   },
   "Pampero": {
     "direccion": "Balbastro 6151, Lugano",
@@ -38,31 +38,31 @@
     "maps": "https://maps.google.com/?q=Alberdi+823+General+Pacheco+Buenos+Aires"
   },
   "Bristol FC": {
-    "direccion": "",
-    "maps": ""
+    "direccion": "La Rioja 1869, CABA",
+    "maps": "https://maps.google.com/?q=La+Rioja+1869+CABA+Buenos+Aires"
   },
   "Santiago de Liniers": {
-    "direccion": "",
-    "maps": ""
+    "direccion": "Caaguazu 6151, CABA",
+    "maps": "https://maps.google.com/?q=Caaguazu+6151+CABA+Buenos+Aires"
   },
   "Social Club": {
-    "direccion": "",
-    "maps": ""
+    "direccion": "Gutierrez 702, Haedo",
+    "maps": "https://maps.google.com/?q=Gutierrez+702+Haedo+Buenos+Aires"
   },
   "Villa Don Bosco": {
-    "direccion": "",
-    "maps": ""
+    "direccion": "Nicolas De Arriola 1833, Ramos Mejia",
+    "maps": "https://maps.google.com/?q=Nicolas+De+Arriola+1833+Ramos+Mejia+Buenos+Aires"
   },
   "San Telmo": {
     "direccion": "",
     "maps": ""
   },
   "Amigos de Villa Luro": {
-    "direccion": "",
-    "maps": ""
+    "direccion": "Ramon Falcon 5177, CABA",
+    "maps": "https://maps.google.com/?q=Ramon+Falcon+5177+CABA+Buenos+Aires"
   },
   "Glorias Argentinas": {
-    "direccion": "",
-    "maps": ""
+    "direccion": "Bragado 6875, CABA",
+    "maps": "https://maps.google.com/?q=Bragado+6875+CABA+Buenos+Aires"
   }
 }

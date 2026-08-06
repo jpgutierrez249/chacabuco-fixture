@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Club Chacabuco — Fixture FEFI 2026</title>
+  <title>Club Chacabuco — Fixture</title>
   <style>
     /* ── Variables ─────────────────────────────────────────── */
     :root {
@@ -748,7 +748,7 @@
 </div>
 
 <footer>
-  <p>Fixture <strong>Club Chacabuco</strong> · FEFI 2026 · Actualizado automáticamente desde fixture.json</p>
+  <p>Fixture <strong>Club Chacabuco</strong> · <span id="footer-torneo"></span> · Actualizado automáticamente desde fixture.json</p>
 </footer>
 
 <!-- ══ SCRIPT ══════════════════════════════════════════════════════ -->
@@ -783,6 +783,10 @@
     // Header
     document.getElementById('header-sub').textContent =
       data.club.categoria ? `${data.club.torneo} · ${data.club.categoria}` : data.club.torneo;
+
+    // Torneo en footer y título — se leen del fixture, no van hardcodeados
+    document.getElementById('footer-torneo').textContent = data.club.torneo;
+    document.title = `${data.club.nombre} — Fixture ${data.club.torneo}`;
 
     // Próximo partido
     const hoy = new Date(); hoy.setHours(0,0,0,0);
@@ -1068,18 +1072,25 @@
 
   function renderPosiciones(data) {
     // Banner de resumen siempre usa la tabla general
-    const chaca = data.general.find(e => e.es_propio);
-    const pos   = data.general.indexOf(chaca) + 1;
+    const general = data.general || [];
+    const chaca   = general.find(e => e.es_propio) || { pj: 0, g: 0, e: 0, p: 0, pts: 0 };
+
+    // Torneo sin empezar: nadie jugó todavía, no hay posición real que mostrar
+    const arrancado = general.some(e => e.pj > 0);
+    const pos       = arrancado ? `${general.indexOf(chaca) + 1}°` : '—';
+
+    const fase = [data.fase, data.temporada || (data.torneo || '').match(/\d{4}/)?.[0]]
+      .filter(Boolean).join(' ');
 
     document.getElementById('pos-summary').innerHTML = `
       <div class="pos-summary-top">
-        <div class="pos-summary-tag">🏆 Apertura 2026</div>
+        <div class="pos-summary-tag">🏆 ${fase || data.torneo || ''}</div>
         <div class="pos-summary-zona">Zona ${data.zona}</div>
       </div>
       <div class="pos-summary-body">
         <div class="pos-big-block">
-          <div class="pos-big-num">${pos}°</div>
-          <div class="pos-big-label">Posición general</div>
+          <div class="pos-big-num">${pos}</div>
+          <div class="pos-big-label">${arrancado ? 'Posición general' : 'Sin partidos jugados'}</div>
         </div>
         <div class="pos-stats-grid">
           <div class="pos-stat"><div class="val">${chaca.pts}</div><div class="lbl">Puntos</div></div>
@@ -1128,13 +1139,16 @@
     let rows = '';
     let sepAgregado = false;
 
+    // Si nadie jugó todavía el separador sobra: sería la tabla entera
+    const algunoJugo = tabla.some(e => e.pj > 0);
+
     tabla.forEach((e, i) => {
-      if (!sepAgregado && e.pj === 0) {
+      if (algunoJugo && !sepAgregado && e.pj === 0) {
         rows += `<tr class="pos-sep"><td colspan="7">Sin partidos disputados</td></tr>`;
         sepAgregado = true;
       }
       const isChaca = !!e.es_propio;
-      const posTag  = sepAgregado && e.pj === 0 ? '—' : (medals[i] || `${i + 1}`);
+      const posTag  = e.pj === 0 ? '—' : (medals[i] || `${i + 1}`);
       rows += `
         <tr class="${isChaca ? 'chaca-row' : ''}">
           <td class="col-pos">${posTag}</td>
