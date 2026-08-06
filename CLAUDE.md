@@ -290,6 +290,7 @@ git commit -m "fix: resolver conflicto — usar versión local del fixture"
 
 ## GitHub Pages
 
-El sitio público está en: `https://<usuario>.github.io/Fixture/`
+El sitio público está en: `https://jpgutierrez249.github.io/chacabuco-fixture/`
+Repo: `git@github.com:jpgutierrez249/chacabuco-fixture.git` (remote SSH).
 Se actualiza automáticamente con cada push a `main`.
 Puede tardar 1-2 minutos en reflejar los cambios.
