@@ -166,12 +166,13 @@ falla con error explícito en vez de traer datos de la fase equivocada.
 
 ### Estado del cron
 
-**Pausado.** El Clausura arrancó y FEFI ya publica la tabla, pero está entera en
-cero — no tiene sentido commitear a diario un JSON que no cambia. Se reactiva
-descomentando el bloque `schedule` en `.github/workflows/update-posiciones.yml`
-cuando haya resultados reales (después de la fecha 1, 8-ago-2026).
+**Activo** desde el 11-ago-2026, con los resultados de la fecha 1 ya publicados.
+Corre todos los días a las 05:00 UTC (02:00 ART) y commitea solo si `posiciones.json`
+cambió. Se pausa comentando el bloque `schedule` en
+`.github/workflows/update-posiciones.yml` — conviene hacerlo al terminar la fase,
+para no commitear a diario un JSON que ya no se mueve.
 
-Mientras esté pausado se puede correr a mano:
+También se puede correr a mano en cualquier momento:
 
 ```bash
 npm install --no-save cheerio
@@ -179,13 +180,20 @@ node scripts/fetch-posiciones.js
 ```
 
 o desde GitHub → Actions → *Actualizar posiciones FEFI* → **Run workflow**
-(el `workflow_dispatch` sigue habilitado).
+(el `workflow_dispatch` está siempre habilitado, aun con el cron pausado).
+
+**Fechas en hora argentina:** `ultima_actualizacion` se calcula con
+`toLocaleDateString('sv-SE', { timeZone: 'America/Argentina/Buenos_Aires' })`.
+Con `toISOString()` una corrida de la tarde/noche quedaba sellada con el día
+siguiente, porque es UTC.
 
 ### El front tolera la tabla en cero
 
-`index.html` ya contempla el torneo sin empezar: si nadie jugó muestra `—` en vez
-de inventar un "1°", no pone medallas, y omite el separador "Sin partidos
-disputados". El banner lee `data.fase` + la temporada, no tiene la fase hardcodeada.
+`index.html` contempla el torneo sin empezar: si nadie jugó muestra `—` en vez de
+inventar un "1°", no pone medallas, y omite el separador "Sin partidos disputados".
+Con la fase ya en curso vuelve al render normal (medallas en el podio, posición
+numérica), y los equipos con `pj: 0` quedan abajo del separador con `—`.
+El banner lee `data.fase` + la temporada, no tiene la fase hardcodeada.
 
 ---
 

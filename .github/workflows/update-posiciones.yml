@@ -1,14 +1,13 @@
 name: Actualizar posiciones FEFI
 
 on:
-  # PAUSADO — el Clausura arrancó y FEFI ya publica la tabla, pero todavía
-  # está entera en cero. No tiene sentido commitear a diario un JSON que no
-  # cambia: se reactiva cuando haya resultados reales (post fecha 1, 8-ago-2026).
-  # Para reactivar, descomentar el bloque schedule. El scraper ya apunta al
-  # Clausura (ver FASE en scripts/fetch-posiciones.js), no hay que tocar nada más.
-  # schedule:
-  #   # Todos los días a las 05:00 UTC (02:00 Argentina, UTC-3)
-  #   - cron: '0 5 * * *'
+  # ACTIVO desde el 11-ago-2026, con los resultados de la fecha 1 del Clausura
+  # ya publicados. El scraper apunta al Clausura (ver FASE en
+  # scripts/fetch-posiciones.js). Al terminar la fase, pausar comentando este
+  # bloque hasta que arranque la siguiente.
+  schedule:
+    # Todos los días a las 05:00 UTC (02:00 Argentina, UTC-3)
+    - cron: '0 5 * * *'
 
   # Se puede seguir ejecutando manualmente desde GitHub → Actions
   workflow_dispatch:

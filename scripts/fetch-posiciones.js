@@ -133,7 +133,11 @@ async function main() {
   const nuevo  = {
     ...actual,
     fase: FASE,
-    ultima_actualizacion: new Date().toISOString().split('T')[0],
+    // Fecha en hora argentina: toISOString() es UTC y a la tarde/noche ya
+    // marca el día siguiente, así que el sitio mostraba una fecha futura
+    ultima_actualizacion: new Date().toLocaleDateString('sv-SE', {
+      timeZone: 'America/Argentina/Buenos_Aires',
+    }),
     general,
     categorias,
   };
