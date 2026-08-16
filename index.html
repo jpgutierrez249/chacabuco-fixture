@@ -597,13 +597,16 @@
     .col-pos { width: 36px; font-weight: 700; font-size: .85rem; color: var(--gris-texto); }
     .col-pts { font-weight: 800; font-size: 1rem; color: var(--azul); }
     .chaca-row .col-pts { color: var(--azul-oscuro); }
-    .pos-sep td {
-      background: var(--gris-bg);
-      font-size: .7rem; font-weight: 700;
-      color: var(--gris-texto); text-transform: uppercase;
-      letter-spacing: .5px; padding: 5px 14px;
-      text-align: left; border-bottom: none;
+    .pj-menos {
+      display: inline-block; margin-left: 5px;
+      min-width: 20px; padding: 1px 5px;
+      border-radius: 9px; text-align: center;
+      background: var(--gris-bg); color: var(--gris-texto);
+      font-size: .62rem; font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap; vertical-align: middle;
     }
+    .chaca-row .pj-menos { background: #fef3c7; color: #92400e; }
     .pos-footer {
       display: flex; align-items: center;
       justify-content: space-between; flex-wrap: wrap; gap: 8px;
@@ -1137,22 +1140,25 @@
 
     const medals = ['🥇','🥈','🥉'];
     let rows = '';
-    let sepAgregado = false;
 
-    // Si nadie jugó todavía el separador sobra: sería la tabla entera
-    const algunoJugo = tabla.some(e => e.pj > 0);
+    // Los equipos no siempre llegan con la misma cantidad de partidos jugados:
+    // hay fechas que FEFI carga tarde y partidos postergados. Marcamos a los que
+    // están atrasados para que se entienda que sus puntos no son comparables.
+    const maxPj = Math.max(...tabla.map(e => e.pj));
 
     tabla.forEach((e, i) => {
-      if (algunoJugo && !sepAgregado && e.pj === 0) {
-        rows += `<tr class="pos-sep"><td colspan="7">Sin partidos disputados</td></tr>`;
-        sepAgregado = true;
-      }
       const isChaca = !!e.es_propio;
       const posTag  = e.pj === 0 ? '—' : (medals[i] || `${i + 1}`);
+
+      const menos = maxPj - e.pj;
+      const tagMenos = menos > 0
+        ? `<span class="pj-menos" title="${menos} partido${menos === 1 ? '' : 's'} menos">-${menos}</span>`
+        : '';
+
       rows += `
         <tr class="${isChaca ? 'chaca-row' : ''}">
           <td class="col-pos">${posTag}</td>
-          <td class="col-equipo${isChaca ? ' chaca' : ''}">${isChaca ? '⭐ ' : ''}${e.equipo}</td>
+          <td class="col-equipo${isChaca ? ' chaca' : ''}">${isChaca ? '⭐ ' : ''}${e.equipo}${tagMenos}</td>
           <td>${e.pj}</td>
           <td>${e.g}</td>
           <td>${e.e}</td>
