@@ -2,17 +2,65 @@
   "torneo": "FEFI 2026",
   "fase": "Clausura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-08-29",
+  "ultima_actualizacion": "2026-08-31",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
     {
       "equipo": "GIMNASIO CHACABUCO",
-      "pj": 21,
-      "g": 16,
+      "pj": 28,
+      "g": 22,
       "e": 1,
-      "p": 4,
-      "pts": 54,
+      "p": 5,
+      "pts": 73,
       "es_propio": true
+    },
+    {
+      "equipo": "LA LOMA",
+      "pj": 28,
+      "g": 13,
+      "e": 4,
+      "p": 11,
+      "pts": 58
+    },
+    {
+      "equipo": "VILLA DON BOSCO",
+      "pj": 25,
+      "g": 12,
+      "e": 5,
+      "p": 8,
+      "pts": 54
+    },
+    {
+      "equipo": "A. F. SANTIAGO DE LINIERS",
+      "pj": 28,
+      "g": 11,
+      "e": 4,
+      "p": 12,
+      "pts": 53
+    },
+    {
+      "equipo": "GLORIAS ARGENTINAS",
+      "pj": 21,
+      "g": 11,
+      "e": 3,
+      "p": 7,
+      "pts": 46
+    },
+    {
+      "equipo": "EL BARRIO ''2''",
+      "pj": 28,
+      "g": 8,
+      "e": 2,
+      "p": 18,
+      "pts": 46
+    },
+    {
+      "equipo": "FEDERACION CABALLITO",
+      "pj": 25,
+      "g": 9,
+      "e": 3,
+      "p": 11,
+      "pts": 44
     },
     {
       "equipo": "NUEVA ESTRELLA",
@@ -23,52 +71,12 @@
       "pts": 44
     },
     {
-      "equipo": "A. F. SANTIAGO DE LINIERS",
-      "pj": 21,
-      "g": 9,
-      "e": 4,
-      "p": 7,
-      "pts": 42
-    },
-    {
-      "equipo": "LA LOMA",
-      "pj": 21,
-      "g": 8,
-      "e": 4,
-      "p": 9,
-      "pts": 41
-    },
-    {
-      "equipo": "VILLA DON BOSCO",
-      "pj": 18,
-      "g": 9,
-      "e": 4,
-      "p": 5,
-      "pts": 40
-    },
-    {
       "equipo": "AMIGOS DE VILLA LURO",
       "pj": 18,
       "g": 8,
       "e": 3,
       "p": 7,
       "pts": 37
-    },
-    {
-      "equipo": "FEDERACION CABALLITO",
-      "pj": 18,
-      "g": 8,
-      "e": 3,
-      "p": 6,
-      "pts": 36
-    },
-    {
-      "equipo": "EL BARRIO ''2''",
-      "pj": 21,
-      "g": 7,
-      "e": 1,
-      "p": 13,
-      "pts": 36
     },
     {
       "equipo": "C. A. SAN TELMO",
@@ -95,11 +103,11 @@
       "pts": 34
     },
     {
-      "equipo": "GLORIAS ARGENTINAS",
-      "pj": 14,
-      "g": 8,
+      "equipo": "PAMPERO",
+      "pj": 21,
+      "g": 7,
       "e": 2,
-      "p": 4,
+      "p": 7,
       "pts": 32
     },
     {
@@ -125,25 +133,34 @@
       "e": 0,
       "p": 10,
       "pts": 22
-    },
-    {
-      "equipo": "PAMPERO",
-      "pj": 14,
-      "g": 2,
-      "e": 1,
-      "p": 6,
-      "pts": 14
     }
   ],
   "categorias": {
     "2013": [
       {
         "equipo": "VILLA DON BOSCO",
-        "pj": 3,
-        "g": 3,
+        "pj": 4,
+        "g": 4,
         "e": 0,
         "p": 0,
-        "pts": 9
+        "pts": 12
+      },
+      {
+        "equipo": "GIMNASIO CHACABUCO",
+        "pj": 4,
+        "g": 3,
+        "e": 0,
+        "p": 1,
+        "pts": 10,
+        "es_propio": true
+      },
+      {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 4,
+        "g": 2,
+        "e": 0,
+        "p": 2,
+        "pts": 8
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -154,12 +171,12 @@
         "pts": 8
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 3,
+        "equipo": "EL BARRIO ''2''",
+        "pj": 4,
         "g": 2,
         "e": 0,
-        "p": 1,
-        "pts": 7
+        "p": 2,
+        "pts": 8
       },
       {
         "equipo": "CLUB CORVALAN",
@@ -170,13 +187,12 @@
         "pts": 7
       },
       {
-        "equipo": "GIMNASIO CHACABUCO",
+        "equipo": "GLORIAS ARGENTINAS",
         "pj": 3,
         "g": 2,
         "e": 0,
         "p": 1,
-        "pts": 7,
-        "es_propio": true
+        "pts": 7
       },
       {
         "equipo": "C. A. NUEVA ERA",
@@ -195,31 +211,23 @@
         "pts": 6
       },
       {
-        "equipo": "GLORIAS ARGENTINAS",
-        "pj": 2,
-        "g": 2,
+        "equipo": "LA LOMA",
+        "pj": 4,
+        "g": 1,
         "e": 0,
-        "p": 0,
+        "p": 3,
         "pts": 6
       },
       {
-        "equipo": "LA LOMA",
-        "pj": 3,
+        "equipo": "A. F. SANTIAGO DE LINIERS",
+        "pj": 4,
         "g": 1,
         "e": 0,
-        "p": 2,
-        "pts": 5
+        "p": 3,
+        "pts": 6
       },
       {
         "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
-        "equipo": "EL BARRIO ''2''",
         "pj": 3,
         "g": 1,
         "e": 0,
@@ -235,7 +243,7 @@
         "pts": 4
       },
       {
-        "equipo": "A. F. SANTIAGO DE LINIERS",
+        "equipo": "PAMPERO",
         "pj": 3,
         "g": 0,
         "e": 0,
@@ -244,14 +252,6 @@
       },
       {
         "equipo": "SOCIAL CLUB",
-        "pj": 2,
-        "g": 0,
-        "e": 0,
-        "p": 2,
-        "pts": 2
-      },
-      {
-        "equipo": "PAMPERO",
         "pj": 2,
         "g": 0,
         "e": 0,
@@ -270,11 +270,36 @@
     "2014": [
       {
         "equipo": "VILLA DON BOSCO",
-        "pj": 3,
-        "g": 2,
+        "pj": 4,
+        "g": 3,
         "e": 1,
         "p": 0,
-        "pts": 8
+        "pts": 11
+      },
+      {
+        "equipo": "GIMNASIO CHACABUCO",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9,
+        "es_propio": true
+      },
+      {
+        "equipo": "LA LOMA",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 4,
+        "g": 1,
+        "e": 1,
+        "p": 2,
+        "pts": 7
       },
       {
         "equipo": "CLUB CORVALAN",
@@ -301,12 +326,12 @@
         "pts": 7
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 3,
+        "equipo": "A. F. SANTIAGO DE LINIERS",
+        "pj": 4,
         "g": 1,
         "e": 1,
-        "p": 1,
-        "pts": 6
+        "p": 2,
+        "pts": 7
       },
       {
         "equipo": "C. A. NUEVA ERA",
@@ -317,15 +342,6 @@
         "pts": 6
       },
       {
-        "equipo": "GIMNASIO CHACABUCO",
-        "pj": 3,
-        "g": 1,
-        "e": 1,
-        "p": 1,
-        "pts": 6,
-        "es_propio": true
-      },
-      {
         "equipo": "SOCIAL CLUB",
         "pj": 2,
         "g": 2,
@@ -334,36 +350,28 @@
         "pts": 6
       },
       {
-        "equipo": "LA LOMA",
-        "pj": 3,
-        "g": 1,
-        "e": 1,
-        "p": 1,
-        "pts": 6
-      },
-      {
-        "equipo": "A. F. SANTIAGO DE LINIERS",
-        "pj": 3,
-        "g": 1,
-        "e": 1,
-        "p": 1,
-        "pts": 6
-      },
-      {
         "equipo": "GLORIAS ARGENTINAS",
-        "pj": 2,
+        "pj": 3,
         "g": 1,
         "e": 1,
-        "p": 0,
-        "pts": 5
+        "p": 1,
+        "pts": 6
       },
       {
         "equipo": "EL BARRIO ''2''",
+        "pj": 4,
+        "g": 1,
+        "e": 0,
+        "p": 3,
+        "pts": 6
+      },
+      {
+        "equipo": "PAMPERO",
         "pj": 3,
         "g": 1,
         "e": 0,
-        "p": 2,
-        "pts": 5
+        "p": 1,
+        "pts": 4
       },
       {
         "equipo": "C. A. SAN TELMO",
@@ -388,17 +396,26 @@
         "e": 0,
         "p": 2,
         "pts": 2
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 2,
-        "g": 0,
-        "e": 0,
-        "p": 1,
-        "pts": 1
       }
     ],
     "2015": [
+      {
+        "equipo": "GIMNASIO CHACABUCO",
+        "pj": 4,
+        "g": 3,
+        "e": 0,
+        "p": 1,
+        "pts": 10,
+        "es_propio": true
+      },
+      {
+        "equipo": "GLORIAS ARGENTINAS",
+        "pj": 3,
+        "g": 3,
+        "e": 0,
+        "p": 0,
+        "pts": 9
+      },
       {
         "equipo": "C. A. SAN TELMO",
         "pj": 3,
@@ -408,21 +425,28 @@
         "pts": 8
       },
       {
-        "equipo": "GIMNASIO CHACABUCO",
-        "pj": 3,
-        "g": 2,
-        "e": 0,
-        "p": 1,
-        "pts": 7,
-        "es_propio": true
-      },
-      {
         "equipo": "A. F. SANTIAGO DE LINIERS",
-        "pj": 3,
+        "pj": 4,
         "g": 1,
         "e": 2,
-        "p": 0,
+        "p": 1,
+        "pts": 8
+      },
+      {
+        "equipo": "LA LOMA",
+        "pj": 4,
+        "g": 1,
+        "e": 1,
+        "p": 2,
         "pts": 7
+      },
+      {
+        "equipo": "VILLA DON BOSCO",
+        "pj": 3,
+        "g": 1,
+        "e": 1,
+        "p": 1,
+        "pts": 6
       },
       {
         "equipo": "AMIGOS DE VILLA LURO",
@@ -433,19 +457,19 @@
         "pts": 6
       },
       {
-        "equipo": "GLORIAS ARGENTINAS",
-        "pj": 2,
-        "g": 2,
+        "equipo": "EL BARRIO ''2''",
+        "pj": 4,
+        "g": 1,
         "e": 0,
-        "p": 0,
+        "p": 3,
         "pts": 6
       },
       {
-        "equipo": "VILLA DON BOSCO",
-        "pj": 2,
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 3,
         "g": 1,
-        "e": 1,
-        "p": 0,
+        "e": 0,
+        "p": 2,
         "pts": 5
       },
       {
@@ -457,22 +481,6 @@
         "pts": 5
       },
       {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 2,
-        "g": 1,
-        "e": 0,
-        "p": 1,
-        "pts": 4
-      },
-      {
         "equipo": "SOCIAL CLUB",
         "pj": 2,
         "g": 1,
@@ -481,15 +489,15 @@
         "pts": 4
       },
       {
-        "equipo": "NUEVA ESTRELLA",
+        "equipo": "PAMPERO",
         "pj": 3,
-        "g": 0,
-        "e": 1,
-        "p": 2,
+        "g": 1,
+        "e": 0,
+        "p": 1,
         "pts": 4
       },
       {
-        "equipo": "LA LOMA",
+        "equipo": "NUEVA ESTRELLA",
         "pj": 3,
         "g": 0,
         "e": 1,
@@ -511,14 +519,6 @@
         "e": 1,
         "p": 1,
         "pts": 3
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 2,
-        "g": 0,
-        "e": 0,
-        "p": 1,
-        "pts": 1
       },
       {
         "equipo": "C. A. NUEVA ERA",
@@ -532,20 +532,36 @@
     "2016": [
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
-        "pj": 3,
-        "g": 3,
+        "pj": 4,
+        "g": 4,
         "e": 0,
         "p": 0,
-        "pts": 9
+        "pts": 12
       },
       {
         "equipo": "GIMNASIO CHACABUCO",
+        "pj": 4,
+        "g": 3,
+        "e": 0,
+        "p": 1,
+        "pts": 10,
+        "es_propio": true
+      },
+      {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 4,
+        "g": 2,
+        "e": 0,
+        "p": 2,
+        "pts": 8
+      },
+      {
+        "equipo": "VILLA DON BOSCO",
         "pj": 3,
         "g": 2,
         "e": 0,
         "p": 1,
-        "pts": 7,
-        "es_propio": true
+        "pts": 7
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -556,20 +572,12 @@
         "pts": 7
       },
       {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 3,
-        "g": 2,
-        "e": 0,
-        "p": 1,
-        "pts": 7
-      },
-      {
         "equipo": "LA LOMA",
-        "pj": 3,
+        "pj": 4,
         "g": 1,
         "e": 1,
-        "p": 1,
-        "pts": 6
+        "p": 2,
+        "pts": 7
       },
       {
         "equipo": "SEMILLERO F. C.",
@@ -580,6 +588,14 @@
         "pts": 6
       },
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 3,
+        "g": 1,
+        "e": 0,
+        "p": 2,
+        "pts": 5
+      },
+      {
         "equipo": "AMIGOS DE VILLA LURO",
         "pj": 2,
         "g": 1,
@@ -588,12 +604,12 @@
         "pts": 5
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 2,
+        "equipo": "GLORIAS ARGENTINAS",
+        "pj": 3,
         "g": 1,
         "e": 0,
-        "p": 1,
-        "pts": 4
+        "p": 2,
+        "pts": 5
       },
       {
         "equipo": "C. A. NUEVA ERA",
@@ -604,16 +620,8 @@
         "pts": 4
       },
       {
-        "equipo": "VILLA DON BOSCO",
-        "pj": 2,
-        "g": 1,
-        "e": 0,
-        "p": 1,
-        "pts": 4
-      },
-      {
-        "equipo": "GLORIAS ARGENTINAS",
-        "pj": 2,
+        "equipo": "PAMPERO",
+        "pj": 3,
         "g": 1,
         "e": 0,
         "p": 1,
@@ -650,32 +658,32 @@
         "e": 0,
         "p": 2,
         "pts": 2
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 2,
-        "g": 0,
-        "e": 0,
-        "p": 1,
-        "pts": 1
       }
     ],
     "2017": [
       {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 4,
+        "g": 3,
+        "e": 1,
+        "p": 0,
+        "pts": 11
+      },
+      {
         "equipo": "GIMNASIO CHACABUCO",
-        "pj": 3,
+        "pj": 4,
         "g": 3,
         "e": 0,
-        "p": 0,
-        "pts": 9,
+        "p": 1,
+        "pts": 10,
         "es_propio": true
       },
       {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 3,
+        "equipo": "LA LOMA",
+        "pj": 4,
         "g": 2,
-        "e": 1,
-        "p": 0,
+        "e": 0,
+        "p": 2,
         "pts": 8
       },
       {
@@ -684,6 +692,22 @@
         "g": 2,
         "e": 0,
         "p": 1,
+        "pts": 7
+      },
+      {
+        "equipo": "GLORIAS ARGENTINAS",
+        "pj": 3,
+        "g": 2,
+        "e": 0,
+        "p": 1,
+        "pts": 7
+      },
+      {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 4,
+        "g": 1,
+        "e": 1,
+        "p": 2,
         "pts": 7
       },
       {
@@ -703,11 +727,35 @@
         "pts": 6
       },
       {
+        "equipo": "A. F. SANTIAGO DE LINIERS",
+        "pj": 4,
+        "g": 1,
+        "e": 0,
+        "p": 3,
+        "pts": 6
+      },
+      {
         "equipo": "C. A. NUEVA ERA",
         "pj": 2,
         "g": 1,
         "e": 1,
         "p": 0,
+        "pts": 5
+      },
+      {
+        "equipo": "PAMPERO",
+        "pj": 3,
+        "g": 1,
+        "e": 1,
+        "p": 0,
+        "pts": 5
+      },
+      {
+        "equipo": "VILLA DON BOSCO",
+        "pj": 3,
+        "g": 1,
+        "e": 0,
+        "p": 2,
         "pts": 5
       },
       {
@@ -717,54 +765,6 @@
         "e": 0,
         "p": 2,
         "pts": 5
-      },
-      {
-        "equipo": "LA LOMA",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
-        "equipo": "A. F. SANTIAGO DE LINIERS",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
-        "equipo": "VILLA DON BOSCO",
-        "pj": 2,
-        "g": 1,
-        "e": 0,
-        "p": 1,
-        "pts": 4
-      },
-      {
-        "equipo": "GLORIAS ARGENTINAS",
-        "pj": 2,
-        "g": 1,
-        "e": 0,
-        "p": 1,
-        "pts": 4
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 2,
-        "g": 1,
-        "e": 0,
-        "p": 0,
-        "pts": 3
       },
       {
         "equipo": "AMIGOS DE VILLA LURO",
@@ -794,12 +794,28 @@
     "2018": [
       {
         "equipo": "GIMNASIO CHACABUCO",
-        "pj": 3,
-        "g": 3,
+        "pj": 4,
+        "g": 4,
         "e": 0,
         "p": 0,
-        "pts": 9,
+        "pts": 12,
         "es_propio": true
+      },
+      {
+        "equipo": "LA LOMA",
+        "pj": 4,
+        "g": 3,
+        "e": 0,
+        "p": 1,
+        "pts": 10
+      },
+      {
+        "equipo": "A. F. SANTIAGO DE LINIERS",
+        "pj": 4,
+        "g": 3,
+        "e": 0,
+        "p": 1,
+        "pts": 10
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -810,15 +826,15 @@
         "pts": 9
       },
       {
-        "equipo": "A. F. SANTIAGO DE LINIERS",
-        "pj": 3,
-        "g": 3,
-        "e": 0,
-        "p": 0,
-        "pts": 9
+        "equipo": "VILLA DON BOSCO",
+        "pj": 4,
+        "g": 1,
+        "e": 1,
+        "p": 2,
+        "pts": 7
       },
       {
-        "equipo": "LA LOMA",
+        "equipo": "GLORIAS ARGENTINAS",
         "pj": 3,
         "g": 2,
         "e": 0,
@@ -826,12 +842,28 @@
         "pts": 7
       },
       {
-        "equipo": "VILLA DON BOSCO",
+        "equipo": "PAMPERO",
         "pj": 3,
-        "g": 1,
-        "e": 1,
-        "p": 1,
+        "g": 2,
+        "e": 0,
+        "p": 0,
         "pts": 6
+      },
+      {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 4,
+        "g": 1,
+        "e": 0,
+        "p": 3,
+        "pts": 6
+      },
+      {
+        "equipo": "FEDERACION CABALLITO",
+        "pj": 4,
+        "g": 0,
+        "e": 1,
+        "p": 3,
+        "pts": 5
       },
       {
         "equipo": "CLUB CORVALAN",
@@ -850,31 +882,7 @@
         "pts": 5
       },
       {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 3,
-        "g": 1,
-        "e": 0,
-        "p": 2,
-        "pts": 5
-      },
-      {
-        "equipo": "FEDERACION CABALLITO",
-        "pj": 3,
-        "g": 0,
-        "e": 1,
-        "p": 2,
-        "pts": 4
-      },
-      {
         "equipo": "SOCIAL CLUB",
-        "pj": 2,
-        "g": 1,
-        "e": 0,
-        "p": 1,
-        "pts": 4
-      },
-      {
-        "equipo": "GLORIAS ARGENTINAS",
         "pj": 2,
         "g": 1,
         "e": 0,
@@ -895,14 +903,6 @@
         "g": 0,
         "e": 1,
         "p": 1,
-        "pts": 3
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 2,
-        "g": 1,
-        "e": 0,
-        "p": 0,
         "pts": 3
       },
       {
@@ -925,20 +925,20 @@
     "2019": [
       {
         "equipo": "GIMNASIO CHACABUCO",
-        "pj": 3,
-        "g": 3,
+        "pj": 4,
+        "g": 4,
         "e": 0,
         "p": 0,
-        "pts": 9,
+        "pts": 12,
         "es_propio": true
       },
       {
         "equipo": "LA LOMA",
-        "pj": 3,
-        "g": 2,
+        "pj": 4,
+        "g": 3,
         "e": 1,
         "p": 0,
-        "pts": 8
+        "pts": 11
       },
       {
         "equipo": "AMIGOS DE VILLA LURO",
@@ -957,6 +957,22 @@
         "pts": 7
       },
       {
+        "equipo": "PAMPERO",
+        "pj": 3,
+        "g": 1,
+        "e": 1,
+        "p": 1,
+        "pts": 6
+      },
+      {
+        "equipo": "VILLA DON BOSCO",
+        "pj": 4,
+        "g": 0,
+        "e": 2,
+        "p": 2,
+        "pts": 6
+      },
+      {
         "equipo": "SEMILLERO F. C.",
         "pj": 2,
         "g": 2,
@@ -973,27 +989,27 @@
         "pts": 5
       },
       {
+        "equipo": "GLORIAS ARGENTINAS",
+        "pj": 3,
+        "g": 0,
+        "e": 2,
+        "p": 1,
+        "pts": 5
+      },
+      {
+        "equipo": "EL BARRIO ''2''",
+        "pj": 4,
+        "g": 0,
+        "e": 1,
+        "p": 3,
+        "pts": 5
+      },
+      {
         "equipo": "SOCIAL CLUB",
         "pj": 2,
         "g": 1,
         "e": 0,
         "p": 1,
-        "pts": 4
-      },
-      {
-        "equipo": "VILLA DON BOSCO",
-        "pj": 3,
-        "g": 0,
-        "e": 1,
-        "p": 2,
-        "pts": 4
-      },
-      {
-        "equipo": "EL BARRIO ''2''",
-        "pj": 3,
-        "g": 0,
-        "e": 1,
-        "p": 2,
         "pts": 4
       },
       {
@@ -1005,8 +1021,16 @@
         "pts": 4
       },
       {
+        "equipo": "A. F. SANTIAGO DE LINIERS",
+        "pj": 4,
+        "g": 0,
+        "e": 1,
+        "p": 2,
+        "pts": 4
+      },
+      {
         "equipo": "FEDERACION CABALLITO",
-        "pj": 2,
+        "pj": 3,
         "g": 1,
         "e": 0,
         "p": 0,
@@ -1021,31 +1045,7 @@
         "pts": 3
       },
       {
-        "equipo": "PAMPERO",
-        "pj": 2,
-        "g": 0,
-        "e": 1,
-        "p": 1,
-        "pts": 3
-      },
-      {
         "equipo": "NUEVA ESTRELLA",
-        "pj": 3,
-        "g": 0,
-        "e": 1,
-        "p": 1,
-        "pts": 3
-      },
-      {
-        "equipo": "GLORIAS ARGENTINAS",
-        "pj": 2,
-        "g": 0,
-        "e": 1,
-        "p": 1,
-        "pts": 3
-      },
-      {
-        "equipo": "A. F. SANTIAGO DE LINIERS",
         "pj": 3,
         "g": 0,
         "e": 1,
