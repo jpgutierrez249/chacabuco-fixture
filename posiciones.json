@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Clausura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-09-08",
+  "ultima_actualizacion": "2026-09-09",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
   "general": [
     {
@@ -79,20 +79,20 @@
       "pts": 56
     },
     {
+      "equipo": "PAMPERO",
+      "pj": 27,
+      "g": 11,
+      "e": 4,
+      "p": 12,
+      "pts": 53
+    },
+    {
       "equipo": "BRISTOL F. C.",
       "pj": 31,
       "g": 10,
       "e": 2,
       "p": 19,
       "pts": 53
-    },
-    {
-      "equipo": "PAMPERO",
-      "pj": 27,
-      "g": 11,
-      "e": 4,
-      "p": 7,
-      "pts": 48
     },
     {
       "equipo": "C. A. SAN TELMO",
@@ -334,6 +334,14 @@
         "pts": 8
       },
       {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 2,
+        "e": 0,
+        "p": 2,
+        "pts": 8
+      },
+      {
         "equipo": "NUEVA ESTRELLA",
         "pj": 4,
         "g": 2,
@@ -363,14 +371,6 @@
         "g": 1,
         "e": 1,
         "p": 2,
-        "pts": 7
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 4,
-        "g": 2,
-        "e": 0,
-        "p": 1,
         "pts": 7
       },
       {
@@ -473,6 +473,14 @@
         "pts": 8
       },
       {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 1,
+        "e": 1,
+        "p": 2,
+        "pts": 7
+      },
+      {
         "equipo": "VILLA DON BOSCO",
         "pj": 4,
         "g": 1,
@@ -483,14 +491,6 @@
       {
         "equipo": "CLUB CORVALAN",
         "pj": 3,
-        "g": 1,
-        "e": 1,
-        "p": 1,
-        "pts": 6
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 4,
         "g": 1,
         "e": 1,
         "p": 1,
@@ -588,6 +588,14 @@
         "pts": 9
       },
       {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 2,
+        "e": 0,
+        "p": 2,
+        "pts": 8
+      },
+      {
         "equipo": "NUEVA ESTRELLA",
         "pj": 4,
         "g": 1,
@@ -610,14 +618,6 @@
         "e": 1,
         "p": 0,
         "pts": 8
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 4,
-        "g": 2,
-        "e": 0,
-        "p": 1,
-        "pts": 7
       },
       {
         "equipo": "FEDERACION CABALLITO",
@@ -703,6 +703,14 @@
         "pts": 10
       },
       {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
         "equipo": "NUEVA ESTRELLA",
         "pj": 4,
         "g": 2,
@@ -724,14 +732,6 @@
         "g": 2,
         "e": 0,
         "p": 2,
-        "pts": 8
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 4,
-        "g": 2,
-        "e": 1,
-        "p": 0,
         "pts": 8
       },
       {
@@ -842,6 +842,14 @@
         "pts": 10
       },
       {
+        "equipo": "PAMPERO",
+        "pj": 4,
+        "g": 2,
+        "e": 1,
+        "p": 1,
+        "pts": 9
+      },
+      {
         "equipo": "AMIGOS DE VILLA LURO",
         "pj": 5,
         "g": 2,
@@ -863,14 +871,6 @@
         "g": 2,
         "e": 0,
         "p": 2,
-        "pts": 8
-      },
-      {
-        "equipo": "PAMPERO",
-        "pj": 4,
-        "g": 2,
-        "e": 1,
-        "p": 0,
         "pts": 8
       },
       {
