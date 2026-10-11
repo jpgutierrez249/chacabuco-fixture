@@ -118,7 +118,7 @@ no crear entradas nuevas — duplicarlas deja partidos sin dirección.
   "fase": "Clausura",
   "zona": "Vespertino-F",
   "ultima_actualizacion": "2026-08-06",
-  "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/#botonera",
+  "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=tablas-clausura",
   "general":    [ { "equipo": "GIMNASIO CHACABUCO", "pj": 0, "g": 0, "e": 0, "p": 0, "pts": 0, "es_propio": true } ],
   "categorias": { "2013": [ /* mismo formato */ ], "2019": [] }
 }
@@ -133,36 +133,42 @@ en el nombre). El front la destaca con ⭐ y la usa para el banner de resumen.
 
 `posiciones.json` **se autogenera**. Editarlo a mano no sirve: el cron lo pisa.
 
-### Cómo está armada la página de FEFI
+### De dónde salen los datos
 
-Las dos fases del torneo conviven en la **misma URL**, en solapas que Elementor
-muestra y oculta por JS. Los botones de la botonera son todos `href="#botonera"`,
-así que no se puede linkear a una fase directamente — hay que ubicar la tabla por
-el `id` de su contenedor:
+En oct-2026 FEFI rediseñó la página del torneo. La vieja URL por zona
+(`/2026-torneo-anual-baby-futbol/f/`, con solapas `#cont5`/`#cont7`) ahora
+**redirige a otra página**, y el contenido se carga por JS desde un endpoint REST
+del plugin `fefit`. El scraper le pega directo a ese endpoint:
 
-| Contenedor | Contenido |
+```
+https://fefi.com.ar/wp-json/fefit/v1/vista?torneo=1&zona=14&vista=tablas-clausura
+```
+
+Devuelve `{ html, vista }`. El `html` trae una `<section class="fefit-tabla" data-panel="…">`
+por tabla: `general` primero y después una por categoría (título `Categoría 2019`, etc.),
+16 equipos cada una. En cada fila el equipo va en un `<th>` y los números en `<td>`
+(la celda `#` viene vacía en los empates, por eso no se usa).
+
+| Parámetro | Valor |
 |---|---|
-| `#cont2` | Fixture completo de la zona |
-| `#cont3` | Equipos con dirección y localidad |
-| `#cont5` | **Tablas Apertura** |
-| `#cont7` | **Tablas Clausura** ← el que se scrapea hoy |
-
-Cada tabla de posiciones trae adentro secciones separadas por filas con `colspan`:
-`GENERAL` primero y después una por categoría (2013–2019), 16 equipos cada una.
+| `zona` | id numérico — `14` = Zona F (ver el `<select>` de zonas en la página) |
+| `vista` | `tablas-apertura` · `tablas-clausura` · `tabla-anual` |
 
 ### Cambiar de fase
 
 En `scripts/fetch-posiciones.js`, arriba de todo:
 
 ```js
-const FASE          = 'Clausura';
-const FASE_SELECTOR = '#cont7';
-const FASE_ORDEN    = 2;   // fallback: 2ª tabla de posiciones del documento
+const FASE   = 'Clausura';
+const TORNEO = 1;
+const ZONA   = 14;
+const VISTA  = 'tablas-clausura';
 ```
 
-Si FEFI reordena la página y el `id` cambia, el scraper cae al fallback por orden
-(1ª tabla = Apertura, 2ª = Clausura) y avisa por consola. Si tampoco encuentra,
-falla con error explícito en vez de traer datos de la fase equivocada.
+Si el endpoint deja de devolver JSON o viene sin `html`, el scraper falla con error
+explícito en vez de pisar `posiciones.json` con basura. Si FEFI vuelve a cambiar
+la página, mirar `data-config` del contenedor `.fefit` y `assets/front.js` del plugin
+`ma-fefi-torneos` para ver cómo arma el pedido.
 
 ### Estado del cron
 

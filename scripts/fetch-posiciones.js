@@ -7,31 +7,41 @@ const fs      = require('fs');
 const path    = require('path');
 const cheerio = require('cheerio');
 
-const FEFI_URL = 'https://fefi.com.ar/2026-torneo-anual-baby-futbol/f/';
-const OUTPUT   = path.join(__dirname, '..', 'posiciones.json');
+// ── De dónde se sacan las tablas ─────────────────────────────────────────
+// En oct-2026 FEFI rediseñó la página del torneo: la vieja URL por zona
+// (/2026-torneo-anual-baby-futbol/f/) ahora redirige a otra página, y el
+// contenido se carga por JS desde un endpoint REST del plugin "fefit":
+//
+//   /wp-json/fefit/v1/vista?torneo=1&zona=14&vista=tablas-clausura
+//
+// Devuelve { html, vista } con una <section data-panel> por tabla: "general"
+// y una por categoría ("Categoría 2019", etc.).
+//
+// zona = id numérico de la zona (14 = F; ver el <select> de zonas en la página)
+// vista = "tablas-apertura" | "tablas-clausura" | "tabla-anual"
+const FASE     = 'Clausura';
+const TORNEO   = 1;
+const ZONA     = 14;
+const VISTA    = 'tablas-clausura';
 
-// ── Qué fase scrapear ────────────────────────────────────────────────────
-// La página de FEFI trae las dos fases en la misma URL, en solapas distintas
-// de la botonera. Los botones no linkean por href (Elementor las muestra y
-// oculta por JS), así que hay que ubicar la tabla por su contenedor:
-//
-//   #cont5 → "TABLAS APERTURA"
-//   #cont7 → "TABLAS CLAUSURA"
-//
-// Si FEFI reordena la página y el id cambia, se cae al fallback por orden:
-// la 1ª tabla de posiciones del documento es Apertura, la 2ª es Clausura.
-const FASE            = 'Clausura';
-const FASE_SELECTOR   = '#cont7';
-const FASE_ORDEN      = 2;
+const API_URL  = `https://fefi.com.ar/wp-json/fefit/v1/vista?torneo=${TORNEO}&zona=${ZONA}&vista=${VISTA}`;
+const FUENTE   = `https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=${VISTA}`;
+const OUTPUT   = path.join(__dirname, '..', 'posiciones.json');
 
 
 function get(url) {
   return new Promise((resolve, reject) => {
     https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (fixture-updater/1.0)' } }, res => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        res.resume();
         return get(res.headers.location).then(resolve, reject);
       }
+      if (res.statusCode !== 200) {
+        res.resume();
+        return reject(new Error(`HTTP ${res.statusCode} en ${url}`));
+      }
       let body = '';
+      res.setEncoding('utf8');
       res.on('data', c => body += c);
       res.on('end', () => resolve(body));
     }).on('error', reject);
@@ -40,92 +50,63 @@ function get(url) {
 
 function norm(t) {
   return t.toLowerCase()
-    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .trim();
 }
 
-// ── Tabla de posiciones (Table 3) — parsea todas las secciones ───────────
-// La tabla tiene secciones separadas por filas colspan: "GENERAL", "2019", "2013", etc.
-function parsearTablaPosiciones($) {
-  // Todas las tablas de posiciones del documento, en orden (Apertura, Clausura)
-  const candidatas = [];
-  $('table').each((_, table) => {
-    const headers = [];
-    $(table).find('thead th').each((_, th) => headers.push(norm($(th).text())));
-    if (headers.includes('pj') && headers.includes('pts.') && headers.includes('equipos')) {
-      candidatas.push(table);
-    }
-  });
-
-  if (candidatas.length === 0) throw new Error('No se encontró ninguna tabla de posiciones');
-
-  // Preferimos el contenedor de la fase; si no está, caemos al orden
-  const porSelector = $(FASE_SELECTOR).find('table').get(0);
-  let tablaEl = candidatas.find(t => t === porSelector);
-
-  if (tablaEl) {
-    console.log(`   Tabla de ${FASE} ubicada por ${FASE_SELECTOR}`);
-  } else {
-    tablaEl = candidatas[FASE_ORDEN - 1];
-    if (!tablaEl) {
-      throw new Error(
-        `Tabla de ${FASE} no encontrada: ${FASE_SELECTOR} no matcheó y solo hay ` +
-        `${candidatas.length} tabla(s) de posiciones (se esperaba al menos ${FASE_ORDEN}). ` +
-        `Revisar la estructura de ${FEFI_URL}`
-      );
-    }
-    console.warn(
-      `   ⚠️  ${FASE_SELECTOR} no matcheó — usando la tabla #${FASE_ORDEN} por orden. ` +
-      `Verificar que FEFI no haya reordenado la página.`
-    );
-  }
-
-  const secciones = {}; // { 'GENERAL': [...], '2019': [...], ... }
-  let seccionActual = null;
-
-  $(tablaEl).find('tbody tr').each((_, row) => {
-    const celdas = $(row).find('td');
-    if (!celdas.length) return;
-
-    // Fila de título de sección (colspan)
-    if ($(celdas[0]).attr('colspan')) {
-      seccionActual = $(celdas[0]).text().trim().toUpperCase();
-      secciones[seccionActual] = [];
-      return;
-    }
-
-    if (!seccionActual || celdas.length < 5) return;
-
-    const equipo = $(celdas[0]).text().trim();
-    if (!equipo || equipo.length < 2) return;
-
-    const num = i => parseInt($(celdas[i]).text().trim()) || 0;
-    const fila = { equipo, pj: num(1), g: num(2), e: num(3), p: num(4), pts: num(5) };
-    if (norm(equipo).includes('chacabuco')) fila.es_propio = true;
-    secciones[seccionActual].push(fila);
-  });
-
-  // Separar general de categorías
-  const general    = secciones['GENERAL'] || [];
+// ── Tablas de posiciones — una <section data-panel> por tabla ────────────
+// Cada fila: <td>#</td> <th>equipo</th> <td>PJ</td> <td>G</td> <td>E</td> <td>P</td> <td>Pts</td>
+// En los empates la celda # viene vacía, por eso no se usa.
+function parsearTablas($) {
+  const general    = [];
   const categorias = {};
-  Object.keys(secciones).forEach(k => {
-    if (k !== 'GENERAL' && secciones[k].length > 0) {
-      // Normalizar nombre: "2019", "CAT 2019", etc. → "2019"
-      const match = k.match(/\d{4}/);
-      if (match) categorias[match[0]] = secciones[k];
+
+  $('section.fefit-tabla').each((_, section) => {
+    const panel  = $(section).attr('data-panel');
+    const titulo = $(section).find('h3').first().text().trim();
+
+    let destino;
+    if (panel === 'general') {
+      destino = general;
+    } else {
+      const match = titulo.match(/\d{4}/);
+      if (!match) {
+        console.warn(`   ⚠️  Sección "${titulo}" (${panel}) sin año reconocible — se ignora`);
+        return;
+      }
+      destino = categorias[match[0]] = [];
     }
+
+    $(section).find('table.fefit-pos tbody tr').each((_, row) => {
+      const equipo = $(row).find('th').text().trim();
+      const nums   = $(row).find('td').not('.fefit-pos__n')
+        .map((_, td) => parseInt($(td).text().trim(), 10) || 0).get();
+      if (!equipo || nums.length < 5) return;
+
+      const [pj, g, e, p, pts] = nums;
+      const fila = { equipo, pj, g, e, p, pts };
+      if (norm(equipo).includes('chacabuco')) fila.es_propio = true;
+      destino.push(fila);
+    });
   });
 
   return { general, categorias };
 }
 
 async function main() {
-  console.log(`Fetching ${FEFI_URL}`);
-  const html = await get(FEFI_URL);
-  const $    = cheerio.load(html);
+  console.log(`Fetching ${API_URL}`);
+  const body = await get(API_URL);
+
+  let html;
+  try {
+    ({ html } = JSON.parse(body));
+  } catch {
+    throw new Error(`La respuesta no es JSON — ¿cambió el endpoint? Revisar ${FUENTE}`);
+  }
+  if (!html) throw new Error(`Respuesta sin html para zona=${ZONA} vista=${VISTA}`);
 
   console.log('\nParsing tablas...');
-  const { general, categorias } = parsearTablaPosiciones($);
+  const { general, categorias } = parsearTablas(cheerio.load(html));
 
   if (general.length === 0) throw new Error('Tabla general vacía — abortando');
 
@@ -133,6 +114,7 @@ async function main() {
   const nuevo  = {
     ...actual,
     fase: FASE,
+    fuente: FUENTE,
     // Fecha en hora argentina: toISOString() es UTC y a la tarde/noche ya
     // marca el día siguiente, así que el sitio mostraba una fecha futura
     ultima_actualizacion: new Date().toLocaleDateString('sv-SE', {
