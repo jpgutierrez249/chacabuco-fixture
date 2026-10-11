@@ -16,10 +16,10 @@
       "rival": "Glorias Argentinas",
       "cancha": "Glorias Argentinas",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 12,
+        "goles_visitante": 16
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
@@ -62,10 +62,10 @@
       "rival": "El Barrio 2",
       "cancha": "Chacabuco",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 17,
+        "goles_visitante": 11
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
@@ -108,10 +108,10 @@
       "rival": "Bristol FC",
       "cancha": "Bristol FC",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 7,
+        "goles_visitante": 21
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
@@ -154,10 +154,10 @@
       "rival": "Federacion Caballito",
       "cancha": "Chacabuco",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 19,
+        "goles_visitante": 8
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
@@ -200,10 +200,10 @@
       "rival": "Corvalan",
       "cancha": "Corvalan",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 11,
+        "goles_visitante": 17
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
@@ -246,10 +246,10 @@
       "rival": "Nueva Era",
       "cancha": "Chacabuco",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 20,
+        "goles_visitante": 7
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
@@ -292,10 +292,10 @@
       "rival": "Santiago de Liniers",
       "cancha": "Santiago de Liniers",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 9,
+        "goles_visitante": 19
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
@@ -338,10 +338,10 @@
       "rival": "Social Club",
       "cancha": "Social Club",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 7,
+        "goles_visitante": 21
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
@@ -384,10 +384,10 @@
       "rival": "Pampero",
       "cancha": "Chacabuco",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 19,
+        "goles_visitante": 9
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",

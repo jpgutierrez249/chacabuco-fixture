@@ -34,17 +34,25 @@ jobs:
       - name: Instalar cheerio
         run: npm install --no-save cheerio
 
-      - name: Ejecutar scraping
+      - name: Scraping de posiciones
         run: node scripts/fetch-posiciones.js
 
+      # Corre aunque falle el paso anterior: son independientes
+      - name: Scraping de resultados
+        if: ${{ !cancelled() }}
+        run: node scripts/fetch-resultados.js
+
+      # Commitea lo que haya salido bien aunque uno de los dos falle
+      # (el job igual queda en rojo para que se note)
       - name: Commit y push si hubo cambios
+        if: ${{ !cancelled() }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add posiciones.json
+          git add posiciones.json fixture.json
           if git diff --staged --quiet; then
-            echo "Sin cambios en posiciones.json — nada para commitear"
+            echo "Sin cambios en posiciones.json ni fixture.json — nada para commitear"
           else
-            git commit -m "data: actualizar posiciones FEFI $(date +'%Y-%m-%d')"
+            git commit -m "data: actualizar posiciones y resultados FEFI $(date +'%Y-%m-%d')"
             git push
           fi

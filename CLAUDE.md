@@ -13,6 +13,8 @@ Hay dos orígenes de datos distintos, y conviene no confundirlos:
 
 - **Fixture y clubes** → se cargan a mano desde `admin.html`
 - **Posiciones** → se scrapean de la web de FEFI (ver sección *Posiciones*)
+- **Resultados** (`resultado` + `estado` de cada partido en `fixture.json`) → los
+  completa el cron desde FEFI; el resto del partido sigue siendo manual
 
 ---
 
@@ -35,7 +37,8 @@ Hay dos orígenes de datos distintos, y conviene no confundirlos:
 | `clubs.json` | Maestro de clubes: direcciones y links de Google Maps |
 | `posiciones.json` | Tabla de posiciones — **autogenerado, no editar a mano** |
 | `scripts/fetch-posiciones.js` | Scraper de la tabla de FEFI (usa `cheerio`) |
-| `.github/workflows/update-posiciones.yml` | Cron que corre el scraper y commitea |
+| `scripts/fetch-resultados.js` | Completa resultados de partidos en `fixture.json` |
+| `.github/workflows/update-posiciones.yml` | Cron que corre los dos scrapers y commitea |
 | `convert-excel.js` | Script auxiliar para importar desde el Excel de la FEFI |
 
 ---
@@ -170,11 +173,24 @@ explícito en vez de pisar `posiciones.json` con basura. Si FEFI vuelve a cambia
 la página, mirar `data-config` del contenedor `.fefit` y `assets/front.js` del plugin
 `ma-fefi-torneos` para ver cómo arma el pedido.
 
+### Resultados de los partidos
+
+`scripts/fetch-resultados.js` usa el mismo endpoint con `vista=fechas-clausura`.
+Cada fecha es una `<section data-panel="N">` y cada partido un `<article>` con una
+tabla de 2 filas (local, visitante); la última celda son los puntos totales.
+
+- Solo escribe `resultado` y `estado: "jugado"` en partidos que FEFI marca
+  **Verificado**. Lo que FEFI tiene pendiente no se toca (no pisa cargas a mano).
+- En `goles_local` / `goles_visitante` van los **puntos** del partido (suma de las
+  7 categorías), no goles. Es lo que define ganado/perdido en el badge de `index.html`.
+- Empareja por `numero` de fecha y verifica que local/visitante coincida con
+  `condicion`; si no coincide, avisa y omite ese partido.
+
 ### Estado del cron
 
 **Activo** desde el 11-ago-2026, con los resultados de la fecha 1 ya publicados.
-Corre todos los días a las 05:00 UTC (02:00 ART) y commitea solo si `posiciones.json`
-cambió. Se pausa comentando el bloque `schedule` en
+Corre todos los días a las 05:00 UTC (02:00 ART), ejecuta los dos scrapers (uno no
+frena al otro) y commitea solo si `posiciones.json` o `fixture.json` cambiaron. Se pausa comentando el bloque `schedule` en
 `.github/workflows/update-posiciones.yml` — conviene hacerlo al terminar la fase,
 para no commitear a diario un JSON que ya no se mueve.
 
@@ -183,6 +199,7 @@ También se puede correr a mano en cualquier momento:
 ```bash
 npm install --no-save cheerio
 node scripts/fetch-posiciones.js
+node scripts/fetch-resultados.js
 ```
 
 o desde GitHub → Actions → *Actualizar posiciones FEFI* → **Run workflow**
@@ -207,6 +224,8 @@ El banner lee `data.fase` + la temporada, no tiene la fase hardcodeada.
 
 ### Editar datos (normal)
 
+0. **`git pull` antes de editar**: el cron commitea resultados en `fixture.json`
+   y si se exporta desde una versión vieja se pierden
 1. Abrir `admin.html` con **Live Server** en VSCode
 2. Editar en las pestañas **Equipos** o **Fixture**
 3. Descargar `fixture.json` y/o `clubs.json` con los botones de exportar
@@ -269,7 +288,9 @@ git diff fixture.json
 
 ### Si hay conflictos con fixture.json o clubs.json
 
-Siempre quedarse con la versión local (la que acaba de editarse en admin):
+Siempre quedarse con la versión local (la que acaba de editarse en admin).
+Ojo: si el conflicto es contra un commit del cron, la versión local pierde los
+resultados que trajo; se recuperan corriendo `node scripts/fetch-resultados.js`.
 
 ```bash
 git checkout --theirs fixture.json
