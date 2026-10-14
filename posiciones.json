@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Clausura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-10-13",
+  "ultima_actualizacion": "2026-10-14",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=tablas-clausura",
   "general": [
     {
@@ -13,6 +13,14 @@
       "p": 10,
       "pts": 186,
       "es_propio": true
+    },
+    {
+      "equipo": "AMIGOS DE VILLA LURO",
+      "pj": 67,
+      "g": 35,
+      "e": 9,
+      "p": 23,
+      "pts": 146
     },
     {
       "equipo": "LA LOMA",
@@ -29,14 +37,6 @@
       "e": 13,
       "p": 18,
       "pts": 140
-    },
-    {
-      "equipo": "AMIGOS DE VILLA LURO",
-      "pj": 64,
-      "g": 33,
-      "e": 9,
-      "p": 22,
-      "pts": 139
     },
     {
       "equipo": "SEMILLERO F. C.",
@@ -128,11 +128,11 @@
     },
     {
       "equipo": "C. A. SAN TELMO",
-      "pj": 67,
-      "g": 16,
+      "pj": 70,
+      "g": 17,
       "e": 5,
-      "p": 46,
-      "pts": 104
+      "p": 48,
+      "pts": 109
     }
   ],
   "categorias": {
@@ -425,6 +425,14 @@
         "pts": 23
       },
       {
+        "equipo": "C. A. SAN TELMO",
+        "pj": 10,
+        "g": 5,
+        "e": 2,
+        "p": 3,
+        "pts": 22
+      },
+      {
         "equipo": "SEMILLERO F. C.",
         "pj": 8,
         "g": 5,
@@ -449,11 +457,11 @@
         "pts": 20
       },
       {
-        "equipo": "C. A. SAN TELMO",
+        "equipo": "AMIGOS DE VILLA LURO",
         "pj": 9,
-        "g": 4,
-        "e": 2,
-        "p": 3,
+        "g": 5,
+        "e": 0,
+        "p": 4,
         "pts": 19
       },
       {
@@ -463,14 +471,6 @@
         "e": 3,
         "p": 4,
         "pts": 19
-      },
-      {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 8,
-        "g": 5,
-        "e": 0,
-        "p": 3,
-        "pts": 18
       },
       {
         "equipo": "PAMPERO",
@@ -564,6 +564,14 @@
         "pts": 22
       },
       {
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 9,
+        "g": 4,
+        "e": 5,
+        "p": 0,
+        "pts": 22
+      },
+      {
         "equipo": "PAMPERO",
         "pj": 9,
         "g": 6,
@@ -586,14 +594,6 @@
         "e": 3,
         "p": 2,
         "pts": 20
-      },
-      {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 8,
-        "g": 3,
-        "e": 5,
-        "p": 0,
-        "pts": 19
       },
       {
         "equipo": "FEDERACION CABALLITO",
@@ -644,7 +644,7 @@
         "pts": 15
       },
       {
-        "equipo": "SOCIAL CLUB",
+        "equipo": "C. A. SAN TELMO",
         "pj": 10,
         "g": 0,
         "e": 0,
@@ -652,12 +652,12 @@
         "pts": 10
       },
       {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 9,
+        "equipo": "SOCIAL CLUB",
+        "pj": 10,
         "g": 0,
         "e": 0,
-        "p": 9,
-        "pts": 9
+        "p": 10,
+        "pts": 10
       }
     ],
     "2017": [
@@ -687,7 +687,7 @@
         "pts": 24
       },
       {
-        "equipo": "C. A. NUEVA ERA",
+        "equipo": "AMIGOS DE VILLA LURO",
         "pj": 9,
         "g": 6,
         "e": 1,
@@ -695,12 +695,12 @@
         "pts": 22
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 8,
-        "g": 5,
+        "equipo": "C. A. NUEVA ERA",
+        "pj": 9,
+        "g": 6,
         "e": 1,
         "p": 2,
-        "pts": 19
+        "pts": 22
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -752,11 +752,11 @@
       },
       {
         "equipo": "C. A. SAN TELMO",
-        "pj": 9,
+        "pj": 10,
         "g": 3,
         "e": 0,
-        "p": 6,
-        "pts": 15
+        "p": 7,
+        "pts": 16
       },
       {
         "equipo": "A. F. SANTIAGO DE LINIERS",
