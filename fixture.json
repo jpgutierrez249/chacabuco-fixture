@@ -430,10 +430,10 @@
       "rival": "Villa Don Bosco",
       "cancha": "Villa Don Bosco",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 11,
+        "goles_visitante": 17
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
