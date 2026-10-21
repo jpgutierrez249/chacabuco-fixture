@@ -2,7 +2,7 @@
   "torneo": "FEFI 2026",
   "fase": "Clausura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-10-20",
+  "ultima_actualizacion": "2026-10-21",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=tablas-clausura",
   "general": [
     {
@@ -417,12 +417,12 @@
         "pts": 27
       },
       {
-        "equipo": "AMIGOS DE VILLA LURO",
+        "equipo": "C. A. SAN TELMO",
         "pj": 11,
         "g": 6,
-        "e": 1,
-        "p": 4,
-        "pts": 24
+        "e": 2,
+        "p": 3,
+        "pts": 25
       },
       {
         "equipo": "BRISTOL F. C.",
@@ -433,12 +433,12 @@
         "pts": 23
       },
       {
-        "equipo": "C. A. SAN TELMO",
+        "equipo": "AMIGOS DE VILLA LURO",
         "pj": 11,
         "g": 5,
-        "e": 2,
-        "p": 4,
-        "pts": 23
+        "e": 1,
+        "p": 5,
+        "pts": 22
       },
       {
         "equipo": "SEMILLERO F. C.",
@@ -547,6 +547,14 @@
         "pts": 29
       },
       {
+        "equipo": "AMIGOS DE VILLA LURO",
+        "pj": 11,
+        "g": 5,
+        "e": 6,
+        "p": 0,
+        "pts": 27
+      },
+      {
         "equipo": "GIMNASIO CHACABUCO",
         "pj": 11,
         "g": 7,
@@ -554,14 +562,6 @@
         "p": 4,
         "pts": 25,
         "es_propio": true
-      },
-      {
-        "equipo": "AMIGOS DE VILLA LURO",
-        "pj": 11,
-        "g": 4,
-        "e": 6,
-        "p": 1,
-        "pts": 25
       },
       {
         "equipo": "NUEVA ESTRELLA",
@@ -644,20 +644,20 @@
         "pts": 16
       },
       {
-        "equipo": "C. A. SAN TELMO",
-        "pj": 11,
-        "g": 1,
-        "e": 0,
-        "p": 10,
-        "pts": 13
-      },
-      {
         "equipo": "SOCIAL CLUB",
         "pj": 11,
         "g": 0,
         "e": 1,
         "p": 10,
         "pts": 12
+      },
+      {
+        "equipo": "C. A. SAN TELMO",
+        "pj": 11,
+        "g": 0,
+        "e": 0,
+        "p": 11,
+        "pts": 11
       }
     ],
     "2017": [
