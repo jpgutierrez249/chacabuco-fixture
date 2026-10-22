@@ -476,10 +476,10 @@
       "rival": "Nueva Estrella",
       "cancha": "Chacabuco",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 19,
+        "goles_visitante": 9
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
