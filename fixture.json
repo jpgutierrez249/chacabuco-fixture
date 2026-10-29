@@ -522,10 +522,10 @@
       "rival": "San Telmo",
       "cancha": "San Telmo",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 8,
+        "goles_visitante": 20
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
