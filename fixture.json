@@ -614,10 +614,10 @@
       "rival": "Amigos de Villa Luro",
       "cancha": "Amigos de Villa Luro",
       "resultado": {
-        "goles_local": null,
-        "goles_visitante": null
+        "goles_local": 10,
+        "goles_visitante": 18
       },
-      "estado": "pendiente",
+      "estado": "jugado",
       "categorias": [
         {
           "cat": "2019",
