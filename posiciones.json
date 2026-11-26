@@ -2,17 +2,25 @@
   "torneo": "FEFI 2026",
   "fase": "Clausura",
   "zona": "Vespertino-F",
-  "ultima_actualizacion": "2026-11-25",
+  "ultima_actualizacion": "2026-11-26",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=tablas-clausura",
   "general": [
     {
       "equipo": "GIMNASIO CHACABUCO",
-      "pj": 102,
-      "g": 80,
+      "pj": 105,
+      "g": 83,
       "e": 8,
       "p": 14,
-      "pts": 270,
+      "pts": 279,
       "es_propio": true
+    },
+    {
+      "equipo": "SEMILLERO F. C.",
+      "pj": 105,
+      "g": 61,
+      "e": 20,
+      "p": 23,
+      "pts": 246
     },
     {
       "equipo": "GLORIAS ARGENTINAS",
@@ -21,14 +29,6 @@
       "e": 20,
       "p": 25,
       "pts": 245
-    },
-    {
-      "equipo": "SEMILLERO F. C.",
-      "pj": 102,
-      "g": 61,
-      "e": 20,
-      "p": 20,
-      "pts": 243
     },
     {
       "equipo": "PAMPERO",
@@ -400,21 +400,21 @@
     ],
     "2015": [
       {
+        "equipo": "GIMNASIO CHACABUCO",
+        "pj": 15,
+        "g": 14,
+        "e": 0,
+        "p": 1,
+        "pts": 43,
+        "es_propio": true
+      },
+      {
         "equipo": "GLORIAS ARGENTINAS",
         "pj": 15,
         "g": 12,
         "e": 3,
         "p": 0,
         "pts": 42
-      },
-      {
-        "equipo": "GIMNASIO CHACABUCO",
-        "pj": 14,
-        "g": 13,
-        "e": 0,
-        "p": 1,
-        "pts": 40,
-        "es_propio": true
       },
       {
         "equipo": "BRISTOL F. C.",
@@ -425,19 +425,19 @@
         "pts": 38
       },
       {
+        "equipo": "SEMILLERO F. C.",
+        "pj": 15,
+        "g": 8,
+        "e": 4,
+        "p": 3,
+        "pts": 35
+      },
+      {
         "equipo": "PAMPERO",
         "pj": 15,
         "g": 8,
         "e": 3,
         "p": 4,
-        "pts": 34
-      },
-      {
-        "equipo": "SEMILLERO F. C.",
-        "pj": 14,
-        "g": 8,
-        "e": 4,
-        "p": 2,
         "pts": 34
       },
       {
@@ -555,6 +555,15 @@
         "pts": 38
       },
       {
+        "equipo": "GIMNASIO CHACABUCO",
+        "pj": 15,
+        "g": 10,
+        "e": 1,
+        "p": 4,
+        "pts": 36,
+        "es_propio": true
+      },
+      {
         "equipo": "PAMPERO",
         "pj": 15,
         "g": 10,
@@ -571,13 +580,12 @@
         "pts": 35
       },
       {
-        "equipo": "GIMNASIO CHACABUCO",
-        "pj": 14,
-        "g": 9,
-        "e": 1,
+        "equipo": "SEMILLERO F. C.",
+        "pj": 15,
+        "g": 7,
+        "e": 4,
         "p": 4,
-        "pts": 33,
-        "es_propio": true
+        "pts": 33
       },
       {
         "equipo": "BRISTOL F. C.",
@@ -585,14 +593,6 @@
         "g": 7,
         "e": 3,
         "p": 5,
-        "pts": 32
-      },
-      {
-        "equipo": "SEMILLERO F. C.",
-        "pj": 14,
-        "g": 7,
-        "e": 4,
-        "p": 3,
         "pts": 32
       },
       {
@@ -662,6 +662,15 @@
     ],
     "2017": [
       {
+        "equipo": "GIMNASIO CHACABUCO",
+        "pj": 15,
+        "g": 13,
+        "e": 1,
+        "p": 1,
+        "pts": 42,
+        "es_propio": true
+      },
+      {
         "equipo": "C. A. NUEVA ERA",
         "pj": 15,
         "g": 12,
@@ -676,15 +685,6 @@
         "e": 3,
         "p": 1,
         "pts": 40
-      },
-      {
-        "equipo": "GIMNASIO CHACABUCO",
-        "pj": 14,
-        "g": 12,
-        "e": 1,
-        "p": 1,
-        "pts": 39,
-        "es_propio": true
       },
       {
         "equipo": "GLORIAS ARGENTINAS",
@@ -703,19 +703,19 @@
         "pts": 36
       },
       {
+        "equipo": "SEMILLERO F. C.",
+        "pj": 15,
+        "g": 6,
+        "e": 4,
+        "p": 5,
+        "pts": 31
+      },
+      {
         "equipo": "VILLA DON BOSCO",
         "pj": 15,
         "g": 7,
         "e": 1,
         "p": 7,
-        "pts": 30
-      },
-      {
-        "equipo": "SEMILLERO F. C.",
-        "pj": 14,
-        "g": 6,
-        "e": 4,
-        "p": 4,
         "pts": 30
       },
       {
