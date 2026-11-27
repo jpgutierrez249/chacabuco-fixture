@@ -200,8 +200,11 @@ tabla de 2 filas (local, visitante); la última celda son los puntos totales.
 
 ### Estado del cron
 
-**Activo** desde el 11-ago-2026, con los resultados de la fecha 1 ya publicados.
-Corre todos los días a las 05:00 UTC (02:00 ART), ejecuta los dos scrapers (uno no
+**Pausado** desde el 27-nov-2026: terminó el Clausura. Ese mismo día FEFI empezó
+a responder `403 "Acceso no permitido"` al endpoint (pide una clave `k` que
+publica en el `data-config` de su página); al reactivar hay que revisar eso primero.
+
+Cuando está activo, corre todos los días a las 05:00 UTC (02:00 ART), ejecuta los dos scrapers (uno no
 frena al otro) y commitea solo si `posiciones.json` o `fixture.json` cambiaron. Se pausa comentando el bloque `schedule` en
 `.github/workflows/update-posiciones.yml` — conviene hacerlo al terminar la fase,
 para no commitear a diario un JSON que ya no se mueve.

@@ -1,13 +1,12 @@
 name: Actualizar posiciones FEFI
 
 on:
-  # ACTIVO desde el 11-ago-2026, con los resultados de la fecha 1 del Clausura
-  # ya publicados. El scraper apunta al Clausura (ver FASE en
-  # scripts/fetch-posiciones.js). Al terminar la fase, pausar comentando este
-  # bloque hasta que arranque la siguiente.
-  schedule:
-    # Todos los días a las 05:00 UTC (02:00 Argentina, UTC-3)
-    - cron: '0 5 * * *'
+  # PAUSADO desde el 27-nov-2026: terminó el Clausura (y desde ese día FEFI
+  # responde 403 "Acceso no permitido" al endpoint). Para reactivarlo,
+  # descomentar el bloque cuando arranque la próxima fase.
+  # schedule:
+  #   # Todos los días a las 05:00 UTC (02:00 Argentina, UTC-3)
+  #   - cron: '0 5 * * *'
 
   # Se puede seguir ejecutando manualmente desde GitHub → Actions
   workflow_dispatch:
