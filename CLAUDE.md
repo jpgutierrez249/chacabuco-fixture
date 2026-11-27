@@ -123,9 +123,17 @@ no crear entradas nuevas — duplicarlas deja partidos sin dirección.
   "ultima_actualizacion": "2026-08-06",
   "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=tablas-clausura",
   "general":    [ { "equipo": "GIMNASIO CHACABUCO", "pj": 0, "g": 0, "e": 0, "p": 0, "pts": 0, "es_propio": true } ],
-  "categorias": { "2013": [ /* mismo formato */ ], "2019": [] }
+  "categorias": { "2013": [ /* mismo formato */ ], "2019": [] },
+  "anual": {
+    "fuente": "https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=tabla-anual",
+    "general": [ /* mismo formato */ ], "categorias": { /* … */ }
+  }
 }
 ```
+
+`anual` es la tabla anual (Apertura + Clausura) y se muestra en la solapa
+**📅 Tabla anual** de `index.html` (antes ahí iba "Canchas"; las direcciones
+siguen saliendo en el modal de cada partido y en la card del próximo partido).
 
 `es_propio: true` marca la fila de Chacabuco (el scraper lo pone buscando "chacabuco"
 en el nombre). El front la destaca con ⭐ y la usa para el banner de resumen.
@@ -167,6 +175,10 @@ const TORNEO = 1;
 const ZONA   = 14;
 const VISTA  = 'tablas-clausura';
 ```
+
+El scraper hace un segundo pedido con `vista=tabla-anual` (`VISTA_ANUAL`) para
+llenar `anual`. Si ese falla, conserva la anual anterior, escribe igual la de la
+fase y termina con error (el job queda en rojo).
 
 Si el endpoint deja de devolver JSON o viene sin `html`, el scraper falla con error
 explícito en vez de pisar `posiciones.json` con basura. Si FEFI vuelve a cambiar

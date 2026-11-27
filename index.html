@@ -368,40 +368,6 @@
     .estado-chip.libre-chip { background: #f1f5f9; color: var(--gris-texto); }
 
     /* ── Vista Info del club ────────────────────────────────── */
-    #view-info { display: none; }
-    .info-card {
-      background: var(--blanco);
-      border-radius: var(--radio);
-      padding: 26px;
-      box-shadow: var(--sombra);
-      margin-bottom: 16px;
-    }
-    .info-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--azul);
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--gris-borde);
-    }
-    .info-card p { font-size: .9rem; color: #4a5568; line-height: 1.6; margin-bottom: 6px; }
-    .info-card strong { color: #1e2d40; }
-
-    .rival-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 12px;
-      margin-top: 10px;
-    }
-    .rival-item {
-      background: var(--gris-bg);
-      border-radius: 10px;
-      padding: 14px 16px;
-      border-left: 4px solid var(--amarillo2);
-    }
-    .rival-item .rname { font-weight: 700; font-size: .9rem; margin-bottom: 4px; }
-    .rival-item .rdir  { font-size: .78rem; color: var(--gris-texto); display: flex; gap: 5px; align-items: flex-start; }
-    .rival-item .maps-btn { margin-top: 6px; }
 
     /* ── Footer ────────────────────────────────────────────── */
     footer {
@@ -657,7 +623,7 @@
     <div class="nav-inner">
       <button class="active" onclick="showView('fixture')">⚽ Fixture</button>
       <button onclick="showView('posiciones')">🏆 Posiciones</button>
-      <button onclick="showView('info')">📍 Canchas</button>
+      <button onclick="showView('anual')">📅 Tabla anual</button>
     </div>
   </nav>
 </header>
@@ -714,20 +680,15 @@
     <p class="pos-scoring-note">⭐ Sistema de puntos: Victoria = 3 pts · Empate = 2 pts · Derrota = 1 pt</p>
   </div>
 
-  <!-- ── VIEW: INFO ───────────────────────────────────────────── -->
-  <div id="view-info">
-
-    <div class="info-card">
-      <h3>🏟 Nuestro estadio</h3>
-      <p id="info-estadio">—</p>
-      <p id="info-dir-local">—</p>
+  <!-- ── VIEW: TABLA ANUAL (Apertura + Clausura) ─────────────── -->
+  <div id="view-anual" style="display:none">
+    <div class="pos-summary" id="anual-summary"></div>
+    <div class="filtros" id="anual-tabs"></div>
+    <div class="seccion-titulo" id="anual-titulo">Tabla anual</div>
+    <div id="anual-table-container">
+      <p style="color:var(--gris-texto); padding:20px 0;">Cargando tabla anual…</p>
     </div>
-
-    <div class="seccion-titulo">Canchas de rivales</div>
-    <div class="rival-grid" id="rival-grid">
-      <p style="color:var(--gris-texto);">Cargando…</p>
-    </div>
-
+    <p class="pos-scoring-note">⭐ Suma Apertura + Clausura · Victoria = 3 pts · Empate = 2 pts · Derrota = 1 pt</p>
   </div>
 
 </main>
@@ -836,7 +797,6 @@
     }
 
     renderFixture(data.fixture);
-    renderInfo(data);
   }
 
   // ── Parsear fecha sin problemas de timezone ──────────────────
@@ -941,43 +901,19 @@
     `;
   }
 
-  // ── Render info/canchas ──────────────────────────────────────
-  function renderInfo(data) {
-    const propio = Object.values(clubsData).find(c => c.es_propio) || {};
-    document.getElementById('info-estadio').innerHTML =
-      `<strong>${propio.estadio || data.club.nombre}</strong>`;
-    document.getElementById('info-dir-local').innerHTML =
-      `📍 ${propio.direccion || '—'}`;
-
-    // Rivales visitantes únicos
-    const visitantes = data.fixture.filter(p => p.condicion === 'visitante');
-    const vistos = {};
-    const items = visitantes
-      .filter(p => { if (vistos[p.cancha]) return false; vistos[p.cancha] = true; return true; })
-      .map(p => `
-        <div class="rival-item">
-          <div class="rname">⚽ ${p.cancha}</div>
-          <div class="rdir">📍 ${infoClub(p.cancha).direccion || 'Sin dirección'}</div>
-          ${infoClub(p.cancha).maps ? `<a class="maps-btn" href="${infoClub(p.cancha).maps}" target="_blank">🗺 Ver en Maps</a>` : ''}
-        </div>
-      `).join('');
-
-    document.getElementById('rival-grid').innerHTML = items || '<p>Sin partidos de visitante.</p>';
-  }
-
   // ── Navegación de vistas ─────────────────────────────────────
   function showView(view) {
     document.getElementById('view-fixture').style.display    = view === 'fixture'    ? 'block' : 'none';
     document.getElementById('view-posiciones').style.display = view === 'posiciones' ? 'block' : 'none';
-    document.getElementById('view-info').style.display       = view === 'info'       ? 'block' : 'none';
+    document.getElementById('view-anual').style.display      = view === 'anual'      ? 'block' : 'none';
     document.querySelectorAll('nav button').forEach((b, i) => {
       b.classList.toggle('active',
         (view === 'fixture'    && i === 0) ||
         (view === 'posiciones' && i === 1) ||
-        (view === 'info'       && i === 2)
+        (view === 'anual'      && i === 2)
       );
     });
-    if (view === 'posiciones' && posicionesData) renderPosiciones(posicionesData);
+    if ((view === 'posiciones' || view === 'anual') && posicionesData) renderPosiciones(view);
   }
 
   // ── Filtros ──────────────────────────────────────────────────
@@ -1067,13 +1003,30 @@
     .then(r => r.json())
     .then(data => { posicionesData = data; })
     .catch(() => {
-      document.getElementById('pos-table-container').innerHTML =
-        '<p style="color:#dc2626;padding:20px 0;">⚠️ No se pudo cargar posiciones.json</p>';
+      ['pos', 'anual'].forEach(pre => {
+        document.getElementById(`${pre}-table-container`).innerHTML =
+          '<p style="color:#dc2626;padding:20px 0;">⚠️ No se pudo cargar posiciones.json</p>';
+      });
     });
 
-  let posTabActiva = 'general';
+  // La misma UI sirve para dos tablas: la de la fase en curso (vista
+  // "posiciones", ids pos-*) y la anual (vista "anual", ids anual-*).
+  const POS_VISTAS = {
+    posiciones: { pre: 'pos',   tab: 'general' },
+    anual:      { pre: 'anual', tab: 'general' },
+  };
 
-  function renderPosiciones(data) {
+  // Datos de una vista: la anual vive en posicionesData.anual y hereda zona,
+  // temporada y fecha de actualización del nivel de arriba
+  function datosVista(vista) {
+    const d = posicionesData;
+    if (vista !== 'anual') return d;
+    return d.anual ? { ...d, ...d.anual, fase: 'Anual' } : { ...d, fase: 'Anual', general: [], categorias: {} };
+  }
+
+  function renderPosiciones(vista) {
+    const { pre } = POS_VISTAS[vista];
+    const data    = datosVista(vista);
     // Banner de resumen siempre usa la tabla general
     const general = data.general || [];
     const chaca   = general.find(e => e.es_propio) || { pj: 0, g: 0, e: 0, p: 0, pts: 0 };
@@ -1085,7 +1038,7 @@
     const fase = [data.fase, data.temporada || (data.torneo || '').match(/\d{4}/)?.[0]]
       .filter(Boolean).join(' ');
 
-    document.getElementById('pos-summary').innerHTML = `
+    document.getElementById(`${pre}-summary`).innerHTML = `
       <div class="pos-summary-top">
         <div class="pos-summary-tag">🏆 ${fase || data.torneo || ''}</div>
         <div class="pos-summary-zona">Zona ${data.zona}</div>
@@ -1108,32 +1061,37 @@
     const cats = Object.keys(data.categorias || {}).sort((a, b) => b - a);
     const tabs  = [{ id: 'general', label: 'General' }, ...cats.map(c => ({ id: c, label: `Cat. ${c}` }))];
 
-    document.getElementById('pos-tabs').innerHTML = tabs.map(t =>
-      `<button class="filtro-btn${posTabActiva === t.id ? ' active' : ''}"
-               onclick="cambiarTabPos('${t.id}')">${t.label}</button>`
+    const activa = POS_VISTAS[vista].tab;
+    document.getElementById(`${pre}-tabs`).innerHTML = tabs.map(t =>
+      `<button class="filtro-btn${activa === t.id ? ' active' : ''}"
+               onclick="cambiarTabPos('${vista}', '${t.id}')">${t.label}</button>`
     ).join('');
 
-    renderTablaPos(data);
+    renderTablaPos(vista);
   }
 
-  function cambiarTabPos(tab) {
-    posTabActiva = tab;
-    document.querySelectorAll('#pos-tabs .filtro-btn').forEach(b => {
+  function cambiarTabPos(vista, tab) {
+    const { pre } = POS_VISTAS[vista];
+    POS_VISTAS[vista].tab = tab;
+    document.querySelectorAll(`#${pre}-tabs .filtro-btn`).forEach(b => {
       b.classList.toggle('active', b.textContent.trim() === (tab === 'general' ? 'General' : `Cat. ${tab}`));
     });
-    renderTablaPos(posicionesData);
+    renderTablaPos(vista);
   }
 
-  function renderTablaPos(data) {
-    const tabla = posTabActiva === 'general'
+  function renderTablaPos(vista) {
+    const { pre, tab } = POS_VISTAS[vista];
+    const data  = datosVista(vista);
+    const tabla = tab === 'general'
       ? data.general
-      : (data.categorias || {})[posTabActiva] || [];
+      : (data.categorias || {})[tab] || [];
 
-    const titulo = posTabActiva === 'general' ? 'Tabla general' : `Categoría ${posTabActiva}`;
-    document.getElementById('pos-titulo').textContent = titulo;
+    const base   = vista === 'anual' ? 'Tabla anual' : 'Tabla general';
+    const titulo = tab === 'general' ? base : `Categoría ${tab}${vista === 'anual' ? ' — anual' : ''}`;
+    document.getElementById(`${pre}-titulo`).textContent = titulo;
 
     if (!tabla.length) {
-      document.getElementById('pos-table-container').innerHTML =
+      document.getElementById(`${pre}-table-container`).innerHTML =
         `<p style="color:var(--gris-texto);padding:20px 0;">Sin datos para esta categoría todavía.</p>`;
       return;
     }
@@ -1167,7 +1125,7 @@
         </tr>`;
     });
 
-    document.getElementById('pos-table-container').innerHTML = `
+    document.getElementById(`${pre}-table-container`).innerHTML = `
       <div class="pos-table-card">
         <div class="pos-table-scroll">
           <table class="pos-table">

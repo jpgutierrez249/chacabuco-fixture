@@ -23,9 +23,12 @@ const FASE     = 'Clausura';
 const TORNEO   = 1;
 const ZONA     = 14;
 const VISTA    = 'tablas-clausura';
+// La tabla anual (Apertura + Clausura) se guarda aparte, bajo la clave "anual"
+const VISTA_ANUAL = 'tabla-anual';
 
-const API_URL  = `https://fefi.com.ar/wp-json/fefit/v1/vista?torneo=${TORNEO}&zona=${ZONA}&vista=${VISTA}`;
-const FUENTE   = `https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=${VISTA}`;
+const apiUrl   = vista => `https://fefi.com.ar/wp-json/fefit/v1/vista?torneo=${TORNEO}&zona=${ZONA}&vista=${vista}`;
+const fuente   = vista => `https://fefi.com.ar/2026-torneo-anual-baby-futbol/?zona=f&vista=${vista}`;
+const FUENTE   = fuente(VISTA);
 const OUTPUT   = path.join(__dirname, '..', 'posiciones.json');
 
 
@@ -93,24 +96,40 @@ function parsearTablas($) {
   return { general, categorias };
 }
 
-async function main() {
-  console.log(`Fetching ${API_URL}`);
-  const body = await get(API_URL);
+// Baja una vista del endpoint y devuelve { general, categorias }.
+// Falla con error explícito si la respuesta no sirve, para no pisar el JSON.
+async function bajarTablas(vista) {
+  const url = apiUrl(vista);
+  console.log(`Fetching ${url}`);
+  const body = await get(url);
 
   let html;
   try {
     ({ html } = JSON.parse(body));
   } catch {
-    throw new Error(`La respuesta no es JSON — ¿cambió el endpoint? Revisar ${FUENTE}`);
+    throw new Error(`La respuesta no es JSON — ¿cambió el endpoint? Revisar ${fuente(vista)}`);
   }
-  if (!html) throw new Error(`Respuesta sin html para zona=${ZONA} vista=${VISTA}`);
+  if (!html) throw new Error(`Respuesta sin html para zona=${ZONA} vista=${vista}`);
 
-  console.log('\nParsing tablas...');
-  const { general, categorias } = parsearTablas(cheerio.load(html));
+  const tablas = parsearTablas(cheerio.load(html));
+  if (tablas.general.length === 0) throw new Error(`Tabla general vacía (${vista}) — abortando`);
+  return tablas;
+}
 
-  if (general.length === 0) throw new Error('Tabla general vacía — abortando');
-
+async function main() {
+  const { general, categorias } = await bajarTablas(VISTA);
   const actual = JSON.parse(fs.readFileSync(OUTPUT, 'utf8'));
+
+  // Si falla la anual no se frena la de la fase: queda la anual anterior
+  // y el proceso termina con error para que el job quede en rojo
+  let anual = actual.anual;
+  try {
+    anual = { fuente: fuente(VISTA_ANUAL), ...(await bajarTablas(VISTA_ANUAL)) };
+  } catch (err) {
+    console.error(`\n⚠️  Tabla anual: ${err.message} — se mantiene la anterior`);
+    process.exitCode = 1;
+  }
+
   const nuevo  = {
     ...actual,
     fase: FASE,
@@ -122,6 +141,7 @@ async function main() {
     }),
     general,
     categorias,
+    anual,
   };
 
   fs.writeFileSync(OUTPUT, JSON.stringify(nuevo, null, 2) + '\n');
@@ -138,6 +158,13 @@ async function main() {
     const top = categorias[cat].slice(0, 3).map(e => `${e.equipo}(${e.pts})`).join(', ');
     console.log(`   ${cat}: ${top}`);
   });
+
+  if (anual) {
+    console.log(`\n   Anual: ${anual.general.length} equipos`);
+    anual.general.slice(0, 3).forEach((f, i) =>
+      console.log(`   ${i + 1}. ${f.equipo.padEnd(28)} ${f.pts} pts`)
+    );
+  }
 }
 
 main().catch(err => { console.error('\n❌', err.message); process.exit(1); });
